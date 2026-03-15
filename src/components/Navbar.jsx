@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
+import SiteSwitcher from './SiteSwitcher';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -20,8 +21,13 @@ const Navbar = () => {
       <div className="container">
         <div className="nav-content">
           <Link to="/" className="nav-logo">
-            <Globe className="logo-icon" />
-            <span>Pugazh Overseas</span>
+            <div className="logo-container">
+              <Globe className="logo-icon" />
+              <div className="logo-text">
+                <span className="company-name">Pugazh Overseas</span>
+                <span className="company-tagline">Global Trade Solutions</span>
+              </div>
+            </div>
           </Link>
           
           <div className={`nav-links ${isOpen ? 'nav-links-open' : ''}`}>
@@ -55,9 +61,12 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <button className="nav-toggle" onClick={toggleMenu}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="nav-actions">
+            <SiteSwitcher />
+            <button className="nav-toggle" onClick={toggleMenu}>
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
     </nav>
