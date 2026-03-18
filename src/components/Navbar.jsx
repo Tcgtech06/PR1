@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import SiteSwitcher from './SiteSwitcher';
+import logo from '../assets/logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -22,11 +23,8 @@ const Navbar = () => {
         <div className="nav-content">
           <Link to="/" className="nav-logo">
             <div className="logo-container">
-              <Globe className="logo-icon" />
-              <div className="logo-text">
-                <span className="company-name">Pugazh Overseas</span>
-                <span className="company-tagline">Global Trade Solutions</span>
-              </div>
+              <img src={logo} alt="Pugazh Overseas Logo" className="logo-image" />
+              <span className="company-tagline">Global Trade Solutions</span>
             </div>
           </Link>
           

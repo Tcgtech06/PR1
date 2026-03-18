@@ -25,15 +25,6 @@ const About = () => {
     }
   ];
 
-  const milestones = [
-    { year: "2009", event: "Company Founded", description: "Started with a vision to connect global markets" },
-    { year: "2012", event: "First International Export", description: "Successfully exported to 5 countries" },
-    { year: "2015", event: "ISO Certification", description: "Achieved ISO 9001:2015 quality certification" },
-    { year: "2018", event: "Expanded Operations", description: "Opened new facilities and expanded product range" },
-    { year: "2021", event: "Digital Transformation", description: "Implemented advanced logistics and tracking systems" },
-    { year: "2026", event: "Global Leader", description: "Serving 50+ countries with 500+ satisfied clients" }
-  ];
-
   return (
     <div className="about">
       {/* Hero Section */}
@@ -54,31 +45,28 @@ const About = () => {
         <div className="container">
           <div className="story-content">
             <div className="story-text">
-              <h2 className="section-title">Our Story</h2>
+              <h2 className="section-title">About Us</h2>
               <p className="story-description">
-                Founded in 2009, Pugazh Overseas began with a simple yet ambitious vision: 
-                to connect businesses across the globe through quality products and reliable service. 
-                What started as a small export business has grown into a trusted international 
-                trade partner serving clients in over 50 countries.
+                As one of South India's premier <strong>Polyester Knitted fabric</strong> suppliers, our journey began with a simple mission: to deliver exceptional quality textiles to businesses nationwide. Over the years, we have grown into a trusted partner for school and corporate uniforms, sportswear, casual wear, and premium suiting.
               </p>
               <p className="story-description">
-                Our journey has been marked by continuous growth, innovation, and an unwavering 
-                commitment to excellence. We've built lasting relationships with suppliers, 
-                manufacturers, and clients worldwide, creating a network that spans continents 
-                and cultures.
+                Our extensive catalog features over 300 varieties of premium textiles. From versatile <strong>Micro</strong> and <strong>Spun Polyester fabrics</strong> to our celebrated spandex and lycra collections, we ensure every woven thread meets world-class standards. We also specialize in high-performance sublimation fabrics like <strong>Dot-knit</strong> and <strong>Honey-Comb</strong>.
+              </p>
+              <p className="story-description">
+                Beyond standard offerings, we pride ourselves on delivering bespoke solutions. Whether you need custom <strong>Collar Cuffs</strong>, essential accessories like <strong>Zippers</strong> and <strong>Elastics</strong>, or timely nation-wide delivery through our dedicated logistics network, Pugazh Overseas is your complete textile sourcing partner.
               </p>
               <div className="story-stats">
                 <div className="stat">
-                  <span className="stat-number">15+</span>
-                  <span className="stat-label">Years Experience</span>
+                  <span className="stat-number">300+</span>
+                  <span className="stat-label">Fabric Varieties</span>
                 </div>
                 <div className="stat">
-                  <span className="stat-number">50+</span>
-                  <span className="stat-label">Countries Served</span>
+                  <span className="stat-number">All India</span>
+                  <span className="stat-label">Delivery</span>
                 </div>
                 <div className="stat">
-                  <span className="stat-number">500+</span>
-                  <span className="stat-label">Happy Clients</span>
+                  <span className="stat-number">Custom</span>
+                  <span className="stat-label">Specifications</span>
                 </div>
               </div>
             </div>
@@ -88,6 +76,39 @@ const About = () => {
                 <h3>Global Presence</h3>
                 <p>Connecting Markets Worldwide</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About MD Section */}
+      <section className="section story-section" style={{ background: 'var(--light-gray)' }}>
+        <div className="container">
+          <div className="story-content">
+            <div className="story-image" style={{ order: -1 }}>
+              <div className="story-card" style={{ background: 'var(--white)' }}>
+                <Users size={80} />
+                <h3>Founder's Vision</h3>
+                <p>A True Entrepreneurial Spirit</p>
+              </div>
+            </div>
+            <div className="story-text">
+              <h2 className="section-title">About Our Managing Director</h2>
+              <p className="story-description">
+                At the young age of 23, driven by an unwavering entrepreneurial spirit, Mr. Mahalingam, CEO of Sri Rajamani Fabrics & Pugazh Overseas, embarked on a remarkable journey with a close friend. Armed with a dream and determination, they set up a modest service-based business in a humble 100 sq.ft building. Little did they know that this was just the beginning of an extraordinary success story that would captivate the hearts of many.
+              </p>
+              <p className="story-description">
+                Within a mere two years, their venture not only flourished but flourished exponentially! Witnessing the tremendous growth, they took a bold step and opened a new branch, expanding their reach and influence. To diversify their offerings, they also ventured into small-scale trading in the same service field, demonstrating their adaptability and foresight.
+              </p>
+              <p className="story-description">
+                But Mr. Mahalingam was not content with resting on his laurels. Instead, he dared to dream bigger and bolder. Recognizing an untapped opportunity, he took a daring leap into the unknown, establishing a trading business that directly competed with the leading concern in the market. This audacious move was met with skepticism, but he knew that great rewards come to those who embrace calculated risks.
+              </p>
+              <p className="story-description">
+                Through sheer resilience, hard work, and an unwavering commitment to quality, Mr. Mahalingam's venture soon blossomed into a roaring success. Today, he stands tall as one of Tamil Nadu's foremost polyester fabric sellers, a name synonymous with trust, excellence, and innovation.
+              </p>
+              <p className="story-description" style={{ fontWeight: 600, color: 'var(--primary-blue)' }}>
+                From the modest 100 sq.ft building to an impressive 20,000 sq.ft facility, Mr. Mahalingam's journey is an awe-inspiring testament to the power of vision and perseverance.
+              </p>
             </div>
           </div>
         </div>
@@ -134,28 +155,6 @@ const About = () => {
                 </div>
                 <h3 className="value-title">{value.title}</h3>
                 <p className="value-description">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="timeline-section">
-        <div className="container">
-          <h2 className="section-title">Our Journey</h2>
-          <p className="section-subtitle">
-            Key milestones that have shaped our growth and success over the years.
-          </p>
-          <div className="timeline">
-            {milestones.map((milestone, index) => (
-              <div key={index} className="timeline-item">
-                <div className="timeline-marker"></div>
-                <div className="timeline-content">
-                  <div className="timeline-year">{milestone.year}</div>
-                  <h4 className="timeline-event">{milestone.event}</h4>
-                  <p className="timeline-description">{milestone.description}</p>
-                </div>
               </div>
             ))}
           </div>

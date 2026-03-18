@@ -1,10 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, Globe, Shirt } from 'lucide-react';
 import './SiteSwitcher.css';
 
 const SiteSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentSite, setCurrentSite] = useState('pugazh');
+
+  // Detect current site based on URL
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path.includes('/rajmani')) {
+      setCurrentSite('rajamani');
+    } else {
+      setCurrentSite('pugazh');
+    }
+  }, []);
 
   const sites = [
     {
@@ -26,9 +36,11 @@ const SiteSwitcher = () => {
   const handleSiteSwitch = (siteId) => {
     setCurrentSite(siteId);
     setIsOpen(false);
-    // Here you would implement the actual site switching logic
+    // Implement actual site switching logic
     if (siteId === 'rajamani') {
-      alert('Switching to Raja Mani Fabrics - Feature coming soon!');
+      window.location.href = '/rajmani';
+    } else if (siteId === 'pugazh') {
+      window.location.href = '/';
     }
   };
 

@@ -1,6 +1,6 @@
-/* About Hero */
+/* About Hero - Blue */
 .about-hero {
-  background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+  background: var(--secondary-color);
   padding: 120px 0 80px;
   color: var(--white);
   text-align: center;
@@ -53,7 +53,7 @@
   display: block;
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--primary-green);
+  color: var(--primary-color);
   margin-bottom: 5px;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .story-card svg {
-  color: var(--primary-blue);
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
@@ -119,7 +119,7 @@
 }
 
 .mv-card svg {
-  color: var(--primary-green);
+  color: var(--secondary-color);
   margin-bottom: 20px;
 }
 
@@ -149,7 +149,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  color: var(--primary-blue);
+  color: var(--primary-color);
 }
 
 .value-title {
@@ -184,7 +184,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--primary-green), var(--primary-blue));
+  background: var(--secondary-color);
   transform: translateX(-50%);
 }
 
@@ -212,7 +212,7 @@
 .timeline-marker {
   width: 20px;
   height: 20px;
-  background: var(--primary-green);
+  background: var(--secondary-color);
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -234,7 +234,7 @@
 .timeline-year {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: var(--primary-color);
   margin-bottom: 8px;
 }
 
@@ -275,7 +275,7 @@
 }
 
 .choose-point svg {
-  color: var(--primary-green);
+  color: var(--primary-color);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -307,7 +307,7 @@
 }
 
 .choose-card svg {
-  color: var(--primary-green);
+  color: var(--secondary-color);
   margin-bottom: 20px;
 }
 
@@ -332,6 +332,10 @@
     font-size: 2.5rem;
   }
   
+  .about-hero .hero-description {
+    font-size: 1.1rem;
+  }
+  
   .story-content,
   .choose-content {
     grid-template-columns: 1fr;
@@ -342,6 +346,7 @@
   .story-stats {
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
   }
   
   .mv-content {
@@ -371,11 +376,27 @@
   .choose-points {
     text-align: left;
   }
+  
+  .grid {
+    gap: 20px;
+  }
+  
+  .value-card {
+    padding: 25px;
+  }
 }
 
 @media (max-width: 480px) {
+  .about-hero {
+    padding: 60px 0 40px;
+  }
+  
   .about-hero .hero-title {
     font-size: 2rem;
+  }
+  
+  .about-hero .hero-description {
+    font-size: 1rem;
   }
   
   .story-stats {
@@ -383,14 +404,38 @@
     gap: 20px;
   }
   
+  .stat {
+    min-width: 120px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
   .mv-card,
   .story-card,
   .choose-card {
-    padding: 30px 25px;
+    padding: 25px 20px;
   }
   
   .timeline-content {
     padding: 20px;
     max-width: 280px;
+  }
+  
+  .value-card {
+    padding: 20px;
+  }
+  
+  .value-title {
+    font-size: 1.2rem;
+  }
+  
+  .choose-point h4 {
+    font-size: 1rem;
+  }
+  
+  .choose-point p {
+    font-size: 0.9rem;
   }
 }

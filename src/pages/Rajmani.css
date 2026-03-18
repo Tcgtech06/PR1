@@ -1,0 +1,558 @@
+/* Rajmani Site Styles - Using Logo Colors */
+.rajmani-site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Define Rajmani Logo Colors */
+:root {
+  --rajmani-light-green: #90EE90; /* Light Green from logo */
+  --rajmani-light-blue: #87CEEB; /* Light Blue from logo */
+  --rajmani-green: #32CD32; /* Lime Green */
+  --rajmani-blue: #4682B4; /* Steel Blue */
+  --rajmani-mint: #98FB98; /* Pale Green */
+}
+
+/* Navbar */
+/* Rajmani Navbar - White */
+.rajmani-navbar {
+  width: 100%;
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.rajmani-navbar .nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.rajmani-navbar .nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+.rajmani-navbar .logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.rajmani-navbar .logo-image {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.2));
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+
+.rajmani-navbar .company-tagline {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--dark-gray);
+}
+
+.rajmani-navbar .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.rajmani-navbar .nav-link {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.rajmani-navbar .nav-link:hover {
+  background: var(--light-gray);
+  color: var(--rajmani-light-green);
+  transform: translateY(-1px);
+}
+
+.rajmani-navbar .nav-link.active {
+  background: var(--rajmani-light-green);
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* Products Section */
+.rajmani-products {
+  background: var(--white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.rajmani-products h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.rajmani-products > p {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  margin-bottom: 50px;
+}
+
+.rajmani-products .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.rajmani-products .product-card {
+  background: var(--light-gray);
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.rajmani-products .product-card:hover {
+  transform: translateY(-5px);
+}
+
+.rajmani-products .product-card svg {
+  color: var(--rajmani-light-green);
+  margin-bottom: 20px;
+}
+
+.rajmani-products .product-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.rajmani-products .product-card p {
+  color: var(--dark-gray);
+  line-height: 1.6;
+}
+
+.rajmani-navbar .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.rajmani-navbar .nav-toggle:hover {
+  background: var(--light-gray);
+}
+
+/* Rajmani Hero - Light Green */
+.rajmani-hero {
+  background: var(--rajmani-light-green);
+  padding: 120px 0 80px;
+  color: var(--white);
+  text-align: center;
+}
+
+.rajmani-hero .hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.rajmani-hero .hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.rajmani-hero .hero-description {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.rajmani-hero .hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.rajmani-hero .stat {
+  text-align: center;
+}
+
+.rajmani-hero .stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.rajmani-hero .stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+/* About Section */
+.rajmani-about {
+  background: var(--white);
+  padding: 80px 0;
+}
+
+.rajmani-about .about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.rajmani-about h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--text-dark);
+}
+
+.rajmani-about p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--dark-gray);
+  margin-bottom: 25px;
+}
+
+.rajmani-about .features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.rajmani-about .feature {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.rajmani-about .feature svg {
+  color: var(--rajmani-light-green);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rajmani-about .feature h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+}
+
+.rajmani-about .feature p {
+  color: var(--dark-gray);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.rajmani-about .about-image {
+  display: flex;
+  justify-content: center;
+}
+
+.rajmani-about .image-placeholder {
+  background: var(--light-gray);
+  padding: 60px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.rajmani-about .image-placeholder svg {
+  color: var(--rajmani-light-blue);
+  margin-bottom: 20px;
+}
+
+.rajmani-about .image-placeholder h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.rajmani-about .image-placeholder p {
+  color: var(--dark-gray);
+  margin: 0;
+}
+
+/* Contact Section */
+.rajmani-contact {
+  background: var(--light-gray);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.rajmani-contact h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.rajmani-contact > p {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  margin-bottom: 50px;
+}
+
+.rajmani-contact .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.rajmani-contact .contact-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.rajmani-contact .contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.rajmani-contact .contact-card svg {
+  color: var(--rajmani-light-green);
+  margin-bottom: 20px;
+}
+
+.rajmani-contact .contact-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.rajmani-contact .contact-card p {
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+/* Footer */
+/* Rajmani Footer - Light Blue */
+.rajmani-footer {
+  background: var(--rajmani-light-blue);
+  color: var(--white);
+  padding: 60px 0 20px;
+  margin-top: auto;
+}
+
+.rajmani-footer .footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.rajmani-footer .footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.rajmani-footer .footer-logo .logo-image {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+
+.rajmani-footer .footer-description {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.rajmani-footer .social-links {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.rajmani-footer .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.rajmani-footer .social-link:hover {
+  background: var(--white);
+  color: var(--rajmani-light-blue);
+  transform: translateY(-2px);
+}
+
+.rajmani-footer .footer-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--white);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.rajmani-footer .contact-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.rajmani-footer .contact-icons svg {
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rajmani-footer .contact-icons svg:hover {
+  transform: translateY(-2px);
+  color: var(--white);
+  filter: brightness(1.2);
+}
+
+.rajmani-footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .rajmani-navbar .nav-actions {
+    gap: 0.5rem;
+  }
+  
+  .rajmani-navbar .nav-toggle {
+    display: block;
+  }
+
+  .rajmani-navbar .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--medium-gray);
+  }
+
+  .rajmani-navbar .nav-links-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .rajmani-navbar .nav-link {
+    padding: 1rem 2rem;
+    border-radius: 0;
+    border-bottom: 1px solid var(--medium-gray);
+    color: var(--text-dark);
+  }
+
+  .rajmani-navbar .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .rajmani-hero {
+    padding: 80px 0 60px;
+  }
+  
+  .rajmani-hero .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .rajmani-hero .hero-stats {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .rajmani-about .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .rajmani-contact .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .rajmani-footer .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .rajmani-footer .contact-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .rajmani-hero .hero-title {
+    font-size: 2rem;
+  }
+  
+  .rajmani-about h2,
+  .rajmani-contact h2 {
+    font-size: 2rem;
+  }
+  
+  .rajmani-about .image-placeholder {
+    padding: 40px 30px;
+  }
+  
+  .rajmani-contact .contact-card {
+    padding: 30px 25px;
+  }
+}

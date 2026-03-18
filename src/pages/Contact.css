@@ -1,6 +1,6 @@
-/* Contact Hero */
+/* Contact Hero - Green */
 .contact-hero {
-  background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+  background: var(--primary-color);
   padding: 120px 0 80px;
   color: var(--white);
   text-align: center;
@@ -21,9 +21,6 @@
 }
 
 /* Contact Info Cards */
-.contact-info {
-  background: var(--white);
-}
 
 .contact-card {
   text-align: center;
@@ -35,7 +32,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  color: var(--primary-green);
+  color: var(--primary-color);
 }
 
 .contact-title {
@@ -85,7 +82,7 @@
 }
 
 .form-header svg {
-  color: var(--primary-green);
+  color: var(--primary-color);
   margin-bottom: 15px;
 }
 
@@ -132,13 +129,15 @@
   font-size: 16px;
   transition: border-color 0.3s ease;
   font-family: inherit;
+  background-color: #ffffff;
+  color: #1a202c;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-green);
+  border-color: var(--primary-color);
 }
 
 .form-group textarea {
@@ -171,7 +170,7 @@
 }
 
 .map-placeholder svg {
-  color: var(--primary-blue);
+  color: var(--secondary-color);
   margin-bottom: 20px;
 }
 
@@ -193,7 +192,7 @@
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
-  border-left: 4px solid var(--primary-green);
+  border-left: 4px solid var(--primary-color);
 }
 
 .map-note p {
@@ -219,7 +218,7 @@
   background: var(--light-gray);
   padding: 30px;
   border-radius: 12px;
-  border-left: 4px solid var(--primary-green);
+  border-left: 4px solid var(--primary-color);
 }
 
 .faq-item h4 {
@@ -242,6 +241,10 @@
   
   .contact-hero .hero-title {
     font-size: 2.5rem;
+  }
+  
+  .contact-hero .hero-description {
+    font-size: 1.1rem;
   }
   
   .contact-content {
@@ -270,11 +273,27 @@
   .faq-item {
     padding: 25px 20px;
   }
+  
+  .grid {
+    gap: 20px;
+  }
+  
+  .contact-card {
+    padding: 30px 20px;
+  }
 }
 
 @media (max-width: 480px) {
+  .contact-hero {
+    padding: 60px 0 40px;
+  }
+  
   .contact-hero .hero-title {
     font-size: 2rem;
+  }
+  
+  .contact-hero .hero-description {
+    font-size: 1rem;
   }
   
   .form-container {
@@ -284,16 +303,32 @@
   .form-group input,
   .form-group select,
   .form-group textarea {
-    padding: 10px 14px;
-    font-size: 14px;
+    padding: 12px 14px;
+    font-size: 15px;
   }
   
   .btn-large {
-    padding: 14px 28px;
+    padding: 14px 24px;
     font-size: 16px;
   }
   
   .map-placeholder {
     padding: 30px 20px;
+  }
+  
+  .contact-card {
+    padding: 25px 15px;
+  }
+  
+  .contact-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .faq-item {
+    padding: 20px 15px;
+  }
+  
+  .faq-item h4 {
+    font-size: 1.1rem;
   }
 }

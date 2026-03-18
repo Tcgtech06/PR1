@@ -44,13 +44,13 @@ const Contact = () => {
     {
       icon: <Phone size={24} />,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 87654 32109"],
+      details: ["+91 78451 60516"],
       description: "Mon-Fri 9AM-6PM IST"
     },
     {
       icon: <MapPin size={24} />,
       title: "Visit Us",
-      details: ["123 Export Street", "Chennai, Tamil Nadu 600001", "India"],
+      details: ["Pugazh Overseas Head Office", "10, 1st Floor, Opp Sivan Theatre", "Cross Street, Pitchampalayam Pudur", "Tiruppur, Tamil Nadu 641602"],
       description: "Our office location"
     },
     {
@@ -208,10 +208,9 @@ const Contact = () => {
               <div className="map-placeholder">
                 <MapPin size={60} />
                 <h4>Our Location</h4>
-                <p>123 Export Street<br />Chennai, Tamil Nadu 600001<br />India</p>
+                <p>Pugazh Overseas Head Office<br />10, 1st Floor, Opp Sivan Theatre<br />Cross Street, Pitchampalayam Pudur<br />Tiruppur, Tamil Nadu 641602</p>
                 <div className="map-note">
-                  <p>We're located in the heart of Chennai's business district, 
-                  easily accessible by public transport and with ample parking facilities.</p>
+                  <p>We're located in Tiruppur, easily accessible with ample parking facilities.</p>
                 </div>
               </div>
             </div>
