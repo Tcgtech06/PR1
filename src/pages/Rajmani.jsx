@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Package, Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Package, Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react';
 import SiteSwitcher from '../components/SiteSwitcher';
+import HamburgerIcon from '../components/HamburgerIcon';
 import logo2 from '../assets/logo2.png';
 import './Rajmani.css';
 
@@ -25,6 +26,9 @@ const Rajmani = () => {
             </Link>
             
             <div className={`nav-links ${isOpen ? 'nav-links-open' : ''}`}>
+              <div className="mobile-site-switcher">
+                <SiteSwitcher />
+              </div>
               <Link 
                 to="/rajmani" 
                 className="nav-link active"
@@ -56,10 +60,12 @@ const Rajmani = () => {
             </div>
             
             <div className="nav-actions">
-              <SiteSwitcher />
               <button className="nav-toggle" onClick={toggleMenu}>
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                <HamburgerIcon isOpen={isOpen} />
               </button>
+              <div className="desktop-site-switcher">
+                <SiteSwitcher />
+              </div>
             </div>
           </div>
         </div>

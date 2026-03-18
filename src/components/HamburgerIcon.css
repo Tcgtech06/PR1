@@ -1,0 +1,64 @@
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.line {
+  height: 3px;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+}
+
+.line-top {
+  width: 20px; /* Shorter than middle line */
+  background-color: #ef4444; /* Red */
+  margin-left: 4px; /* Center the shorter line */
+}
+
+.line-middle {
+  width: 28px; /* Full width */
+  background-color: #22c55e; /* Green */
+}
+
+.line-bottom {
+  width: 20px; /* Shorter than middle line */
+  background-color: #eab308; /* Yellow */
+  margin-left: 4px; /* Center the shorter line */
+}
+
+/* Animation when menu is open */
+.hamburger-icon.open .line-top {
+  transform: rotate(45deg) translate(7px, 7px);
+  width: 28px; /* Full width when transformed */
+  margin-left: 0;
+}
+
+.hamburger-icon.open .line-middle {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-icon.open .line-bottom {
+  transform: rotate(-45deg) translate(7px, -7px);
+  width: 28px; /* Full width when transformed */
+  margin-left: 0;
+}
+
+/* Hover effect */
+.hamburger-icon:hover .line-top {
+  width: 24px;
+}
+
+.hamburger-icon:hover .line-bottom {
+  width: 24px;
+}
+
+.hamburger-icon:hover .line-middle {
+  width: 30px;
+}

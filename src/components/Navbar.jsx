@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { X } from 'lucide-react';
 import SiteSwitcher from './SiteSwitcher';
+import HamburgerIcon from './HamburgerIcon';
 import logo from '../assets/logo.png';
 import './Navbar.css';
 
@@ -24,11 +25,13 @@ const Navbar = () => {
           <Link to="/" className="nav-logo">
             <div className="logo-container">
               <img src={logo} alt="Pugazh Overseas Logo" className="logo-image" />
-              <span className="company-tagline">Global Trade Solutions</span>
             </div>
           </Link>
           
           <div className={`nav-links ${isOpen ? 'nav-links-open' : ''}`}>
+            <div className="mobile-site-switcher">
+              <SiteSwitcher />
+            </div>
             <Link 
               to="/" 
               className={`nav-link ${isActive('/') ? 'active' : ''}`}
@@ -60,10 +63,12 @@ const Navbar = () => {
           </div>
 
           <div className="nav-actions">
-            <SiteSwitcher />
             <button className="nav-toggle" onClick={toggleMenu}>
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              <HamburgerIcon isOpen={isOpen} />
             </button>
+            <div className="desktop-site-switcher">
+              <SiteSwitcher />
+            </div>
           </div>
         </div>
       </div>

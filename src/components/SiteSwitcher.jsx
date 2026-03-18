@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
 import logo from '../assets/logo.png';
 import logo2 from '../assets/logo2.png';
 import './SiteSwitcher.css';
 
 const SiteSwitcher = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [currentSite, setCurrentSite] = useState('pugazh');
 
   // Detect current site based on URL
@@ -35,58 +33,31 @@ const SiteSwitcher = () => {
     }
   ];
 
-  const handleSiteSwitch = (siteId) => {
-    setCurrentSite(siteId);
-    setIsOpen(false);
-    // Implement actual site switching logic
-    if (siteId === 'rajamani') {
-      window.location.href = '/rajmani';
-    } else if (siteId === 'pugazh') {
+  const handleSiteSwitch = () => {
+    // Directly switch to the other site
+    if (currentSite === 'rajamani') {
       window.location.href = '/';
+    } else {
+      window.location.href = '/rajmani';
     }
   };
 
-  const currentSiteData = sites.find(site => site.id === currentSite);
-  const otherSites = sites.filter(site => site.id !== currentSite);
+  const otherSite = sites.find(site => site.id !== currentSite);
 
   return (
     <div className="site-switcher">
       <button 
         className="site-switcher-button"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleSiteSwitch}
       >
-        <div className="site-info">
-          {currentSiteData.icon}
-          <div className="site-details">
-            <span className="site-name">{currentSiteData.name}</span>
-            <span className="site-description">{currentSiteData.description}</span>
+        <div className="switch-info">
+          <span className="switch-text">SWITCH TO</span>
+          <div className="site-info">
+            {otherSite.icon}
+            <span className="site-name">{otherSite.name}</span>
           </div>
         </div>
-        <ChevronDown 
-          size={16} 
-          className={`chevron ${isOpen ? 'open' : ''}`}
-        />
       </button>
-
-      {isOpen && (
-        <div className="site-switcher-dropdown">
-          {otherSites.map((site) => (
-            <button
-              key={site.id}
-              className="site-option"
-              onClick={() => handleSiteSwitch(site.id)}
-            >
-              <div className="site-info">
-                {site.icon}
-                <div className="site-details">
-                  <span className="site-name">{site.name}</span>
-                  <span className="site-description">{site.description}</span>
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
-      )}
     </div>
   );
 };

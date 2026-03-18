@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -22,6 +22,7 @@ function App() {
               <Footer />
             </>
           } />
+          <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/products" element={
             <>
               <Navbar />
@@ -50,6 +51,7 @@ function App() {
             </>
           } />
           <Route path="/rajmani" element={<Rajmani />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
