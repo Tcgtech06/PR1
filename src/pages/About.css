@@ -1,6 +1,6 @@
-/* About Hero - Blue */
+/* About Hero - Green */
 .about-hero {
-  background: var(--secondary-color);
+  background: #22c55e;
   padding: 120px 0 80px;
   color: var(--white);
   text-align: center;
