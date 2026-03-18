@@ -1,5 +1,4 @@
 import { Mail, Phone, MapPin, Globe, Facebook, Twitter, Linkedin } from 'lucide-react';
-import logo from '../assets/logo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -8,9 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <div className="footer-logo">
-              <img src={logo} alt="Pugazh Overseas Logo" className="logo-image" />
-            </div>
+            <h2 className="footer-company-name">Pugazh Overseas</h2>
             <p className="footer-description">
               We are one of the leading Polyester Knitted fabric sellers in South India. We deal with various kinds of polyester knitted fabrics and maintain 300+ varieties. We supply accessories and deliver goods all over India through our logistic partners.
             </p>

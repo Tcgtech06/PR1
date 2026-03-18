@@ -212,9 +212,9 @@
   color: var(--dark-gray);
 }
 
-/* CTA Section - Blue */
+/* CTA Section - Green */
 .cta-section {
-  background: var(--secondary-color);
+  background: var(--primary-color);
   padding: 100px 0;
   text-align: center;
   color: var(--white);

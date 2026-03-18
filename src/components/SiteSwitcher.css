@@ -30,6 +30,12 @@
   gap: 10px;
 }
 
+.site-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
 .site-details {
   display: flex;
   flex-direction: column;

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, Globe, Shirt } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+import logo from '../assets/logo.png';
+import logo2 from '../assets/logo2.png';
 import './SiteSwitcher.css';
 
 const SiteSwitcher = () => {
@@ -20,16 +22,16 @@ const SiteSwitcher = () => {
     {
       id: 'pugazh',
       name: 'Pugazh Overseas',
-      icon: <Globe size={20} />,
+      icon: <img src={logo} alt="Pugazh" className="site-logo" />,
       description: 'Global Trade Solutions',
-      url: '#'
+      url: '/'
     },
     {
       id: 'rajamani',
       name: 'Raja Mani Fabrics',
-      icon: <Shirt size={20} />,
+      icon: <img src={logo2} alt="Raja Mani" className="site-logo" />,
       description: 'Premium Textile Solutions',
-      url: '#'
+      url: '/rajmani'
     }
   ];
 
@@ -45,6 +47,7 @@ const SiteSwitcher = () => {
   };
 
   const currentSiteData = sites.find(site => site.id === currentSite);
+  const otherSites = sites.filter(site => site.id !== currentSite);
 
   return (
     <div className="site-switcher">
@@ -67,10 +70,10 @@ const SiteSwitcher = () => {
 
       {isOpen && (
         <div className="site-switcher-dropdown">
-          {sites.map((site) => (
+          {otherSites.map((site) => (
             <button
               key={site.id}
-              className={`site-option ${currentSite === site.id ? 'active' : ''}`}
+              className="site-option"
               onClick={() => handleSiteSwitch(site.id)}
             >
               <div className="site-info">
@@ -80,9 +83,6 @@ const SiteSwitcher = () => {
                   <span className="site-description">{site.description}</span>
                 </div>
               </div>
-              {currentSite === site.id && (
-                <div className="active-indicator"></div>
-              )}
             </button>
           ))}
         </div>

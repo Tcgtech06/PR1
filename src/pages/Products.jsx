@@ -124,15 +124,6 @@ const Products = () => {
     }
   ];
 
-  const features = [
-    "Quality Certified Products",
-    "Competitive Pricing",
-    "Custom Packaging",
-    "Timely Delivery",
-    "Export Documentation",
-    "Quality Assurance"
-  ];
-
   return (
     <div className="products">
       {/* Hero Section */}
@@ -224,67 +215,6 @@ const Products = () => {
                 </button>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="features-section">
-        <div className="container">
-          <h2 className="section-title">Why Our Products Stand Out</h2>
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <div key={index} className="feature-item">
-                <Package size={24} />
-                <span>{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Quality Assurance */}
-      <section className="section quality-section">
-        <div className="container">
-          <div className="quality-content">
-            <div className="quality-text">
-              <h2 className="section-title">Quality Assurance</h2>
-              <p className="quality-description">
-                At Pugazh Overseas, quality is our top priority. We implement rigorous 
-                quality control measures at every step of the process to ensure our 
-                products meet international standards.
-              </p>
-              <div className="quality-points">
-                <div className="quality-point">
-                  <div className="point-number">01</div>
-                  <div className="point-content">
-                    <h4>Source Verification</h4>
-                    <p>Direct sourcing from verified suppliers and manufacturers</p>
-                  </div>
-                </div>
-                <div className="quality-point">
-                  <div className="point-number">02</div>
-                  <div className="point-content">
-                    <h4>Quality Testing</h4>
-                    <p>Comprehensive testing and inspection before shipment</p>
-                  </div>
-                </div>
-                <div className="quality-point">
-                  <div className="point-number">03</div>
-                  <div className="point-content">
-                    <h4>Certification</h4>
-                    <p>All necessary certifications and documentation provided</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="quality-image">
-              <div className="quality-card">
-                <Gem size={60} />
-                <h3>Premium Quality</h3>
-                <p>Certified & Tested</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

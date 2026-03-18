@@ -213,12 +213,13 @@
   color: var(--dark-gray);
 }
 
-/* CTA Section - Blue */
+/* CTA Section - Green */
 .cta-section {
-  background: var(--secondary-color);
-  padding: 100px 0;
+  background: #22c55e;
+  padding: 60px 0;
   text-align: center;
   color: var(--white);
+  margin-bottom: 40px;
 }
 
 .cta-content {
@@ -236,6 +237,16 @@
   font-size: 1.2rem;
   margin-bottom: 40px;
   opacity: 0.9;
+}
+
+.cta-section .btn-primary {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.cta-section .btn-primary:hover {
+  background: var(--light-blue);
+  border-color: var(--light-blue);
 }
 
 /* Mobile Responsive */

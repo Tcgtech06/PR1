@@ -203,9 +203,7 @@ const Rajmani = () => {
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <div className="footer-logo">
-                <img src={logo2} alt="Raja Mani Fabrics Logo" className="logo-image" />
-              </div>
+              <h2 className="footer-company-name">Raja Mani Fabrics</h2>
               <p className="footer-description">
                 Premium textile solutions with over 25 years of excellence in fabric manufacturing and supply.
               </p>
