@@ -178,27 +178,12 @@
 }
 
 /* Hero section animations */
-.hero-title {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 .hero-title.animate-in-view {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.hero-subtitle {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 .hero-subtitle.animate-in-view {
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
-}
-
-.hero-description {
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 .hero-description.animate-in-view {
@@ -206,21 +191,11 @@
 }
 
 /* Section heading animations */
-h2 {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 h2.animate-in-view {
   animation: slideInTop 0.6s ease-out forwards;
 }
 
 /* Product card animations */
-.product-card {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 .product-card.animate-in-view {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -231,11 +206,6 @@ h2.animate-in-view {
 .product-card.animate-in-view:nth-child(4) { animation-delay: 0.4s; }
 
 /* Rajmani product card animations */
-.rajmani-products-card {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 .rajmani-products-card.animate-in-view {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -246,11 +216,6 @@ h2.animate-in-view {
 .rajmani-products-card.animate-in-view:nth-child(4) { animation-delay: 0.4s; }
 
 /* Contact card animations */
-.contact-card {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 .contact-card.animate-in-view {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -260,11 +225,6 @@ h2.animate-in-view {
 .contact-card.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
 
 /* Feature animations */
-.feature {
-  opacity: 0;
-  transform: translateX(-30px);
-}
-
 .feature.animate-in-view {
   animation: slideInLeft 0.6s ease-out forwards;
 }
@@ -274,18 +234,8 @@ h2.animate-in-view {
 .feature.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
 
 /* About section animations */
-.about-content-text {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 .about-content-text.animate-in-view {
   animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.about-image-section {
-  opacity: 0;
-  transform: scale(0.9);
 }
 
 .about-image-section.animate-in-view {
@@ -293,27 +243,12 @@ h2.animate-in-view {
 }
 
 /* Rajmani section animations */
-.rajmani-hero-title {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 .rajmani-hero-title.animate-in-view {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.rajmani-hero-subtitle {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 .rajmani-hero-subtitle.animate-in-view {
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
-}
-
-.rajmani-hero-stat {
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 .rajmani-hero-stat.animate-in-view {
@@ -324,27 +259,12 @@ h2.animate-in-view {
 .rajmani-hero-stat.animate-in-view:nth-child(2) { animation-delay: 0.2s; }
 .rajmani-hero-stat.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
 
-.rajmani-about-text {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 .rajmani-about-text.animate-in-view {
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
-.rajmani-about-image {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
 .rajmani-about-image.animate-in-view {
   animation: scaleIn 0.6s ease-out forwards;
-}
-
-.rajmani-contact-card {
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 .rajmani-contact-card.animate-in-view {
@@ -408,4 +328,15 @@ button:hover {
 /* Menu item animation on click */
 .nav-links-open {
   animation: slideInRight 0.4s ease-out;
+}
+
+/* Typing effect */
+@keyframes revealText {
+  0%   { opacity: 0; transform: scale(0.6); filter: blur(6px); }
+  60%  { opacity: 1; transform: scale(1.05); filter: blur(0); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+.typing-heading {
+  animation: revealText 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
+import HeroSection from '../components/HeroSection';
 import './Contact.css';
 
 const Contact = () => {
@@ -63,18 +64,11 @@ const Contact = () => {
 
   return (
     <div className="contact">
-      {/* Hero Section */}
-      <section className="contact-hero">
-        <div className="container">
-          <div className="hero-content">
-            <h1 className="hero-title">Contact Us</h1>
-            <p className="hero-description">
-              Ready to start your global trade journey? Get in touch with our expert team 
-              for personalized solutions and competitive quotes.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        className="contact-hero"
+        title="Contact Us"
+        description="Ready to start your global trade journey? Get in touch with our expert team for personalized solutions and competitive quotes."
+      />
 
       {/* Contact Info Cards */}
       <section className="section contact-info">

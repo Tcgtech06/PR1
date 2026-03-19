@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Package, Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Package, Mail, Phone, MapPin, Facebook, Linkedin } from 'lucide-react';
 import SiteSwitcher from '../components/SiteSwitcher';
 import HamburgerIcon from '../components/HamburgerIcon';
 import logo2 from '../assets/logo2.png';
@@ -220,9 +220,6 @@ const Rajmani = () => {
               <div className="social-links">
                 <a href="#" className="social-link">
                   <Facebook size={20} />
-                </a>
-                <a href="#" className="social-link">
-                  <Twitter size={20} />
                 </a>
                 <a href="#" className="social-link">
                   <Linkedin size={20} />

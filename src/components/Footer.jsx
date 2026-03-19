@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Globe, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Facebook, Linkedin } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -14,9 +14,6 @@ const Footer = () => {
             <div className="social-links">
               <a href="#" className="social-link">
                 <Facebook size={20} />
-              </a>
-              <a href="#" className="social-link">
-                <Twitter size={20} />
               </a>
               <a href="#" className="social-link">
                 <Linkedin size={20} />

@@ -1,4 +1,5 @@
 import { Package, Leaf, Shirt, Gem, Coffee, Wheat, Activity, MessageSquare } from 'lucide-react';
+import HeroSection from '../components/HeroSection';
 import './Products.css';
 
 const Products = () => {
@@ -126,18 +127,11 @@ const Products = () => {
 
   return (
     <div className="products">
-      {/* Hero Section */}
-      <section className="products-hero">
-        <div className="container">
-          <div className="hero-content">
-            <h1 className="hero-title">Our Product Range</h1>
-            <p className="hero-description">
-              Discover our extensive collection of premium quality products, 
-              carefully sourced and exported to meet international standards.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        className="products-hero"
+        title="Our Product Range"
+        description="Discover our extensive collection of premium quality products, carefully sourced and exported to meet international standards."
+      />
 
       {/* Products Categories Grid */}
       <section className="section products-grid">

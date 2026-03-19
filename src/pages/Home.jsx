@@ -1,29 +1,49 @@
 import { ArrowRight, Globe, Shield, Truck, Users, Star, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Home.css';
 
 const Home = () => {
+  const heroRef = useRef(null);
+  const [showHero, setShowHero] = useState(true);
+
+  const headingWrapperRef = useRef(null);
+  const [showHeading, setShowHeading] = useState(true);
+
+  const aboutPointsRef = useScrollReveal('.about-point-animate', 'about-point-visible', 0.3);
+
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShowHero(false);
+        requestAnimationFrame(() => requestAnimationFrame(() => setShowHero(true)));
+      }
+    }, { threshold: 0.1 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = headingWrapperRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShowHeading(false);
+        requestAnimationFrame(() => requestAnimationFrame(() => setShowHeading(true)));
+      }
+    }, { threshold: 0.2 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const features = [
-    {
-      icon: <Globe size={40} />,
-      title: "Global Reach",
-      description: "Connecting businesses across continents with our extensive international network."
-    },
-    {
-      icon: <Shield size={40} />,
-      title: "Quality Assurance",
-      description: "Rigorous quality control processes ensure only the finest products reach our clients."
-    },
-    {
-      icon: <Truck size={40} />,
-      title: "Reliable Logistics",
-      description: "Efficient shipping and logistics solutions for timely delivery worldwide."
-    },
-    {
-      icon: <Users size={40} />,
-      title: "Expert Team",
-      description: "Experienced professionals dedicated to providing exceptional service and support."
-    }
+    { icon: <Globe size={40} />, title: "Global Reach", description: "Connecting businesses across continents with our extensive international network." },
+    { icon: <Shield size={40} />, title: "Quality Assurance", description: "Rigorous quality control processes ensure only the finest products reach our clients." },
+    { icon: <Truck size={40} />, title: "Reliable Logistics", description: "Efficient shipping and logistics solutions for timely delivery worldwide." },
+    { icon: <Users size={40} />, title: "Expert Team", description: "Experienced professionals dedicated to providing exceptional service and support." }
   ];
 
   const stats = [
@@ -36,27 +56,29 @@ const Home = () => {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" ref={heroRef}>
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
-              <h1 className="hero-title">
-                Your Gateway to 
-                <span className="gradient-text"> Global Trade</span>
-              </h1>
-              <p className="hero-description">
-                Pugazh Overseas connects businesses worldwide with premium quality products 
-                and reliable export services. Experience seamless international trade with 
-                our trusted expertise.
-              </p>
-              <div className="hero-buttons">
-                <Link to="/products" className="btn btn-primary">
-                  Explore Products <ArrowRight size={20} />
-                </Link>
-                <Link to="/contact" className="btn btn-outline">
-                  Get Quote
-                </Link>
-              </div>
+              {showHero && <>
+                <h1 className="hero-title">
+                  Your Gateway to
+                  <span className="gradient-text"> Global Trade</span>
+                </h1>
+                <p className="hero-description">
+                  Pugazh Overseas connects businesses worldwide with premium quality products
+                  and reliable export services. Experience seamless international trade with
+                  our trusted expertise.
+                </p>
+                <div className="hero-buttons">
+                  <Link to="/products" className="btn btn-primary">
+                    Explore Products <ArrowRight size={20} />
+                  </Link>
+                  <Link to="/contact" className="btn btn-outline">
+                    Get Quote
+                  </Link>
+                </div>
+              </>}
             </div>
             <div className="hero-image">
               <div className="hero-card">
@@ -72,16 +94,16 @@ const Home = () => {
       {/* Features Section */}
       <section className="section features">
         <div className="container">
-          <h2 className="section-title">Why Choose Pugazh Overseas?</h2>
+          <div ref={headingWrapperRef}>
+            {showHeading && <h2 className="section-title typing-heading">Why Choose Pugazh Overseas?</h2>}
+          </div>
           <p className="section-subtitle">
             We provide comprehensive export solutions with a commitment to excellence and customer satisfaction.
           </p>
           <div className="grid grid-4">
             {features.map((feature, index) => (
               <div key={index} className="card feature-card">
-                <div className="feature-icon">
-                  {feature.icon}
-                </div>
+                <div className="feature-icon">{feature.icon}</div>
                 <h3 className="feature-title">{feature.title}</h3>
                 <p className="feature-description">{feature.description}</p>
               </div>
@@ -97,7 +119,7 @@ const Home = () => {
             {stats.map((stat, index) => (
               <div key={index} className="stat-card">
                 <div className="stat-number">{stat.number}</div>
-                <div className="stat-label">{stat.label}</div>
+                <div className="stats-label">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -111,20 +133,20 @@ const Home = () => {
             <div className="about-text">
               <h2 className="section-title">About Pugazh Overseas</h2>
               <p className="about-description">
-                With over 15 years of experience in international trade, Pugazh Overseas 
-                has established itself as a trusted partner for businesses seeking quality 
+                With over 15 years of experience in international trade, Pugazh Overseas
+                has established itself as a trusted partner for businesses seeking quality
                 products and reliable export services.
               </p>
-              <div className="about-points">
-                <div className="about-point">
+              <div className="about-points" ref={aboutPointsRef}>
+                <div className="about-point about-point-animate" style={{ animationDelay: '0s' }}>
                   <CheckCircle size={20} />
                   <span>ISO Certified Quality Management</span>
                 </div>
-                <div className="about-point">
+                <div className="about-point about-point-animate" style={{ animationDelay: '0.3s' }}>
                   <CheckCircle size={20} />
                   <span>Extensive Global Network</span>
                 </div>
-                <div className="about-point">
+                <div className="about-point about-point-animate" style={{ animationDelay: '0.6s' }}>
                   <CheckCircle size={20} />
                   <span>24/7 Customer Support</span>
                 </div>

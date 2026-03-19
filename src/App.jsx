@@ -6,6 +6,7 @@ import Products from './pages/Products';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Rajmani from './pages/Rajmani';
+import './styles/animations.css'
 import './App.css';
 
 function App() {

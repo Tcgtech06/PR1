@@ -1,4 +1,5 @@
 import { Users, Target, Award, Globe, CheckCircle, TrendingUp } from 'lucide-react';
+import HeroSection from '../components/HeroSection';
 import './About.css';
 
 const About = () => {
@@ -27,18 +28,11 @@ const About = () => {
 
   return (
     <div className="about">
-      {/* Hero Section */}
-      <section className="about-hero">
-        <div className="container">
-          <div className="hero-content">
-            <h1 className="hero-title">About Pugazh Overseas</h1>
-            <p className="hero-description">
-              Building bridges across continents through quality products and trusted partnerships. 
-              Your gateway to global trade excellence.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        className="about-hero"
+        title="About Pugazh Overseas"
+        description="Building bridges across continents through quality products and trusted partnerships. Your gateway to global trade excellence."
+      />
 
       {/* Story Section */}
       <section className="section story-section">
@@ -166,7 +160,7 @@ const About = () => {
         <div className="container">
           <div className="choose-content">
             <div className="choose-text">
-              <h2 className="section-title">Why Choose Pugazh Overseas?</h2>
+              <h2 className="section-title typing-heading">Why Choose Pugazh Overseas?</h2>
               <div className="choose-points">
                 <div className="choose-point">
                   <CheckCircle size={24} />
