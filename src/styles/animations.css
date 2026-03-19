@@ -330,12 +330,28 @@ button:hover {
   animation: slideInRight 0.4s ease-out;
 }
 
-/* Typing effect */
-@keyframes revealText {
-  0%   { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* Focus Reveal Animation */
+@keyframes focusReveal {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
 }
 
-.typing-heading {
-  animation: revealText 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.focus-in-view {
+  animation: focusReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.typing-heading-animate {
+  opacity: 0;
+}
+
+.typing-heading-animate.focus-in-view {
+  animation: focusReveal 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

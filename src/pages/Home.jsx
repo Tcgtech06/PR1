@@ -5,37 +5,28 @@ import useScrollReveal from '../hooks/useScrollReveal';
 import './Home.css';
 
 const Home = () => {
-  const heroRef = useRef(null);
-  const [showHero, setShowHero] = useState(true);
-
-  const headingWrapperRef = useRef(null);
-  const [showHeading, setShowHeading] = useState(true);
-
+  const [showHero, setShowHero] = useState(false);
+  const heroObserverRef = useRef(null);
   const aboutPointsRef = useScrollReveal('.about-point-animate', 'about-point-visible', 0.3);
+  const headingRevealRef = useScrollReveal('.typing-heading-animate', 'focus-in-view', 0.2);
 
   useEffect(() => {
-    const el = heroRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setShowHero(false);
-        requestAnimationFrame(() => requestAnimationFrame(() => setShowHero(true)));
-      }
-    }, { threshold: 0.1 });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    const heroSection = heroObserverRef.current;
+    if (!heroSection) return;
 
-  useEffect(() => {
-    const el = headingWrapperRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setShowHeading(false);
-        requestAnimationFrame(() => requestAnimationFrame(() => setShowHeading(true)));
-      }
-    }, { threshold: 0.2 });
-    observer.observe(el);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowHero(false);
+          setTimeout(() => setShowHero(true), 50);
+        } else {
+          setShowHero(false);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(heroSection);
     return () => observer.disconnect();
   }, []);
 
@@ -56,46 +47,46 @@ const Home = () => {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero" ref={heroRef}>
+      <section className="hero" ref={heroObserverRef}>
         <div className="container">
-          <div className="hero-content">
-            <div className="hero-text">
-              {showHero && <>
-                <h1 className="hero-title">
-                  Your Gateway to
-                  <span className="gradient-text"> Global Trade</span>
-                </h1>
-                <p className="hero-description">
-                  Pugazh Overseas connects businesses worldwide with premium quality products
-                  and reliable export services. Experience seamless international trade with
-                  our trusted expertise.
-                </p>
-                <div className="hero-buttons">
-                  <Link to="/products" className="btn btn-primary">
-                    Explore Products <ArrowRight size={20} />
-                  </Link>
-                  <Link to="/contact" className="btn btn-outline">
-                    Get Quote
-                  </Link>
+          {showHero && (
+            <div className="hero-content">
+              <div className="hero-text">
+                  <h1 className="hero-title">
+                    Your Gateway to
+                    <span className="gradient-text"> Global Trade</span>
+                  </h1>
+                  <p className="hero-description">
+                    Pugazh Overseas connects businesses worldwide with premium quality products
+                    and reliable export services. Experience seamless international trade with
+                    our trusted expertise.
+                  </p>
+                  <div className="hero-buttons">
+                    <Link to="/products" className="btn btn-primary">
+                      Explore Products <ArrowRight size={20} />
+                    </Link>
+                    <Link to="/contact" className="btn btn-outline">
+                      Get Quote
+                    </Link>
+                  </div>
+              </div>
+              <div className="hero-image">
+                <div className="hero-card">
+                  <Globe size={80} className="hero-icon" />
+                  <h3>Worldwide Shipping</h3>
+                  <p>Fast & Secure Delivery</p>
                 </div>
-              </>}
-            </div>
-            <div className="hero-image">
-              <div className="hero-card">
-                <Globe size={80} className="hero-icon" />
-                <h3>Worldwide Shipping</h3>
-                <p>Fast & Secure Delivery</p>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
       {/* Features Section */}
       <section className="section features">
         <div className="container">
-          <div ref={headingWrapperRef}>
-            {showHeading && <h2 className="section-title typing-heading">Why Choose Pugazh Overseas?</h2>}
+          <div ref={headingRevealRef}>
+            <h2 className="section-title typing-heading-animate">Why Choose Pugazh Overseas?</h2>
           </div>
           <p className="section-subtitle">
             We provide comprehensive export solutions with a commitment to excellence and customer satisfaction.
