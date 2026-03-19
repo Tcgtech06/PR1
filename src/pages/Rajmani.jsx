@@ -26,9 +26,6 @@ const Rajmani = () => {
             </Link>
             
             <div className={`nav-links ${isOpen ? 'nav-links-open' : ''}`}>
-              <div className="mobile-site-switcher">
-                <SiteSwitcher />
-              </div>
               <Link 
                 to="/rajmani" 
                 className="nav-link active"
@@ -57,7 +54,14 @@ const Rajmani = () => {
               >
                 Contact Us
               </a>
+              <div className="mobile-site-switcher">
+                <SiteSwitcher />
+              </div>
             </div>
+
+            {isOpen && (
+              <div className="nav-overlay" onClick={() => setIsOpen(false)}></div>
+            )}
             
             <div className="nav-actions">
               <button className="nav-toggle" onClick={toggleMenu}>

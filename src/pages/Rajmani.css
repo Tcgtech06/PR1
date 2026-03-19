@@ -5,13 +5,13 @@
   flex-direction: column;
 }
 
-/* Define Rajmani Logo Colors */
+/* Define Rajmani Logo Colors - Professional Teal & Gold */
 :root {
-  --rajmani-light-green: #90EE90; /* Light Green from logo */
-  --rajmani-light-blue: #87CEEB; /* Light Blue from logo */
-  --rajmani-green: #32CD32; /* Lime Green */
-  --rajmani-blue: #4682B4; /* Steel Blue */
-  --rajmani-mint: #98FB98; /* Pale Green */
+  --rajmani-light-green: #1B6B4F; /* Deep Teal */
+  --rajmani-light-blue: #C9A961; /* Warm Gold */
+  --rajmani-green: #2D8659; /* Emerald Green */
+  --rajmani-blue: #0F4C3A; /* Dark Teal */
+  --rajmani-mint: #1B6B4F; /* Deep Teal */
 }
 
 /* Navbar */
@@ -167,7 +167,7 @@
 }
 
 .rajmani-products .product-card svg {
-  color: var(--rajmani-light-green);
+  color: #C9A961;
   margin-bottom: 20px;
 }
 
@@ -294,7 +294,7 @@
 }
 
 .rajmani-about .feature svg {
-  color: var(--rajmani-light-green);
+  color: #C9A961;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -382,7 +382,7 @@
 }
 
 .rajmani-contact .contact-card svg {
-  color: var(--rajmani-light-green);
+  color: #C9A961;
   margin-bottom: 20px;
 }
 
@@ -399,9 +399,9 @@
 }
 
 /* Footer */
-/* Rajmani Footer - Light Blue */
+/* Rajmani Footer - Dark Teal */
 .rajmani-footer {
-  background: var(--rajmani-light-blue);
+  background: #0F4C3A;
   color: var(--white);
   padding: 25px 0 10px;
   margin-top: auto;
@@ -465,7 +465,7 @@
 
 .rajmani-footer .social-link:hover {
   background: var(--white);
-  color: var(--rajmani-light-blue);
+  color: #0F4C3A;
   transform: translateY(-2px);
 }
 
@@ -511,22 +511,45 @@
   .rajmani-navbar .nav-links {
     position: fixed;
     top: 0;
-    right: -50%;
-    width: 50%;
+    right: 0;
+    left: auto;
+    width: 280px;
     height: 100vh;
     background: var(--white);
     flex-direction: column;
     gap: 0;
-    padding: 0;
-    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    padding: 80px 0 0 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
     z-index: 9999;
     overflow-y: auto;
-    transform: none;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    display: flex !important;
   }
 
   .rajmani-navbar .nav-links-open {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .rajmani-navbar .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
   
   .rajmani-navbar .nav-actions {
@@ -552,28 +575,32 @@
 
   .rajmani-navbar .mobile-site-switcher {
     display: block;
-    padding: 2rem;
-    border-bottom: 2px solid var(--medium-gray);
-    background: var(--light-gray);
-    order: -1;
+    padding: 1.5rem 2.5rem;
+    border-top: none;
+    background: transparent;
+    margin-top: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .rajmani-navbar .nav-link {
-    padding: 1.5rem 2rem;
+    padding: 1.25rem 2.5rem;
     border-radius: 0;
     border-bottom: 1px solid var(--medium-gray);
     color: var(--text-dark);
-    display: block;
+    display: flex;
+    align-items: center;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
   }
 
   .rajmani-navbar .nav-link:hover {
     background: var(--light-gray);
     color: var(--rajmani-light-green);
-    padding-left: 2.5rem;
+    padding-left: 3rem;
   }
 
   .rajmani-navbar .nav-link.active {

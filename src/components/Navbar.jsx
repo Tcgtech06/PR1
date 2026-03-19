@@ -29,9 +29,6 @@ const Navbar = () => {
           </Link>
           
           <div className={`nav-links ${isOpen ? 'nav-links-open' : ''}`}>
-            <div className="mobile-site-switcher">
-              <SiteSwitcher />
-            </div>
             <Link 
               to="/" 
               className={`nav-link ${isActive('/') ? 'active' : ''}`}
@@ -60,7 +57,14 @@ const Navbar = () => {
             >
               Contact Us
             </Link>
+            <div className="mobile-site-switcher">
+              <SiteSwitcher />
+            </div>
           </div>
+
+          {isOpen && (
+            <div className="nav-overlay" onClick={() => setIsOpen(false)}></div>
+          )}
 
           <div className="nav-actions">
             <button className="nav-toggle" onClick={toggleMenu}>

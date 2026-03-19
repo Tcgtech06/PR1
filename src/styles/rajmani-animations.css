@@ -1,0 +1,171 @@
+/* Rajmani Site - Scroll-Triggered Text Animations */
+
+/* ==================== HERO SECTION ANIMATIONS ==================== */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rajmani-hero-title {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-hero-title.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.rajmani-hero-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-hero-subtitle.animate-in-view {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.rajmani-hero-stat {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-hero-stat.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.rajmani-hero-stat.animate-in-view:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.rajmani-hero-stat.animate-in-view:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.rajmani-hero-stat.animate-in-view:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ==================== PRODUCTS SECTION ANIMATIONS ==================== */
+
+.rajmani-products-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-products-card.animate-in-view {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.rajmani-products-card.animate-in-view:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.rajmani-products-card.animate-in-view:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.rajmani-products-card.animate-in-view:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.rajmani-products-card.animate-in-view:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.rajmani-products h2 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-products h2.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ==================== ABOUT SECTION ANIMATIONS ==================== */
+
+.rajmani-about h2 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-about h2.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.rajmani-about-text {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-about-text.animate-in-view {
+  animation: fadeInUp 0.8s ease-out 0.1s forwards;
+}
+
+.rajmani-about-image {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-about-image.animate-in-view {
+  animation: fadeInUp 0.8s ease-out 0.1s forwards;
+}
+
+.rajmani-about .feature {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-about .feature.animate-in-view {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.rajmani-about .feature.animate-in-view:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.rajmani-about .feature.animate-in-view:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.rajmani-about .feature.animate-in-view:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ==================== CONTACT SECTION ANIMATIONS ==================== */
+
+.rajmani-contact h2 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-contact h2.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.rajmani-contact-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.rajmani-contact-card.animate-in-view {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.rajmani-contact-card.animate-in-view:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.rajmani-contact-card.animate-in-view:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.rajmani-contact-card.animate-in-view:nth-child(3) {
+  animation-delay: 0.3s;
+}

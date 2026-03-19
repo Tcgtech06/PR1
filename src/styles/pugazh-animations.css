@@ -1,0 +1,135 @@
+/* Pugazh Site - Scroll-Triggered Text Animations */
+
+/* ==================== HOME PAGE ANIMATIONS ==================== */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-hero-title {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.home-hero-title.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.home-hero-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.home-hero-subtitle.animate-in-view {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+/* ==================== PRODUCTS PAGE ANIMATIONS ==================== */
+
+.product-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.product-card.animate-in-view {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.product-card.animate-in-view:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.product-card.animate-in-view:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.product-card.animate-in-view:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.product-card.animate-in-view:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* ==================== ABOUT PAGE ANIMATIONS ==================== */
+
+.about-content-text {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.about-content-text.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.about-image-section {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.about-image-section.animate-in-view {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.feature {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.feature.animate-in-view {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.feature.animate-in-view:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.feature.animate-in-view:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.feature.animate-in-view:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* ==================== CONTACT PAGE ANIMATIONS ==================== */
+
+.contact-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.contact-card.animate-in-view {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.contact-card.animate-in-view:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.contact-card.animate-in-view:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.contact-card.animate-in-view:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* ==================== SECTION HEADINGS ==================== */
+
+h2 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+h2.animate-in-view {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
