@@ -214,21 +214,24 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 10px;
+  animation: slideInFromLeft 0.8s ease-out forwards;
 }
 
 .rajmani-hero .hero-subtitle {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 20px;
-  opacity: 0.9;
+  opacity: 0;
+  animation: slideInFromLeft 0.8s ease-out 0.2s forwards;
 }
 
 .rajmani-hero .hero-description {
   font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto 40px;
-  opacity: 0.9;
+  opacity: 0;
   line-height: 1.6;
+  animation: slideInFromLeft 0.8s ease-out 0.4s forwards;
 }
 
 .rajmani-hero .hero-stats {
@@ -236,10 +239,23 @@
   justify-content: center;
   gap: 60px;
   margin-top: 40px;
+  opacity: 0;
+  animation: slideInFromLeft 0.8s ease-out 0.6s forwards;
 }
 
 .rajmani-hero .stat {
   text-align: center;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .rajmani-hero .stat-number {
