@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Send, MessageSquare } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Contact.css';
@@ -44,26 +44,34 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: "Email Us",
-      details: ["info@pugazhoverseas.com", "sales@pugazhoverseas.com"],
-      description: "Send us an email anytime"
+      details: ["info@pugazhoverseas.com"],
+      description: "Send us an email anytime",
+      link: "mailto:info@pugazhoverseas.com"
     },
     {
       icon: <Phone size={24} />,
       title: "Call Us",
       details: ["+91 78451 60516"],
-      description: "Mon-Fri 9AM-6PM IST"
+      description: "Mon-Fri 9AM-6PM IST",
+      link: "tel:+917845160516"
+    },
+    {
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+      ),
+      title: "WhatsApp",
+      details: ["+91 78451 60516"],
+      description: "Chat with us on WhatsApp",
+      link: "https://wa.me/917845160516"
     },
     {
       icon: <MapPin size={24} />,
       title: "Visit Us",
       details: ["Pugazh Overseas Head Office", "10, 1st Floor, Opp Sivan Theatre", "Cross Street, Pitchampalayam Pudur", "Tiruppur, Tamil Nadu 641602"],
-      description: "Our office location"
-    },
-    {
-      icon: <Clock size={24} />,
-      title: "Business Hours",
-      details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday: 9:00 AM - 2:00 PM", "Sunday: Closed"],
-      description: "When we're available"
+      description: "Our office location",
+      link: "https://maps.google.com/?q=Pugazh+Overseas+Tiruppur+Tamil+Nadu"
     }
   ];
 
@@ -84,7 +92,13 @@ const Contact = () => {
           </p>
           <div className="grid grid-4" ref={contactInfoRef}>
             {contactInfo.map((info, index) => (
-              <div key={index} className="card contact-card">
+              <a 
+                key={index} 
+                href={info.link}
+                target={info.link.startsWith('http') ? '_blank' : '_self'}
+                rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="card contact-card contact-card-link"
+              >
                 <div className="contact-icon">
                   {info.icon}
                 </div>
@@ -95,152 +109,12 @@ const Contact = () => {
                   ))}
                 </div>
                 <p className="contact-description">{info.description}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Form & Map */}
-      <section className="section contact-form-section">
-        <div className="container">
-          <div className="contact-content">
-            <div className="form-container">
-              <div className="form-header">
-                <MessageSquare size={40} />
-                <h3>Send us a Message</h3>
-                <p>Fill out the form below and we'll get back to you within 24 hours.</p>
-              </div>
-              
-              <form onSubmit={handleSubmit} className="contact-form" ref={formRef}>
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="name">Full Name *</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email Address *</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="company">Company Name</label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder="Your company name"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="subject">Subject *</label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="product-inquiry">Product Inquiry</option>
-                    <option value="quote-request">Quote Request</option>
-                    <option value="partnership">Partnership Opportunity</option>
-                    <option value="support">Customer Support</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Message *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    placeholder="Tell us about your requirements, questions, or how we can help you..."
-                  ></textarea>
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-large">
-                  <Send size={20} />
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            <div className="map-container">
-              <div className="map-placeholder">
-                <MapPin size={60} />
-                <h4>Our Location</h4>
-                <p>Pugazh Overseas Head Office<br />10, 1st Floor, Opp Sivan Theatre<br />Cross Street, Pitchampalayam Pudur<br />Tiruppur, Tamil Nadu 641602</p>
-                <div className="map-note">
-                  <p>We're located in Tiruppur, easily accessible with ample parking facilities.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="faq-section">
-        <div className="container">
-          <h2 className="section-title">Frequently Asked Questions</h2>
-          <div className="faq-grid">
-            <div className="faq-item">
-              <h4>What products do you export?</h4>
-              <p>We export a wide range of products including agricultural products, textiles, handicrafts, food items, and industrial goods. Contact us for a detailed catalog.</p>
-            </div>
-            <div className="faq-item">
-              <h4>Which countries do you ship to?</h4>
-              <p>We ship to over 50 countries worldwide. Our main markets include USA, Europe, Middle East, Southeast Asia, and Africa.</p>
-            </div>
-            <div className="faq-item">
-              <h4>What are your minimum order quantities?</h4>
-              <p>Minimum order quantities vary by product. We work with businesses of all sizes and can accommodate both small and large orders.</p>
-            </div>
-            <div className="faq-item">
-              <h4>How do you ensure product quality?</h4>
-              <p>We have ISO certified quality management systems and conduct thorough inspections at every stage of the process.</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

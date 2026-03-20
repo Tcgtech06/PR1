@@ -10,8 +10,29 @@ const Products = () => {
 
   const WHATSAPP_NUMBER = "+91 78451 60516";
 
-  const handleWhatsAppInquiry = (productName) => {
-    const message = `Hello Pugazh Overseas, I am interested in ${productName}. Can you please provide more details?`;
+  const handleWhatsAppInquiry = (productName, productDetails = null) => {
+    let message = `Hello Pugazh Overseas,\n\nI am interested in *${productName}*.\n`;
+    
+    if (productDetails) {
+      if (productDetails.description) {
+        message += `\nDescription: ${productDetails.description}\n`;
+      }
+      if (productDetails.specs) {
+        message += `\nSpecifications:\n`;
+        productDetails.specs.forEach(spec => {
+          message += `• ${spec.label}: ${spec.value}\n`;
+        });
+      }
+      if (productDetails.details) {
+        message += `\nDetails: ${productDetails.details}\n`;
+      }
+      if (productDetails.products) {
+        message += `\nKey Products: ${productDetails.products.join(', ')}\n`;
+      }
+    }
+    
+    message += `\nCan you please provide more details and pricing information?\n\nThank you!`;
+    
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}?text=${encodedMessage}`, '_blank');
   };
@@ -164,7 +185,10 @@ const Products = () => {
                 </div>
                 <button 
                   className="whatsapp-inquiry-btn"
-                  onClick={() => handleWhatsAppInquiry(category.title)}
+                  onClick={() => handleWhatsAppInquiry(category.title, {
+                    description: category.description,
+                    products: category.products
+                  })}
                 >
                   <MessageSquare size={18} />
                   Enquire on WhatsApp
@@ -207,7 +231,11 @@ const Products = () => {
                 </p>
                 <button 
                   className="whatsapp-inquiry-btn"
-                  onClick={() => handleWhatsAppInquiry(fabric.name)}
+                  onClick={() => handleWhatsAppInquiry(fabric.name, {
+                    specs: fabric.specs,
+                    details: fabric.details,
+                    description: fabric.description
+                  })}
                 >
                   <MessageSquare size={18} />
                   Enquire on WhatsApp

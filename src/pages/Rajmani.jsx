@@ -195,21 +195,26 @@ const Rajmani = () => {
           <h2>Get In Touch</h2>
           <p>Ready to explore our premium fabric collection? Contact us today!</p>
           <div className="contact-grid" ref={contactRef}>
-            <div className="contact-card">
+            <a href="mailto:info@rajmanifabrics.com" className="contact-card">
               <Mail size={32} />
               <h3>Email Us</h3>
               <p>info@rajmanifabrics.com</p>
-            </div>
-            <div className="contact-card">
+            </a>
+            <a href="tel:+917845160516" className="contact-card">
               <Phone size={32} />
               <h3>Call Us</h3>
               <p>+91 78451 60516</p>
-            </div>
-            <div className="contact-card">
+            </a>
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Raja+Mani+Fabrics+Tiruppur+Tamil+Nadu" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="contact-card"
+            >
               <MapPin size={32} />
               <h3>Visit Us</h3>
               <p>Tiruppur, Tamil Nadu</p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
