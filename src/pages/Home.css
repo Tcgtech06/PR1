@@ -30,20 +30,21 @@
   align-items: center;
 }
 
+/* Hero animations - slower speed */
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 20px;
   color: var(--white);
-  animation: slideInLeft 0.8s ease-out forwards;
+  animation: slideInLeft 1.2s ease-out forwards;
 }
 
 .gradient-text {
   color: var(--light-green);
   font-weight: 900;
   display: inline-block;
-  animation: slideInLeft 0.8s ease-out 0.2s both;
+  animation: slideInLeft 1.2s ease-out 0.3s both;
 }
 
 .hero-description {
@@ -51,14 +52,14 @@
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 40px;
-  animation: slideInLeft 0.8s ease-out 0.4s both;
+  animation: slideInLeft 1.2s ease-out 0.6s both;
 }
 
 .hero-buttons {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
-  animation: slideInLeft 0.8s ease-out 0.6s both;
+  animation: slideInLeft 1.2s ease-out 0.9s both;
 }
 
 .hero-buttons .btn-primary {
@@ -130,7 +131,7 @@
 
 .feature-card {
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .feature-icon {
@@ -426,7 +427,7 @@
   }
 }
 
-/* About points reveal animation */
+/* About points reveal animation - slower */
 @keyframes slideDownFade {
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -439,12 +440,12 @@
 
 .about-point-visible {
   opacity: 0;
-  animation: slideDownFade 0.5s ease-out forwards;
+  animation: slideDownFade 0.8s ease-out forwards;
 }
 
 .about-point-visible:nth-child(1) { animation-delay: 0s; }
-.about-point-visible:nth-child(2) { animation-delay: 0.3s; }
-.about-point-visible:nth-child(3) { animation-delay: 0.6s; }
+.about-point-visible:nth-child(2) { animation-delay: 0.4s; }
+.about-point-visible:nth-child(3) { animation-delay: 0.8s; }
 
 /* CTA button pulse */
 @keyframes ctaPulse {
@@ -453,11 +454,12 @@
 }
 
 .cta-section .btn-primary {
-  animation: ctaPulse 2s ease-in-out infinite;
+  animation: ctaPulse 3s ease-in-out infinite;
 }
 
 .cta-section .btn-primary:hover {
   animation: none;
   transform: translateY(-3px);
+  transition: all 0.4s ease;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }

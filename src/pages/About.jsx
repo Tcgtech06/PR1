@@ -1,8 +1,16 @@
 import { Users, Target, Award, Globe, CheckCircle, TrendingUp } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './About.css';
 
 const About = () => {
+  // Scroll reveal hooks for different sections
+  const storyRef = useScrollReveal('.story-content > *', 'scroll-reveal', 0.1);
+  const mdStoryRef = useScrollReveal('.story-content > *', 'scroll-reveal', 0.1);
+  const missionVisionRef = useScrollReveal('.mv-card', 'scroll-reveal', 0.1);
+  const valuesRef = useScrollReveal('.value-card', 'scroll-reveal', 0.1);
+  const whyChooseRef = useScrollReveal('.choose-point', 'scroll-reveal', 0.1);
+
   const values = [
     {
       icon: <Award size={40} />,
@@ -37,7 +45,7 @@ const About = () => {
       {/* Story Section */}
       <section className="section story-section">
         <div className="container">
-          <div className="story-content">
+          <div className="story-content" ref={storyRef}>
             <div className="story-text">
               <h2 className="section-title">About Us</h2>
               <p className="story-description">
@@ -78,7 +86,7 @@ const About = () => {
       {/* About MD Section */}
       <section className="section story-section" style={{ background: 'var(--light-gray)' }}>
         <div className="container">
-          <div className="story-content">
+          <div className="story-content" ref={mdStoryRef}>
             <div className="story-image" style={{ order: -1 }}>
               <div className="story-card" style={{ background: 'var(--white)' }}>
                 <Users size={80} />
@@ -111,7 +119,7 @@ const About = () => {
       {/* Mission & Vision */}
       <section className="mission-vision">
         <div className="container">
-          <div className="mv-content">
+          <div className="mv-content" ref={missionVisionRef}>
             <div className="mv-card">
               <Target size={50} />
               <h3>Our Mission</h3>
@@ -141,7 +149,7 @@ const About = () => {
           <p className="section-subtitle">
             These fundamental principles guide our decisions and shape our relationships with clients and partners.
           </p>
-          <div className="grid grid-4">
+          <div className="grid grid-4" ref={valuesRef}>
             {values.map((value, index) => (
               <div key={index} className="card value-card">
                 <div className="value-icon">
@@ -161,7 +169,7 @@ const About = () => {
           <div className="choose-content">
             <div className="choose-text">
               <h2 className="section-title typing-heading">Why Choose Pugazh Overseas?</h2>
-              <div className="choose-points">
+              <div className="choose-points" ref={whyChooseRef}>
                 <div className="choose-point">
                   <CheckCircle size={24} />
                   <div>

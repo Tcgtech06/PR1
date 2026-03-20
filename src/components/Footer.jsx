@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Globe, Facebook, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Facebook, Instagram } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -16,7 +16,7 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a href="#" className="social-link">
-                <Linkedin size={20} />
+                <Instagram size={20} />
               </a>
             </div>
           </div>
@@ -59,6 +59,20 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; 2026 Pugazh Overseas. All rights reserved.</p>
+          <p className="developed-by">
+            Developed By{' '}
+            <a 
+              href="https://tcgtech.in" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="tcg-tech-link"
+            >
+              <span className="tcg-t">T</span>
+              <span className="tcg-c">C</span>
+              <span className="tcg-g">G</span>
+              <span className="tcg-tech"> TECH</span>
+            </a>
+          </p>
         </div>
       </div>
     </footer>

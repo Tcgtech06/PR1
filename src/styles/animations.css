@@ -1,357 +1,149 @@
-/* Global Animations for both sites - with scroll-based animation support */
-
-/* Fade In Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* Scroll Animation Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Fade In Up Animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Slide In From Left */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.animate-fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
 }
 
-/* Slide In From Right */
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.animate-fade-in.visible {
+  opacity: 1;
 }
 
-/* Slide In From Top */
-@keyframes slideInTop {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Slide In From Bottom */
-@keyframes slideInBottom {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.animate-slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Scale In Animation */
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Rotate Scale Animation */
-@keyframes rotateScale {
-  from {
-    opacity: 0;
-    transform: rotate(-10deg) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: rotate(0) scale(1);
-  }
+.animate-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-/* Pulse Animation */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.6;
-  }
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Bounce Animation */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.animate-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-/* Float Animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.animate-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Glow Effect */
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 15px rgba(200, 149, 88, 0.4);
-  }
+.animate-scale.visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
-/* Logo animations */
-.logo-image {
-  animation: rotateScale 0.8s ease-out;
+/* Staggered animations for multiple elements */
+.animate-stagger-1 {
+  transition-delay: 0.1s;
 }
 
-.logo-image:hover {
-  animation: float 3s ease-in-out infinite;
+.animate-stagger-2 {
+  transition-delay: 0.2s;
 }
 
-/* Navigation animations */
-.nav-link {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+.animate-stagger-3 {
+  transition-delay: 0.3s;
 }
 
-.nav-link.animate-in-view {
-  animation: slideInLeft 0.6s ease-out backwards;
+.animate-stagger-4 {
+  transition-delay: 0.4s;
 }
 
-.nav-link.animate-in-view:nth-child(1) { animation-delay: 0.1s; }
-.nav-link.animate-in-view:nth-child(2) { animation-delay: 0.2s; }
-.nav-link.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
-.nav-link.animate-in-view:nth-child(4) { animation-delay: 0.4s; }
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
+.animate-stagger-5 {
+  transition-delay: 0.5s;
 }
 
-.nav-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.animate-stagger-6 {
+  transition-delay: 0.6s;
+}
+
+/* Text-specific animations */
+.animate-text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-text-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card animations */
+.animate-card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* Hero section animations */
-.hero-title.animate-in-view {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.hero-subtitle.animate-in-view {
-  animation: fadeInUp 0.8s ease-out 0.2s forwards;
-}
-
-.hero-description.animate-in-view {
-  animation: fadeInUp 0.8s ease-out 0.4s forwards;
-}
-
-/* Section heading animations */
-h2.animate-in-view {
-  animation: slideInTop 0.6s ease-out forwards;
-}
-
-/* Product card animations */
-.product-card.animate-in-view {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.product-card.animate-in-view:nth-child(1) { animation-delay: 0.1s; }
-.product-card.animate-in-view:nth-child(2) { animation-delay: 0.2s; }
-.product-card.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
-.product-card.animate-in-view:nth-child(4) { animation-delay: 0.4s; }
-
-/* Rajmani product card animations */
-.rajmani-products-card.animate-in-view {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.rajmani-products-card.animate-in-view:nth-child(1) { animation-delay: 0.1s; }
-.rajmani-products-card.animate-in-view:nth-child(2) { animation-delay: 0.2s; }
-.rajmani-products-card.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
-.rajmani-products-card.animate-in-view:nth-child(4) { animation-delay: 0.4s; }
-
-/* Contact card animations */
-.contact-card.animate-in-view {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.contact-card.animate-in-view:nth-child(1) { animation-delay: 0.1s; }
-.contact-card.animate-in-view:nth-child(2) { animation-delay: 0.2s; }
-.contact-card.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
-
-/* Feature animations */
-.feature.animate-in-view {
-  animation: slideInLeft 0.6s ease-out forwards;
-}
-
-.feature.animate-in-view:nth-child(1) { animation-delay: 0.1s; }
-.feature.animate-in-view:nth-child(2) { animation-delay: 0.2s; }
-.feature.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
-
-/* About section animations */
-.about-content-text.animate-in-view {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.about-image-section.animate-in-view {
-  animation: scaleIn 0.6s ease-out forwards;
-}
-
-/* Rajmani section animations */
-.rajmani-hero-title.animate-in-view {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.rajmani-hero-subtitle.animate-in-view {
-  animation: fadeInUp 0.8s ease-out 0.2s forwards;
-}
-
-.rajmani-hero-stat.animate-in-view {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.rajmani-hero-stat.animate-in-view:nth-child(1) { animation-delay: 0.1s; }
-.rajmani-hero-stat.animate-in-view:nth-child(2) { animation-delay: 0.2s; }
-.rajmani-hero-stat.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
-
-.rajmani-about-text.animate-in-view {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.rajmani-about-image.animate-in-view {
-  animation: scaleIn 0.6s ease-out forwards;
-}
-
-.rajmani-contact-card.animate-in-view {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.rajmani-contact-card.animate-in-view:nth-child(1) { animation-delay: 0.1s; }
-.rajmani-contact-card.animate-in-view:nth-child(2) { animation-delay: 0.2s; }
-.rajmani-contact-card.animate-in-view:nth-child(3) { animation-delay: 0.3s; }
-
-/* Button animations */
-button, .nav-link {
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  animation: glow 2s ease-in-out infinite;
-  transform: translateY(-2px);
-}
-
-/* Footer animations */
-.rajmani-footer, .footer {
-  animation: slideInTop 0.6s ease-out;
-}
-
-.footer-logo {
-  animation: rotateScale 0.8s ease-out;
-}
-
-.footer-logo:hover {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Social links animation */
-.social-link {
-  animation: scaleIn 0.4s ease-out backwards;
-}
-
-.social-link:nth-child(1) { animation-delay: 0.1s; }
-.social-link:nth-child(2) { animation-delay: 0.2s; }
-.social-link:nth-child(3) { animation-delay: 0.3s; }
-
-.social-link:hover {
-  animation: bounce 0.6s ease-in-out;
-}
-
-/* Image placeholder animation */
-.image-placeholder {
-  animation: scaleIn 0.8s ease-out;
-}
-
-.image-placeholder:hover {
-  animation: pulse 2s ease-in-out infinite;
-}
-
-/* Navbar animation */
-.navbar, .rajmani-navbar {
-  animation: slideInTop 0.6s ease-out;
-}
-
-/* Menu item animation on click */
-.nav-links-open {
-  animation: slideInRight 0.4s ease-out;
-}
-
-/* Focus Reveal Animation */
-@keyframes focusReveal {
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
-  }
-}
-
-.focus-in-view {
-  animation: focusReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.typing-heading-animate {
+.animate-hero-title {
   opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.typing-heading-animate.focus-in-view {
-  animation: focusReveal 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.animate-hero-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-hero-subtitle {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 0.2s;
+}
+
+.animate-hero-subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-hero-description {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 0.4s;
+}
+
+.animate-hero-description.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

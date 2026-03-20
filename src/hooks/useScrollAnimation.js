@@ -1,21 +1,23 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-export const useScrollAnimation = (options = {}) => {
-  const ref = useRef(null);
-  const hasAnimated = useRef(false);
+export const useScrollAnimation = (threshold = 0.1) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !hasAnimated.current) {
-        entry.target.classList.add('animate-in-view');
-        hasAnimated.current = true;
-        // Optional: stop observing after animation
-        observer.unobserve(entry.target);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Once animated, keep it visible
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold,
+        rootMargin: '50px 0px -50px 0px'
       }
-    }, {
-      threshold: 0.1,
-      ...options
-    });
+    );
 
     if (ref.current) {
       observer.observe(ref.current);
@@ -26,7 +28,9 @@ export const useScrollAnimation = (options = {}) => {
         observer.unobserve(ref.current);
       }
     };
-  }, [options]);
+  }, [threshold]);
 
-  return ref;
+  return [ref, isVisible];
 };
+
+export default useScrollAnimation;

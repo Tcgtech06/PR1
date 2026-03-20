@@ -1,13 +1,19 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Package, Mail, Phone, MapPin, Facebook, Linkedin } from 'lucide-react';
+import { Package, Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 import SiteSwitcher from '../components/SiteSwitcher';
 import HamburgerIcon from '../components/HamburgerIcon';
+import useScrollReveal from '../hooks/useScrollReveal';
 import logo2 from '../assets/logo2.png';
 import './Rajmani.css';
 
 const Rajmani = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Scroll reveal hooks for different sections
+  const productsRef = useScrollReveal('.product-card', 'scroll-reveal', 0.1);
+  const aboutRef = useScrollReveal('.feature', 'scroll-reveal', 0.1);
+  const contactRef = useScrollReveal('.contact-card', 'scroll-reveal', 0.1);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -108,7 +114,7 @@ const Rajmani = () => {
         <div className="container">
           <h2>Our Products</h2>
           <p>Premium quality fabrics for all your textile needs</p>
-          <div className="products-grid">
+          <div className="products-grid" ref={productsRef}>
             <div className="product-card">
               <Package size={40} />
               <h3>Cotton Fabrics</h3>
@@ -148,7 +154,7 @@ const Rajmani = () => {
                 Our commitment to quality, innovation, and customer satisfaction has made us the preferred 
                 choice for fashion designers, garment manufacturers, and textile enthusiasts across the region.
               </p>
-              <div className="features">
+              <div className="features" ref={aboutRef}>
                 <div className="feature">
                   <Package size={24} />
                   <div>
@@ -188,7 +194,7 @@ const Rajmani = () => {
         <div className="container">
           <h2>Get In Touch</h2>
           <p>Ready to explore our premium fabric collection? Contact us today!</p>
-          <div className="contact-grid">
+          <div className="contact-grid" ref={contactRef}>
             <div className="contact-card">
               <Mail size={32} />
               <h3>Email Us</h3>
@@ -222,7 +228,7 @@ const Rajmani = () => {
                   <Facebook size={20} />
                 </a>
                 <a href="#" className="social-link">
-                  <Linkedin size={20} />
+                  <Instagram size={20} />
                 </a>
               </div>
             </div>
@@ -237,6 +243,20 @@ const Rajmani = () => {
           </div>
           <div className="footer-bottom">
             <p>&copy; 2026 Raja Mani Fabrics. All rights reserved.</p>
+            <p className="developed-by">
+              Developed By{' '}
+              <a 
+                href="https://tcgtech.in" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="tcg-tech-link"
+              >
+                <span className="tcg-t">T</span>
+                <span className="tcg-c">C</span>
+                <span className="tcg-g">G</span>
+                <span className="tcg-tech"> TECH</span>
+              </a>
+            </p>
           </div>
         </div>
       </footer>

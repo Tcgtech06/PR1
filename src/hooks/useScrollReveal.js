@@ -1,14 +1,14 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Adds `animClass` to each matched element when the container scrolls into view,
- * removes it when it leaves — so the animation replays every time.
+ * Adds `animClass` to each matched element when the container scrolls into view.
+ * Once animated, elements stay visible for better performance.
  *
  * @param {string} selector  - CSS selector for children to animate (default: direct children)
  * @param {string} animClass - class to toggle (default: 'scroll-reveal')
- * @param {number} threshold - IntersectionObserver threshold (default: 0.2)
+ * @param {number} threshold - IntersectionObserver threshold (default: 0.1)
  */
-const useScrollReveal = (selector = null, animClass = 'scroll-reveal', threshold = 0.2) => {
+const useScrollReveal = (selector = null, animClass = 'scroll-reveal', threshold = 0.1) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -19,25 +19,35 @@ const useScrollReveal = (selector = null, animClass = 'scroll-reveal', threshold
       ? Array.from(container.querySelectorAll(selector))
       : [container];
 
-    const reset = () => targets.forEach(el => {
-      el.classList.remove(animClass);
+    // Add initial hidden state
+    targets.forEach(el => {
+      if (!el.classList.contains(animClass)) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      }
     });
 
     const reveal = () => {
-      targets.forEach(el => {
-        void el.offsetWidth; // force reflow per element
-        el.classList.add(animClass);
+      targets.forEach((el, index) => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+          el.classList.add(animClass);
+        }, index * 100); // Stagger animation
       });
     };
 
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        reset();
         reveal();
-      } else {
-        reset();
+        // Once animated, stop observing for better performance
+        observer.unobserve(container);
       }
-    }, { threshold });
+    }, { 
+      threshold,
+      rootMargin: '50px 0px -50px 0px'
+    });
 
     observer.observe(container);
     return () => observer.disconnect();

@@ -139,6 +139,46 @@
   text-align: center;
   opacity: 0.8;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.developed-by {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.tcg-tech-link {
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.tcg-tech-link:hover {
+  transform: translateY(-1px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tcg-t {
+  color: #ef4444; /* Red */
+  font-weight: 700;
+}
+
+.tcg-c {
+  color: #22c55e; /* Green */
+  font-weight: 700;
+}
+
+.tcg-g {
+  color: #eab308; /* Yellow */
+  font-weight: 700;
+}
+
+.tcg-tech {
+  color: #3b82f6; /* Blue */
+  font-weight: 700;
 }
 
 .footer-address {
@@ -216,10 +256,15 @@
   
   .footer-bottom {
     padding-top: 15px;
+    gap: 6px;
   }
   
   .footer-bottom p {
     font-size: 0.85rem;
+  }
+  
+  .developed-by {
+    font-size: 0.8rem;
   }
   
   .contact-item {

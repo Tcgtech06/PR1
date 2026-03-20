@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Contact.css';
 
 const Contact = () => {
+  // Scroll reveal hooks for different sections
+  const contactInfoRef = useScrollReveal('.contact-card', 'scroll-reveal', 0.1);
+  const formRef = useScrollReveal('.contact-form', 'scroll-reveal', 0.1);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -77,7 +82,7 @@ const Contact = () => {
           <p className="section-subtitle">
             Multiple ways to reach us. Choose what works best for you.
           </p>
-          <div className="grid grid-4">
+          <div className="grid grid-4" ref={contactInfoRef}>
             {contactInfo.map((info, index) => (
               <div key={index} className="card contact-card">
                 <div className="contact-icon">
@@ -107,7 +112,7 @@ const Contact = () => {
                 <p>Fill out the form below and we'll get back to you within 24 hours.</p>
               </div>
               
-              <form onSubmit={handleSubmit} className="contact-form">
+              <form onSubmit={handleSubmit} className="contact-form" ref={formRef}>
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="name">Full Name *</label>

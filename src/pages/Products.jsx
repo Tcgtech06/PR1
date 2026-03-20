@@ -1,8 +1,13 @@
 import { Package, Leaf, Shirt, Gem, Coffee, Wheat, Activity, MessageSquare } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Products.css';
 
 const Products = () => {
+  // Scroll reveal hooks for different sections
+  const productsGridRef = useScrollReveal('.product-card', 'scroll-reveal', 0.1);
+  const featuresRef = useScrollReveal('.feature-card', 'scroll-reveal', 0.1);
+
   const WHATSAPP_NUMBER = "+91 78451 60516";
 
   const handleWhatsAppInquiry = (productName) => {
@@ -141,7 +146,7 @@ const Products = () => {
             We specialize in various product categories, ensuring quality and authenticity in every shipment.
           </p>
           
-          <div className="grid grid-3">
+          <div className="grid grid-3" ref={productsGridRef}>
             {productCategories.map((category, index) => (
               <div key={index} className="card product-card">
                 <div className="product-icon">
@@ -178,7 +183,7 @@ const Products = () => {
             Detailed technical specifications for our most popular polyester knitted fabrics.
           </p>
           
-          <div className="grid grid-3">
+          <div className="grid grid-3" ref={featuresRef}>
             {fabricSpecifications.map((fabric, index) => (
               <div key={index} className="card product-card fabric-spec-card">
                 <div className="product-icon">
