@@ -494,16 +494,28 @@
   justify-content: flex-start;
 }
 
-.rajmani-footer .contact-icons svg {
+.rajmani-footer .footer-contact-link {
   color: var(--white);
-  cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
 }
 
-.rajmani-footer .contact-icons svg:hover {
-  transform: translateY(-2px);
-  color: var(--white);
-  filter: brightness(1.2);
+.rajmani-footer .footer-contact-link:hover {
+  background: var(--white);
+  color: #0F4C3A;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.rajmani-footer .contact-icons svg {
+  transition: all 0.3s ease;
 }
 
 .rajmani-footer .footer-bottom {
@@ -663,6 +675,10 @@
   }
   
   .rajmani-footer .contact-icons {
+    justify-content: center;
+  }
+
+  .rajmani-footer .social-links {
     justify-content: center;
   }
 }

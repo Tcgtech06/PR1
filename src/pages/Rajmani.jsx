@@ -206,7 +206,7 @@ const Rajmani = () => {
               <p>+91 78451 60516</p>
             </a>
             <a 
-              href="https://www.google.com/maps/search/?api=1&query=Raja+Mani+Fabrics+Tiruppur+Tamil+Nadu" 
+              href="https://www.google.com/maps/place/Sri+Rajamani+Fabrics/data=!4m7!3m6!1s0x3ba90795b19a1483:0xdd6a74907bfb2ed0!8m2!3d11.1313575!4d77.3383085!16s%2Fg%2F11vf9z5216!19sChIJgxSasZUHqTsR0C77e5B0at0?authuser=0&hl=en&rclk=1" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="contact-card"
@@ -240,9 +240,20 @@ const Rajmani = () => {
             <div className="footer-section">
               <h3>Contact Icons</h3>
               <div className="contact-icons">
-                <Mail size={20} />
-                <Phone size={20} />
-                <MapPin size={20} />
+                <a href="mailto:info@rajmanifabrics.com" className="footer-contact-link">
+                  <Mail size={20} />
+                </a>
+                <a href="tel:+917845160516" className="footer-contact-link">
+                  <Phone size={20} />
+                </a>
+                <a 
+                  href="https://www.google.com/maps/place/Sri+Rajamani+Fabrics/data=!4m7!3m6!1s0x3ba90795b19a1483:0xdd6a74907bfb2ed0!8m2!3d11.1313575!4d77.3383085!16s%2Fg%2F11vf9z5216!19sChIJgxSasZUHqTsR0C77e5B0at0?authuser=0&hl=en&rclk=1" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-contact-link"
+                >
+                  <MapPin size={20} />
+                </a>
               </div>
             </div>
           </div>
