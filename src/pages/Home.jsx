@@ -1,4 +1,4 @@
-import { ArrowRight, Globe, Shield, Truck, Users, Star, CheckCircle } from 'lucide-react';
+import { ArrowRight, Scissors, Shirt, Package, Users, Star, CheckCircle, Layers, Zap, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
@@ -31,17 +31,33 @@ const Home = () => {
   }, []);
 
   const features = [
-    { icon: <Globe size={40} />, title: "Global Reach", description: "Connecting businesses across continents with our extensive international network." },
-    { icon: <Shield size={40} />, title: "Quality Assurance", description: "Rigorous quality control processes ensure only the finest products reach our clients." },
-    { icon: <Truck size={40} />, title: "Reliable Logistics", description: "Efficient shipping and logistics solutions for timely delivery worldwide." },
-    { icon: <Users size={40} />, title: "Expert Team", description: "Experienced professionals dedicated to providing exceptional service and support." }
+    { 
+      icon: <Layers size={40} />, 
+      title: "Premium Fabrics", 
+      description: "300+ varieties of high-quality polyester knitted fabrics for diverse applications." 
+    },
+    { 
+      icon: <Award size={40} />, 
+      title: "Quality Assurance", 
+      description: "Rigorous quality control processes ensure only the finest fabrics reach our clients." 
+    },
+    { 
+      icon: <Package size={40} />, 
+      title: "Reliable Supply", 
+      description: "Consistent inventory and timely delivery across India through our logistics network." 
+    },
+    { 
+      icon: <Shirt size={40} />, 
+      title: "Fabric Expertise", 
+      description: "Specialized in uniforms, sportswear, casual wear, and premium suiting materials." 
+    }
   ];
 
   const stats = [
-    { number: "500+", label: "Happy Clients" },
-    { number: "50+", label: "Countries Served" },
-    { number: "1000+", label: "Products Exported" },
-    { number: "15+", label: "Years Experience" }
+    { number: "300+", label: "Fabric Varieties" },
+    { number: "All India", label: "Delivery Network" },
+    { number: "15+", label: "Years Experience" },
+    { number: "1000+", label: "Satisfied Clients" }
   ];
 
   return (
@@ -72,9 +88,9 @@ const Home = () => {
               </div>
               <div className="hero-image">
                 <div className="hero-card">
-                  <Globe size={80} className="hero-icon" />
-                  <h3>Worldwide Shipping</h3>
-                  <p>Fast & Secure Delivery</p>
+                  <Layers size={80} className="hero-icon" />
+                  <h3>Premium Fabrics</h3>
+                  <p>300+ Polyester Varieties</p>
                 </div>
               </div>
             </div>
@@ -148,9 +164,9 @@ const Home = () => {
             </div>
             <div className="about-image">
               <div className="about-card">
-                <Star size={60} className="about-icon" />
-                <h3>Excellence in Service</h3>
-                <p>Committed to Quality & Trust</p>
+                <Scissors size={60} className="about-icon" />
+                <h3>Fabric Excellence</h3>
+                <p>Precision in Every Thread</p>
               </div>
             </div>
           </div>

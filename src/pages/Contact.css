@@ -1,9 +1,53 @@
-/* Contact Hero - Green */
+/* Contact Hero - Green with Rib Knit Pattern */
 .contact-hero {
   background: var(--primary-color);
   padding: 120px 0 80px;
   color: var(--white);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.08) 2px,
+      rgba(255,255,255,0.04) 2px,
+      rgba(255,255,255,0.04) 4px,
+      rgba(255,255,255,0.08) 4px,
+      rgba(255,255,255,0.08) 6px,
+      transparent 6px,
+      transparent 8px
+    );
+  opacity: 1;
+  pointer-events: none;
+}
+
+.contact-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  opacity: 1;
+  pointer-events: none;
 }
 
 .contact-hero .hero-title {

@@ -32,16 +32,6 @@ const Footer = () => {
           </div>
 
           <div className="footer-section">
-            <h3 className="footer-title">Services</h3>
-            <ul className="footer-links">
-              <li><a href="#">Export Services</a></li>
-              <li><a href="#">Import Solutions</a></li>
-              <li><a href="#">Logistics Support</a></li>
-              <li><a href="#">Quality Assurance</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-section">
             <h3 className="footer-title">Contact Info</h3>
             <div className="contact-info">
               <a href="mailto:pugazhoverseas@gmail.com" className="contact-item" title="Email Us">

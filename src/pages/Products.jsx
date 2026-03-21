@@ -247,19 +247,6 @@ const Products = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2 className="cta-title">Interested in Our Products?</h2>
-            <p className="cta-description">
-              Contact us for detailed product catalogs, pricing, and custom requirements.
-            </p>
-            <a href="/contact" className="btn btn-primary btn-large">
-              Request Product Catalog
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
