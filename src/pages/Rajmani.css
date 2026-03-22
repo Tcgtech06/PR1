@@ -202,76 +202,182 @@
   background: var(--light-gray);
 }
 
-/* Rajmani Hero - Light Green */
+/* ── Silk Wave Hero ── */
 .rajmani-hero {
-  background: var(--rajmani-light-green);
-  padding: 120px 0 80px;
-  color: var(--white);
-  text-align: center;
+  background: linear-gradient(135deg, #f8f4ef 0%, #ecdfd4 55%, #e1d0be 100%);
+  min-height: 92vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 80px 180px;
+  position: relative;
+  overflow: hidden;
+  color: #2c2c2c;
+  gap: 40px;
+}
+
+/* Left-aligned text content — override global .hero-content grid from Home.css */
+.rajmani-hero .hero-content {
+  display: block;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  max-width: 560px;
+  text-align: left;
+}
+
+/* ── Hero Slideshow ── */
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  z-index: 2; /* above silk waves */
+  opacity: 0;
+  animation: slideInFromRight 0.8s ease-out 0.4s forwards;
+  flex-shrink: 0;
+}
+
+.hero-slideshow .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slideshow .slide.active {
+  opacity: 1;
+}
+
+.hero-slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes slideInFromRight {
+  0% { transform: translateX(50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
 .rajmani-hero .hero-title {
-  font-size: 3.5rem;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #0F4C3A;
+  line-height: 1.15;
   animation: slideInFromLeft 0.8s ease-out forwards;
 }
 
 .rajmani-hero .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 500;
+  color: #7a6a5a;
   margin-bottom: 20px;
   opacity: 0;
   animation: slideInFromLeft 0.8s ease-out 0.2s forwards;
 }
 
 .rajmani-hero .hero-description {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 40px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin: 20px 0 36px;
   opacity: 0;
-  line-height: 1.6;
   animation: slideInFromLeft 0.8s ease-out 0.4s forwards;
 }
 
 .rajmani-hero .hero-stats {
   display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 40px;
+  gap: 24px;
+  flex-wrap: wrap;
   opacity: 0;
   animation: slideInFromLeft 0.8s ease-out 0.6s forwards;
 }
 
 .rajmani-hero .stat {
   text-align: center;
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 16px 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(201, 169, 97, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  min-width: 110px;
 }
 
 .rajmani-hero .stat-number {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
-  color: var(--white);
-  margin-bottom: 5px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  color: #1B6B4F;
+  margin-bottom: 4px;
 }
 
 .rajmani-hero .stat-label {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  color: var(--white);
+  font-size: 0.8rem;
+  color: #6b6052;
   font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+@keyframes slideInFromLeft {
+  0%   { transform: translateX(-40px); opacity: 0; }
+  100% { transform: translateX(0);     opacity: 1; }
+}
+
+/* ── SVG Silk Waves at bottom ── */
+.silk-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120%;
+  height: 55%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Wave 1 – front layer */
+.silk-wave--1 {
+  animation: silkWave1 12s ease-in-out infinite alternate;
+  filter: blur(0.5px);
+}
+
+/* Wave 2 – mid layer, slightly translucent */
+.silk-wave--2 {
+  animation: silkWave2 12s ease-in-out infinite alternate;
+  animation-delay: -4s;
+  opacity: 0.75;
+  filter: blur(1px);
+}
+
+/* Wave 3 – back layer, most translucent */
+.silk-wave--3 {
+  animation: silkWave3 12s ease-in-out infinite alternate;
+  animation-delay: -8s;
+  opacity: 0.5;
+  filter: blur(1.5px);
+}
+
+@keyframes silkWave1 {
+  0%   { d: path("M0,120 C300,80  600,160 900,120 C1200,80  1500,140 1800,110 L1800,300 L0,300 Z"); }
+  50%  { d: path("M0,140 C300,120 600,100 900,140 C1200,180 1500,120 1800,150 L1800,300 L0,300 Z"); }
+  100% { d: path("M0,110 C300,150 600,90  900,120 C1200,100 1500,170 1800,130 L1800,300 L0,300 Z"); }
+}
+
+@keyframes silkWave2 {
+  0%   { d: path("M0,130 C300,100 600,140 900,130 C1200,100 1500,150 1800,120 L1800,300 L0,300 Z"); }
+  50%  { d: path("M0,150 C300,130 600,110 900,155 C1200,190 1500,130 1800,160 L1800,300 L0,300 Z"); }
+  100% { d: path("M0,115 C300,160 600,100 900,130 C1200,108 1500,175 1800,135 L1800,300 L0,300 Z"); }
+}
+
+@keyframes silkWave3 {
+  0%   { d: path("M0,140 C300,120 600,120 900,140 C1200,160 1500,130 1800,150 L1800,300 L0,300 Z"); }
+  50%  { d: path("M0,160 C300,140 600,125 900,165 C1200,195 1500,140 1800,168 L1800,300 L0,300 Z"); }
+  100% { d: path("M0,125 C300,165 600,108 900,138 C1200,115 1500,180 1800,140 L1800,300 L0,300 Z"); }
 }
 
 /* About Section */
@@ -661,17 +767,36 @@
   }
 
   .rajmani-hero {
-    padding: 80px 0 60px;
+    flex-direction: column;
+    padding: 90px 24px 180px;
+    align-items: center;
+    gap: 40px;
+    min-height: 85vh;
   }
-  
-  .rajmani-hero .hero-title {
-    font-size: 2.5rem;
+
+  .hero-slideshow {
+    height: 200px;
+    max-width: 340px;
+  }
+
+  .rajmani-hero .hero-content {
+    text-align: center;
+    max-width: 100%;
   }
   
   .rajmani-hero .hero-stats {
-    flex-direction: column;
-    gap: 30px;
+    justify-content: center;
+    flex-direction: row;
+    gap: 12px;
   }
+
+  .rajmani-hero .stat {
+    flex: 1 1 90px;
+    min-width: 90px;
+    max-width: 140px;
+    padding: 12px 10px;
+  }
+
   
   .rajmani-about .about-content {
     grid-template-columns: 1fr;

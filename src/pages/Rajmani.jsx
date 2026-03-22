@@ -1,14 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Package, Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 import SiteSwitcher from '../components/SiteSwitcher';
 import HamburgerIcon from '../components/HamburgerIcon';
 import useScrollReveal from '../hooks/useScrollReveal';
 import logo2 from '../assets/logo2.png';
+import img1 from '../assets/img1.jpg';
+import img2 from '../assets/img2.jpg';
+import img3 from '../assets/img3.webp';
+import img4 from '../assets/img4.webp';
 import './Rajmani.css';
 
 const Rajmani = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const heroImages = [img1, img2, img3, img4];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 4000); // Crossfade every 4 seconds
+    return () => clearInterval(timer);
+  }, []);
 
   // Scroll reveal hooks for different sections
   const productsRef = useScrollReveal('.product-card', 'scroll-reveal', 0.1);
@@ -83,30 +97,83 @@ const Rajmani = () => {
 
       {/* Hero Section */}
       <section className="rajmani-hero">
-        <div className="container">
-          <div className="hero-content">
-            <h1 className="hero-title">Raja Mani Fabrics</h1>
-            <p className="hero-subtitle">Premium Textile Solutions</p>
-            <p className="hero-description">
-              Leading manufacturer and supplier of high-quality fabrics for all your textile needs. 
-              From premium cotton to luxury blends, we deliver excellence in every thread.
-            </p>
-            <div className="hero-stats">
-              <div className="stat">
-                <span className="stat-number">25+</span>
-                <span className="stat-label">Years Experience</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">500+</span>
-                <span className="stat-label">Fabric Varieties</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">100%</span>
-                <span className="stat-label">Quality Assured</span>
-              </div>
+        {/* Text content */}
+        <div className="hero-content">
+          <h1 className="hero-title">Raja Mani Fabrics</h1>
+          <h2 className="hero-subtitle">Premium Textile Solutions</h2>
+          <p className="hero-description">
+            Leading manufacturer and supplier of high-quality fabrics for all your textile needs.{' '}
+            From premium cotton to luxury blends, we deliver excellence in every thread.
+          </p>
+          <div className="hero-stats">
+            <div className="stat">
+              <span className="stat-number">25+</span>
+              <span className="stat-label">Years Experience</span>
+            </div>
+            <div className="stat">
+              <span className="stat-number">500+</span>
+              <span className="stat-label">Fabric Varieties</span>
+            </div>
+            <div className="stat">
+              <span className="stat-number">100%</span>
+              <span className="stat-label">Quality Assured</span>
             </div>
           </div>
         </div>
+
+        {/* Slideshow */}
+        <div className="hero-slideshow">
+          {heroImages.map((img, index) => (
+            <div
+              key={index}
+              className={`slide ${index === currentImageIndex ? 'active' : ''}`}
+            >
+              <img src={img} alt={`Hero display ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+
+        {/* Silk Wave SVG */}
+        <svg
+          className="silk-waves"
+          viewBox="0 0 1800 300"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="silkGrad1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#fdfaf6" />
+              <stop offset="50%" stopColor="#e8dccf" />
+              <stop offset="100%" stopColor="#d6c2a8" />
+            </linearGradient>
+            <linearGradient id="silkGrad2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#e8dccf" />
+              <stop offset="50%" stopColor="#d6c2a8" />
+              <stop offset="100%" stopColor="#c9b090" />
+            </linearGradient>
+            <linearGradient id="silkGrad3" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#d6c2a8" />
+              <stop offset="100%" stopColor="#c2a882" />
+            </linearGradient>
+          </defs>
+          <g className="wave-group">
+            <path
+              fill="url(#silkGrad1)"
+              className="silk-wave silk-wave--1"
+              d="M0,120 C300,80 600,160 900,120 C1200,80 1500,140 1800,110 L1800,300 L0,300 Z"
+            />
+            <path
+              fill="url(#silkGrad2)"
+              className="silk-wave silk-wave--2"
+              d="M0,130 C300,100 600,140 900,130 C1200,100 1500,150 1800,120 L1800,300 L0,300 Z"
+            />
+            <path
+              fill="url(#silkGrad3)"
+              className="silk-wave silk-wave--3"
+              d="M0,140 C300,120 600,120 900,140 C1200,160 1500,130 1800,150 L1800,300 L0,300 Z"
+            />
+          </g>
+        </svg>
       </section>
 
       {/* Products Section */}
