@@ -181,6 +181,7 @@ const Rajmani = () => {
         <div className="container">
           <h2>Our Products</h2>
           <p>Premium quality fabrics for all your textile needs</p>
+          <br />
           <div className="products-grid" ref={productsRef}>
             <div className="product-card">
               <Package size={40} />
@@ -261,6 +262,7 @@ const Rajmani = () => {
         <div className="container">
           <h2>Get In Touch</h2>
           <p>Ready to explore our premium fabric collection? Contact us today!</p>
+          <br />
           <div className="contact-grid" ref={contactRef}>
             <a href="mailto:info@rajmanifabrics.com" className="contact-card">
               <Mail size={32} />
@@ -305,7 +307,7 @@ const Rajmani = () => {
               </div>
             </div>
             <div className="footer-section">
-              <h3>Contact Icons</h3>
+              <h3>Contact Info</h3>
               <div className="contact-icons">
                 <a href="mailto:info@rajmanifabrics.com" className="footer-contact-link">
                   <Mail size={20} />
