@@ -65,11 +65,21 @@
 }
 
 /* Contact Info Cards */
+.contact-info .grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
 
 .contact-card {
   text-align: center;
   height: 100%;
   padding: 30px 20px;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px) rotateX(5deg) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .contact-icon {
@@ -77,6 +87,13 @@
   justify-content: center;
   margin-bottom: 20px;
   color: var(--primary-color);
+  transform-style: preserve-3d;
+  transition: all 0.4s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: translateZ(20px) rotateY(360deg) scale(1.15);
+  color: var(--secondary-color);
 }
 
 .contact-title {
@@ -92,8 +109,10 @@
 
 .contact-details p {
   color: var(--text-dark);
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 5px;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
 }
 
 .contact-description {

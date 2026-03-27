@@ -1,7 +1,7 @@
-/* Hero Section - Green */
+/* Hero Section - Green with Polyester Fabric Pattern */
 .hero {
   width: 100%;
-  background: rgba(34, 197, 94, 0.95);
+  background: #22c55e;
   padding: 120px 0;
   min-height: 85vh;
   display: flex;
@@ -9,8 +9,10 @@
   position: relative;
   overflow: hidden;
   color: var(--white);
+  perspective: 1000px;
 }
 
+/* Plain Weave Polyester Pattern - Crosshatch */
 .hero::before {
   content: '';
   position: absolute;
@@ -18,17 +20,19 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-size: 8px 8px;
+  background-size: 10px 10px;
   background-image: 
-    linear-gradient(45deg, rgba(255,255,255,0.15) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255,255,255,0.15) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
-  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+    linear-gradient(45deg, rgba(59, 130, 246, 0.15) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(59, 130, 246, 0.15) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.12) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.12) 75%);
+  background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
   opacity: 1;
   pointer-events: none;
+  z-index: 1;
 }
 
+/* Fine Grid Pattern - Fabric Texture */
 .hero::after {
   content: '';
   position: absolute;
@@ -39,20 +43,21 @@
   background: 
     repeating-linear-gradient(
       0deg,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.08) 1px,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
       transparent 1px,
-      transparent 3px
+      transparent 4px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.08) 1px,
+      rgba(59, 130, 246, 0.08),
+      rgba(59, 130, 246, 0.08) 1px,
       transparent 1px,
-      transparent 3px
+      transparent 4px
     );
   opacity: 1;
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-content {

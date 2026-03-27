@@ -70,12 +70,11 @@ const Home = () => {
               <div className="hero-text">
                   <h1 className="hero-title">
                     Your Gateway to
-                    <span className="gradient-text"> Global Trade</span>
+                    <span className="gradient-text"> Premium Fabrics</span>
                   </h1>
                   <p className="hero-description">
-                    Pugazh Overseas connects businesses worldwide with premium quality products
-                    and reliable export services. Experience seamless international trade with
-                    our trusted expertise.
+                    Leading polyester knitted fabric traders in South India. We offer 300+ varieties 
+                    of premium quality fabrics with All India delivery through our trusted logistics network.
                   </p>
                   <div className="hero-buttons">
                     <Link to="/products" className="btn btn-primary">
