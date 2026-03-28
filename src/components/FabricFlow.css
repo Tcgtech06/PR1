@@ -1,0 +1,134 @@
+.fabric-flow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Yarn threads flowing animation */
+.yarn-thread {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%
+  );
+  animation: flowDown 8s linear infinite;
+  opacity: 0.6;
+}
+
+.yarn-1 { left: 10%; animation-delay: 0s; animation-duration: 7s; }
+.yarn-2 { left: 25%; animation-delay: 2s; animation-duration: 9s; }
+.yarn-3 { left: 40%; animation-delay: 4s; animation-duration: 8s; }
+.yarn-4 { left: 60%; animation-delay: 1s; animation-duration: 10s; }
+.yarn-5 { left: 75%; animation-delay: 3s; animation-duration: 7.5s; }
+.yarn-6 { left: 90%; animation-delay: 5s; animation-duration: 8.5s; }
+
+@keyframes flowDown {
+  0% {
+    transform: translateY(-100%) scaleY(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100%) scaleY(0.5);
+    opacity: 0;
+  }
+}
+
+/* Fabric particles */
+.fabric-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: floatParticle 15s ease-in-out infinite;
+}
+
+.particle-1 { left: 15%; top: 20%; animation-delay: 0s; animation-duration: 12s; }
+.particle-2 { left: 35%; top: 40%; animation-delay: 2s; animation-duration: 14s; }
+.particle-3 { left: 55%; top: 60%; animation-delay: 4s; animation-duration: 13s; }
+.particle-4 { left: 75%; top: 30%; animation-delay: 1s; animation-duration: 15s; }
+.particle-5 { left: 20%; top: 70%; animation-delay: 3s; animation-duration: 11s; }
+.particle-6 { left: 45%; top: 15%; animation-delay: 5s; animation-duration: 16s; }
+.particle-7 { left: 65%; top: 80%; animation-delay: 2.5s; animation-duration: 13.5s; }
+.particle-8 { left: 85%; top: 50%; animation-delay: 4.5s; animation-duration: 14.5s; }
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(30px, -50px) scale(1.5);
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.7;
+  }
+}
+
+/* Weaving pattern overlay */
+.weave-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.03) 10px,
+      rgba(255, 255, 255, 0.03) 11px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.03) 10px,
+      rgba(255, 255, 255, 0.03) 11px
+    );
+  animation: weaveShift 20s linear infinite;
+}
+
+@keyframes weaveShift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 100px, 100px 0;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .yarn-thread {
+    width: 1px;
+  }
+  
+  .fabric-particle {
+    width: 3px;
+    height: 3px;
+  }
+  
+  .weave-pattern {
+    opacity: 0.5;
+  }
+}

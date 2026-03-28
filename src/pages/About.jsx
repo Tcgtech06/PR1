@@ -7,6 +7,7 @@ const About = () => {
   // Scroll reveal hooks for different sections
   const storyRef = useScrollReveal('.story-content > *', 'scroll-reveal', 0.1);
   const mdStoryRef = useScrollReveal('.story-content > *', 'scroll-reveal', 0.1);
+  const heritageRef = useScrollReveal('.heritage-content', 'scroll-reveal', 0.1);
   const missionVisionRef = useScrollReveal('.mv-card', 'scroll-reveal', 0.1);
   const valuesRef = useScrollReveal('.value-card', 'scroll-reveal', 0.1);
   const whyChooseRef = useScrollReveal('.choose-point', 'scroll-reveal', 0.1);
@@ -83,6 +84,7 @@ const About = () => {
         </div>
       </section>
 
+
       {/* About MD Section */}
       <section className="section story-section" style={{ background: 'var(--light-gray)' }}>
         <div className="container">
@@ -111,6 +113,42 @@ const About = () => {
               <p className="story-description" style={{ fontWeight: 600, color: 'var(--primary-blue)' }}>
                 From the modest 100 sq.ft building to an impressive 20,000 sq.ft facility, Mr. Mahalingam's journey is an awe-inspiring testament to the power of vision and perseverance.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Heritage Section */}
+      <section className="section story-section" style={{ background: 'var(--white)' }}>
+        <div className="container">
+          <div className="story-content" ref={heritageRef}>
+            <div className="story-text heritage-content">
+              <h2 className="section-title">Our Heritage</h2>
+              <p className="story-description">
+                Founded in 2020, Pugazh Overseas emerged from the legacy of <strong>Sri Rajamani Fabrics</strong>, a trusted name with deep insight into the pulse of polyester fabric demand. With this foundation, we set out to redefine standards in the polyester market by introducing unique designs, colors, and uncompromising quality.
+              </p>
+              <h3 style={{ marginTop: '24px', marginBottom: '12px', color: 'var(--text-dark)', fontSize: '1.3rem', fontWeight: 700 }}>What Sets Us Apart</h3>
+              <div className="about-points">
+                <div className="about-point">
+                  <CheckCircle size={20} />
+                  <span><strong>Unique Designs:</strong> Exclusive patterns and textures tailored to modern fashion needs.</span>
+                </div>
+                <div className="about-point">
+                  <CheckCircle size={20} />
+                  <span><strong>Color Standards:</strong> Vibrant, lasting shades that elevate every garment.</span>
+                </div>
+                <div className="about-point">
+                  <CheckCircle size={20} />
+                  <span><strong>Quality Assurance:</strong> Fabrics engineered for strength, comfort, and longevity.</span>
+                </div>
+              </div>
+            </div>
+            <div className="story-image heritage-content">
+              <div className="story-card">
+                <Award size={80} />
+                <h3>Our Legacy</h3>
+                <p>Built on Trust Since 2020</p>
+              </div>
             </div>
           </div>
         </div>

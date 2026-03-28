@@ -1,0 +1,56 @@
+.hanging-slogan-container {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  animation: gentleSwing 4s ease-in-out infinite;
+  width: 60%;
+  max-width: 400px;
+}
+
+/* Gentle swinging animation */
+@keyframes gentleSwing {
+  0%, 100% {
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: top center;
+  }
+  25% {
+    transform: translateX(-50%) rotate(1.5deg);
+    transform-origin: top center;
+  }
+  75% {
+    transform: translateX(-50%) rotate(-1.5deg);
+    transform-origin: top center;
+  }
+}
+
+.slogan-board-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hanging-slogan-container {
+    width: 85%;
+    max-width: 400px;
+    top: -35px;
+    animation: gentleSwingMobile 5s ease-in-out infinite;
+  }
+
+  @keyframes gentleSwingMobile {
+    0%, 100% { transform: translateX(-50%) rotate(0deg); }
+    25%       { transform: translateX(-50%) rotate(0.6deg); }
+    75%       { transform: translateX(-50%) rotate(-0.6deg); }
+  }
+}
+
+@media (max-width: 480px) {
+  .hanging-slogan-container {
+    width: 90%;
+    max-width: 400px;
+    top: -30px;
+  }
+}

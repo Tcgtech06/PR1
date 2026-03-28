@@ -67,41 +67,57 @@
   align-items: center;
 }
 
-/* Hero animations - slower speed */
+.hero-text {
+  max-width: 600px;
+}
+
+/* Hero Slogan */
+.hero-slogan {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4da6ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  animation: slideInLeft 0.8s ease-out forwards;
+  opacity: 0.9;
+}
+
+/* Hero animations */
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 20px;
   color: var(--white);
-  animation: slideInLeft 1.2s ease-out forwards;
+  animation: slideInLeft 0.6s ease-out 0.1s both;
 }
 
 .gradient-text {
   color: var(--light-green);
   font-weight: 900;
   display: inline-block;
-  animation: slideInLeft 1.2s ease-out 0.3s both;
+  animation: slideInLeft 0.6s ease-out 0.2s both;
 }
 
 .hero-description {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ddd;
   margin-bottom: 40px;
-  animation: slideInLeft 1.2s ease-out 0.6s both;
+  animation: slideInLeft 0.6s ease-out 0.3s both;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 24px;
+  gap: 15px;
   flex-wrap: wrap;
-  animation: slideInLeft 1.2s ease-out 0.9s both;
+  animation: slideInLeft 0.6s ease-out 0.4s both;
 }
 
 @keyframes slideInLeft {
   0% {
-    transform: translateX(-60px);
+    transform: translateX(-40px);
     opacity: 0;
   }
   100% {
@@ -145,7 +161,7 @@
 .hero-image {
   display: flex;
   justify-content: center;
-  animation: slideInLeft 1.2s ease-out 1.1s both;
+  animation: slideInLeft 0.6s ease-out 0.5s both;
 }
 
 .hero-card {
@@ -340,8 +356,10 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 0;
+    padding: 350px 0 60px;
     min-height: auto;
+    display: flex;
+    align-items: flex-start;
   }
 
   .hero-content {
@@ -511,4 +529,66 @@
   transform: translateY(-3px);
   transition: all 0.4s ease;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mobile animation optimizations */
+@media (max-width: 768px) {
+  /* Faster animations on mobile for better performance */
+  .hero-title,
+  .gradient-text,
+  .hero-description,
+  .hero-buttons,
+  .hero-image {
+    animation-duration: 0.5s !important;
+  }
+  
+  .scroll-reveal {
+    animation-duration: 0.6s !important;
+  }
+  
+  .vision-content,
+  .signature-fabric-card {
+    animation-duration: 0.5s !important;
+  }
+  
+  /* Reduce transform distance on mobile */
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even faster on small mobile screens */
+  .hero-title,
+  .gradient-text,
+  .hero-description,
+  .hero-buttons,
+  .hero-image {
+    animation-duration: 0.4s !important;
+  }
+  
+  .scroll-reveal,
+  .vision-content,
+  .signature-fabric-card {
+    animation-duration: 0.4s !important;
+  }
 }

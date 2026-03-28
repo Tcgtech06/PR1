@@ -2,13 +2,16 @@ import { ArrowRight, Scissors, Shirt, Package, Users, Star, CheckCircle, Layers,
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
+import FabricFlow from '../components/FabricFlow';
 import './Home.css';
 
 const Home = () => {
   const [showHero, setShowHero] = useState(false);
   const heroObserverRef = useRef(null);
-  const aboutPointsRef = useScrollReveal('.about-point-animate', 'about-point-visible', 0.3);
-  const headingRevealRef = useScrollReveal('.typing-heading-animate', 'focus-in-view', 0.2);
+  const aboutPointsRef = useScrollReveal('.about-point-animate', 'about-point-visible', 0.2);
+  const headingRevealRef = useScrollReveal('.typing-heading-animate', 'focus-in-view', 0.15);
+  const visionRef = useScrollReveal('.vision-content', 'scroll-reveal', 0.15);
+  const signatureFabricsRef = useScrollReveal('.signature-fabric-card', 'scroll-reveal', 0.05);
 
   useEffect(() => {
     const heroSection = heroObserverRef.current;
@@ -18,12 +21,16 @@ const Home = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setShowHero(false);
-          setTimeout(() => setShowHero(true), 50);
+          // Shorter delay for smoother transition
+          setTimeout(() => setShowHero(true), 30);
         } else {
           setShowHero(false);
         }
       },
-      { threshold: 0.2 }
+      { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px' // Trigger slightly earlier
+      }
     );
 
     observer.observe(heroSection);
@@ -64,6 +71,7 @@ const Home = () => {
     <div className="home">
       {/* Hero Section */}
       <section className="hero" ref={heroObserverRef}>
+        <FabricFlow />
         <div className="container">
           {showHero && (
             <div className="hero-content">
@@ -132,7 +140,54 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Our Vision Section */}
+      <section className="section" style={{ background: 'var(--white)', paddingBottom: '20px' }}>
+        <div className="container">
+          <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }} ref={visionRef}>
+            <h2 className="section-title vision-content">Our Vision</h2>
+            <p className="section-subtitle vision-content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--dark-gray)' }}>
+              We aim to be a benchmark in the industry by consistently delivering fabrics that combine <strong>innovation</strong>, <strong>durability</strong>, and <strong>style</strong>. Each collection reflects our commitment to excellence and our understanding of evolving market trends.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Signature Fabrics Section */}
+      <section className="section" style={{ background: 'var(--light-gray)', paddingTop: '20px' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <h2 className="section-title">Our Signature Fabrics</h2>
+            <p className="section-subtitle">
+              We specialize in distinctive polyester fabrics that stand out for their texture, finish, and versatility:
+            </p>
+          </div>
+          <div className="grid grid-4" ref={signatureFabricsRef}>
+            {[
+              'Valentino Crepe',
+              'Super Tencile',
+              'Monolisa',
+              'Double Bull',
+              'Road Rib',
+              'Mars (Baby Pique) with Plain & Jacquard Collar Cuff',
+              'Mars Melange with Melange Collar Cuff',
+              'Micro 4 Way Lycra 255 & 230 GSM',
+              '4 Way Lycra Twill Spandex',
+              'TinTin Spandex',
+              'Knitted Corduroy',
+              '2 Way',
+            ].map((fabric, index) => (
+              <div key={index} className="card signature-fabric-card" style={{ textAlign: 'center', padding: '20px 16px', fontWeight: 600, color: 'var(--text-dark)', fontSize: '0.95rem' }}>
+                {fabric}
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       {/* About Preview Section */}
+
+
       <section className="section about-preview">
         <div className="container">
           <div className="about-content">
