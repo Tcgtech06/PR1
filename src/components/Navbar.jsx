@@ -25,7 +25,6 @@ const Navbar = () => {
           <Link to="/" className="nav-logo">
             <div className="logo-container">
               <img src={logo} alt="Pugazh Overseas Logo" className="logo-image" />
-              <p className="company-slogan">Innovating Polyester, Inspiring Fashion.</p>
             </div>
           </Link>
           

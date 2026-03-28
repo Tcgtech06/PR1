@@ -76,6 +76,7 @@ const Home = () => {
           {showHero && (
             <div className="hero-content">
               <div className="hero-text">
+                  <p className="hero-slogan">Innovating Polyester, Inspiring Fashion.</p>
                   <h1 className="hero-title">
                     Your Gateway to
                     <span className="gradient-text"> Premium Fabrics</span>
@@ -163,21 +164,24 @@ const Home = () => {
           </div>
           <div className="grid grid-4" ref={signatureFabricsRef}>
             {[
-              'Valentino Crepe',
-              'Super Tencile',
-              'Monolisa',
-              'Double Bull',
-              'Road Rib',
-              'Mars (Baby Pique) with Plain & Jacquard Collar Cuff',
-              'Mars Melange with Melange Collar Cuff',
-              'Micro 4 Way Lycra 255 & 230 GSM',
-              '4 Way Lycra Twill Spandex',
-              'TinTin Spandex',
-              'Knitted Corduroy',
-              '2 Way',
+              { name: 'Valentino Crepe', image: '/valentino crepe.jpg' },
+              { name: 'Super Tensile', image: '/super tensile.jpg' },
+              { name: 'Monalisa', image: '/Monalisa.jpg' },
+              { name: 'Double Bull', image: '/Double Bull.jpg' },
+              { name: 'Road Rib', image: '/Road Rib.jpg' },
+              { name: 'Mars (Baby Pique) with Plain & Jacquard Collar Cuff', image: '/Mars (Baby Pique) with Plain & Jacquard Collar Cuff.jpg' },
+              { name: 'Mars Melange with Melange Collar Cuff', image: '/Mars Melange with Melange Collar Cuff.jpg' },
+              { name: 'Micro 4 Way Lycra 255 & 230 GSM', image: '/Micro 4 Way Lycra 255 & 230 GSM.jpg' },
+              { name: '4 Way Lycra Twill Spandex', image: '/4 Way Lycra Twill Spandex.jpg' },
+              { name: 'TinTin Spandex', image: '/TinTin Spandex.jpg' },
+              { name: 'Knitted Corduroy', image: '/Knitted Corduroy.jpg' },
+              { name: '2 Way', image: '/2 way.jpg' },
             ].map((fabric, index) => (
-              <div key={index} className="card signature-fabric-card" style={{ textAlign: 'center', padding: '20px 16px', fontWeight: 600, color: 'var(--text-dark)', fontSize: '0.95rem' }}>
-                {fabric}
+              <div key={index} className="card signature-fabric-card">
+                <div className="fabric-image-container">
+                  <img src={fabric.image} alt={fabric.name} className="fabric-image" />
+                </div>
+                <div className="fabric-name">{fabric.name}</div>
               </div>
             ))}
           </div>
@@ -195,7 +199,7 @@ const Home = () => {
               <h2 className="section-title">About Pugazh Overseas</h2>
               <p className="about-description">
                 Building on a legacy of over 14 years in the textile industry, Pugazh Overseas 
-                was established in <strong>2020</strong> as a trusted partner for businesses seeking quality 
+                was established in <strong>2019</strong> as a trusted partner for businesses seeking quality 
                 products and reliable export services.
               </p>
               <div className="about-points" ref={aboutPointsRef}>
