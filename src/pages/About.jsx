@@ -125,7 +125,7 @@ const About = () => {
             <div className="story-text heritage-content">
               <h2 className="section-title">Our Heritage</h2>
               <p className="story-description">
-                Founded in 2020, Pugazh Overseas emerged from the legacy of <strong>Sri Rajamani Fabrics</strong>, a trusted name with deep insight into the pulse of polyester fabric demand. With this foundation, we set out to redefine standards in the polyester market by introducing unique designs, colors, and uncompromising quality.
+                Founded in <strong>2020</strong>, Pugazh Overseas emerged from the legacy of <strong>Sri Rajamani Fabrics</strong>, a trusted name with deep insight into the pulse of polyester fabric demand. With this foundation, we set out to redefine standards in the polyester market by introducing unique designs, colors, and uncompromising quality.
               </p>
               <h3 style={{ marginTop: '24px', marginBottom: '12px', color: 'var(--text-dark)', fontSize: '1.3rem', fontWeight: 700 }}>What Sets Us Apart</h3>
               <div className="about-points">
@@ -147,7 +147,7 @@ const About = () => {
               <div className="story-card">
                 <Award size={80} />
                 <h3>Our Legacy</h3>
-                <p>Built on Trust Since 2020</p>
+                <p>Built on Trust Since <strong>2020</strong></p>
               </div>
             </div>
           </div>
@@ -212,7 +212,7 @@ const About = () => {
                   <CheckCircle size={24} />
                   <div>
                     <h4>Proven Track Record</h4>
-                    <p>15+ years of successful international trade operations</p>
+                    <p>14+ years of successful international trade operations</p>
                   </div>
                 </div>
                 <div className="choose-point">

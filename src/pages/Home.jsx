@@ -63,7 +63,7 @@ const Home = () => {
   const stats = [
     { number: "300+", label: "Fabric Varieties" },
     { number: "All India", label: "Delivery Network" },
-    { number: "15+", label: "Years Experience" },
+    { number: "14+", label: "Years Experience" },
     { number: "1000+", label: "Satisfied Clients" }
   ];
 
@@ -194,8 +194,8 @@ const Home = () => {
             <div className="about-text">
               <h2 className="section-title">About Pugazh Overseas</h2>
               <p className="about-description">
-                With over 15 years of experience in international trade, Pugazh Overseas
-                has established itself as a trusted partner for businesses seeking quality
+                Building on a legacy of over 14 years in the textile industry, Pugazh Overseas 
+                was established in <strong>2020</strong> as a trusted partner for businesses seeking quality 
                 products and reliable export services.
               </p>
               <div className="about-points" ref={aboutPointsRef}>

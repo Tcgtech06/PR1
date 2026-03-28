@@ -841,3 +841,294 @@
     padding: 30px 25px;
   }
 }
+
+/* Impact Section */
+.rajmani-impact {
+  background: var(--white);
+  padding: 100px 0;
+}
+
+.rajmani-impact .impact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.rajmani-impact .impact-image {
+  display: flex;
+  justify-content: center;
+  order: 1;
+}
+
+.rajmani-impact .impact-text {
+  order: 2;
+}
+
+.rajmani-impact h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--rajmani-blue);
+}
+
+.rajmani-impact p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--dark-gray);
+  margin-bottom: 25px;
+}
+
+.rajmani-impact .impact-card {
+  background: #f8fcfb;
+  padding: 60px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(27, 107, 79, 0.1);
+}
+
+.rajmani-impact .impact-card svg {
+  color: var(--rajmani-light-green);
+  margin-bottom: 20px;
+}
+
+.rajmani-impact .impact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.rajmani-impact .impact-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 35px;
+}
+
+.rajmani-impact .impact-stat {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.rajmani-impact .impact-stat svg {
+  color: var(--rajmani-light-blue);
+  flex-shrink: 0;
+}
+
+.rajmani-impact .impact-stat h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-dark);
+}
+
+.rajmani-impact .impact-stat p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Responsive adjustments for Impact Section */
+@media (max-width: 992px) {
+  .rajmani-impact .impact-content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rajmani-impact .impact-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .rajmani-impact .impact-image {
+    order: 2;
+  }
+  
+  .rajmani-impact .impact-text {
+    order: 1;
+  }
+  
+  .rajmani-impact .impact-stat {
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+/* Horizons Section */
+.rajmani-horizons {
+  background: #fdfaf3;
+  padding: 100px 0;
+}
+
+.rajmani-horizons .horizons-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.rajmani-horizons .horizons-text {
+  order: 1;
+}
+
+.rajmani-horizons .horizons-image {
+  order: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.rajmani-horizons h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--rajmani-blue);
+}
+
+.rajmani-horizons p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--dark-gray);
+  margin-bottom: 25px;
+}
+
+.rajmani-horizons .horizons-card {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(201, 169, 97, 0.15);
+  border: 1px solid rgba(201, 169, 97, 0.2);
+}
+
+.rajmani-horizons .horizons-card svg {
+  color: var(--rajmani-light-blue);
+  margin-bottom: 20px;
+}
+
+.rajmani-horizons .horizons-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.rajmani-horizons .horizons-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--rajmani-blue);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.rajmani-horizons .horizons-link:hover {
+  background: var(--rajmani-light-green);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(15, 76, 58, 0.2);
+}
+
+/* Responsive adjustments for Horizons Section */
+@media (max-width: 992px) {
+  .rajmani-horizons .horizons-content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rajmani-horizons .horizons-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .rajmani-horizons .horizons-image {
+    order: 2;
+  }
+  
+  .rajmani-horizons .horizons-text {
+    order: 1;
+  }
+  
+  .rajmani-horizons .horizons-link {
+    justify-content: center;
+  }
+}
+
+/* Values Section */
+.rajmani-values {
+  background: var(--white);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.rajmani-values .section-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: var(--rajmani-blue);
+}
+
+.rajmani-values .values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.rajmani-values .value-card {
+  background: #fdfcf9;
+  padding: 50px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(201, 169, 97, 0.1);
+}
+
+.rajmani-values .value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(201, 169, 97, 0.15);
+  border: 1px solid var(--rajmani-light-blue);
+}
+
+.rajmani-values .value-card svg {
+  color: var(--rajmani-light-green);
+  margin-bottom: 25px;
+}
+
+.rajmani-values .value-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.rajmani-values .value-card p {
+  color: var(--dark-gray);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments for Values Section */
+@media (max-width: 768px) {
+  .rajmani-values .section-header {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .rajmani-values .values-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
