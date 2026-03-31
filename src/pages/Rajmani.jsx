@@ -236,37 +236,48 @@ From those humble beginnings, we have grown into one of the leading polyester fa
             {[
               {
                 title: "Superpoly Series",
-                items: "Superpoly 180 & 220 GSM"
+                items: "Superpoly 180 & 220 GSM",
+                image: "/super poly series.jpeg"
               },
               {
                 title: "Lycra & Spandex",
-                items: "2 Way Print, 2 Way Plain, 4 Way Lycra"
+                items: "2 Way Print, 2 Way Plain, 4 Way Lycra",
+                image: "/Lycra & Spandex.jpg"
               },
               {
                 title: "Specialized Textures",
-                items: "Diamond (Waffle), Kitkat Matty Print, Scuba Sandwich"
+                items: "Diamond (Waffle), Kitkat Matty Print, Scuba Sandwich",
+                image: "/Specialized Textures.jpg"
               },
               {
                 title: "Performance Knitted",
-                items: "Dot Knit Grindle, Creape Non-Spandex"
+                items: "Dot Knit Grindle, Creape Non-Spandex",
+                image: "/Performance Knitted.jpg"
               },
               {
                 title: "Non-Spandex Classics",
-                items: "Karara Non-Spandex, Tin Tin Non-Spandex, Twill Non-Spandex"
+                items: "Karara Non-Spandex, Tin Tin Non-Spandex, Twill Non-Spandex",
+                image: "/Non-Spandex Classics.jpg"
               },
               {
                 title: "Polyester Basics",
-                items: "PP 90, 110 & 140, NS Lycra"
+                items: "PP 90, 110 & 140, NS Lycra",
+                image: "/Polyester Basics.jpg"
               },
               {
                 title: "Knitted Specialties",
-                items: "Saleena Dot Knit, Lacosta, Honey Comb, Micro Nirmal Knit"
+                items: "Saleena Dot Knit, Lacosta, Honey Comb, Micro Nirmal Knit",
+                image: "/Knitted Specialties.jpg"
               }
             ].map((product, index) => (
               <div key={index} className="product-card">
-                <Package size={40} />
-                <h3>{product.title}</h3>
-                <p>{product.items}</p>
+                <div className="product-image-container">
+                  <img src={product.image} alt={product.title} className="product-image" />
+                </div>
+                <div className="product-content">
+                  <h3>{product.title}</h3>
+                  <p>{product.items}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -282,14 +293,32 @@ From those humble beginnings, we have grown into one of the leading polyester fa
           <div className="about-content">
             <div className="about-text">
               <h2 className="journey-title">Our Journey</h2>
-              <div className="journey-typing-container">
-                <p className="journey-typed-text">
-                  {typedText}
-                  {journeyTyping && typedText.length < journeyFullText.length && (
-                    <span className="typing-cursor">|</span>
+              {journeyTyping && (
+                <>
+                  <p className="journey-typed-text journey-para-1">
+                    {typedText.slice(0, 237)}
+                    {typedText.length < 237 && typedText.length > 0 && (
+                      <span className="typing-cursor">|</span>
+                    )}
+                  </p>
+                  {typedText.length >= 237 && (
+                    <p className="journey-typed-text journey-para-2">
+                      {typedText.slice(238, 429)}
+                      {typedText.length < 429 && (
+                        <span className="typing-cursor">|</span>
+                      )}
+                    </p>
                   )}
-                </p>
-              </div>
+                  {typedText.length >= 429 && (
+                    <p className="journey-typed-text journey-para-3">
+                      {typedText.slice(430)}
+                      {typedText.length < journeyFullText.length && (
+                        <span className="typing-cursor">|</span>
+                      )}
+                    </p>
+                  )}
+                </>
+              )}
               {typedText.length >= journeyFullText.length && (
                 <div className="features features-fade-in">
                   <div className="feature">
