@@ -290,9 +290,9 @@ From those humble beginnings, we have grown into one of the leading polyester fa
       {/* About Section */}
       <section className="rajmani-about" id="about" ref={journeyRef}>
         <div className="container">
-          <div className="about-content">
-            <div className="about-text">
-              <h2 className="journey-title">Our Journey</h2>
+          <h2 className="journey-title">Our Journey</h2>
+          <div className="journey-layout">
+            <div className="journey-content">
               {journeyTyping && (
                 <>
                   <p className="journey-typed-text journey-para-1">
@@ -344,6 +344,32 @@ From those humble beginnings, we have grown into one of the leading polyester fa
                   </div>
                 </div>
               )}
+            </div>
+            
+            {/* Timeline - Desktop Only */}
+            <div className="journey-timeline">
+              <div className="timeline-line"></div>
+              <div className={`timeline-item ${typedText.length >= 50 ? 'timeline-visible' : ''}`}>
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <div className="timeline-year">2012</div>
+                  <div className="timeline-text">Founded by Mr. Mahalingam</div>
+                </div>
+              </div>
+              <div className={`timeline-item ${typedText.length >= 237 ? 'timeline-visible' : ''}`}>
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <div className="timeline-year">Starting Capital</div>
+                  <div className="timeline-text">₹50,000 with small team</div>
+                </div>
+              </div>
+              <div className={`timeline-item ${typedText.length >= 429 ? 'timeline-visible' : ''}`}>
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
+                  <div className="timeline-year">Today</div>
+                  <div className="timeline-text">Leading seller in Tiruppur</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
