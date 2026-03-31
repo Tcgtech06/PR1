@@ -103,10 +103,11 @@ const Rajmani = () => {
         {/* Text content */}
         <div className="hero-content">
           <h1 className="hero-title">Raja Mani Fabrics</h1>
-          <h2 className="hero-subtitle">Premium Textile Solutions</h2>
+          <h2 className="hero-subtitle">Weaving Dreams into Reality</h2>
           <p className="hero-description">
-            Leading manufacturer and supplier of high-quality fabrics for all your textile needs.{' '}
-            From premium cotton to luxury blends, we deliver excellence in every thread.
+            From humble beginnings in 2012 to becoming South India's trusted fabric partner, 
+            we serve millions with colorful, durable, and affordable polyester fabrics. 
+            Our journey is built on dedication, quality, and making fashion dreams accessible to all.
           </p>
           <div className="hero-stats">
             <div className="stat">
@@ -271,13 +272,6 @@ const Rajmani = () => {
                     <p>Tailored fabrics for specific requirements</p>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="about-image">
-              <div className="image-placeholder">
-                <Package size={80} />
-                <h3>Premium Fabrics</h3>
-                <p>Quality You Can Trust</p>
               </div>
             </div>
           </div>

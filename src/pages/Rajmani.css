@@ -387,10 +387,12 @@
 }
 
 .rajmani-about .about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.rajmani-about .about-text {
+  width: 100%;
 }
 
 .rajmani-about h2 {
@@ -398,6 +400,7 @@
   font-weight: 700;
   margin-bottom: 30px;
   color: var(--text-dark);
+  text-align: center;
 }
 
 .rajmani-about p {
@@ -481,37 +484,6 @@
   color: var(--dark-gray);
   margin: 0;
   font-size: 0.95rem;
-}
-
-.rajmani-about .about-image {
-  display: flex;
-  justify-content: center;
-}
-
-.rajmani-about .image-placeholder {
-  background: var(--light-gray);
-  padding: 60px 40px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
-}
-
-.rajmani-about .image-placeholder svg {
-  color: var(--rajmani-light-blue);
-  margin-bottom: 20px;
-}
-
-.rajmani-about .image-placeholder h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--text-dark);
-}
-
-.rajmani-about .image-placeholder p {
-  color: var(--dark-gray);
-  margin: 0;
 }
 
 /* Contact Section */
@@ -841,8 +813,6 @@
 
   
   .rajmani-about .about-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
     text-align: center;
   }
   
