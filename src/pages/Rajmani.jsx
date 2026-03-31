@@ -234,17 +234,17 @@ const Rajmani = () => {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h2>Our Journey</h2>
-              <p>
+              <h2 className="journey-title">Our Journey</h2>
+              <p className="journey-text journey-text-1">
                 Founded in <strong>2012</strong>, Sri Rajamani Fabrics (SRF) was born from the vision of a 
                 young entrepreneur, Mr. Mahalingam, whose determination, dedication, and commitment 
                 laid the foundation for what we are today. 
               </p>
-              <p>
+              <p className="journey-text journey-text-2">
                 With just ₹50,000 and a small team, he set out to create a business that understood the 
                 needs of its clients and delivered fabrics with quality, reliability, and satisfaction.
               </p>
-              <p>
+              <p className="journey-text journey-text-3">
                 From those humble beginnings, we have grown into one of the leading polyester fabric sellers 
                 in South India. Our success is built on listening to our customers, fulfilling their 
                 requirements with care, and ensuring that every product we deliver adds value to their lives.
@@ -288,41 +288,18 @@ const Rajmani = () => {
       <section className="rajmani-impact">
         <div className="container">
           <div className="impact-content" ref={impactRef}>
-            <div className="impact-image">
-              <div className="impact-card">
-                <TrendingUp size={80} />
-                <h3>70% Popularity</h3>
-                <p>Trusted by Millions</p>
-              </div>
-            </div>
             <div className="impact-text">
-              <h2>Our Impact</h2>
-              <p>
+              <h2 className="impact-title">Our Impact</h2>
+              <p className="impact-text-1">
                 We specialize in fabrics for the domestic market, serving millions of people across the region. 
                 Nearly 70% of the population relies on garments made from our fabrics — colorful, durable, 
                 and affordable materials that bring confidence and comfort to everyday life.
               </p>
-              <p>
+              <p className="impact-text-2">
                 For us, this is more than business; it is a way of participating in the fashion dreams 
                 of common people and making them accessible to all. We believe that everyone deserves 
                 access to high-quality textiles that enhance their lifestyle.
               </p>
-              <div className="impact-stats">
-                <div className="impact-stat">
-                  <Users size={32} />
-                  <div>
-                    <h4>Millions Served</h4>
-                    <p>Wide domestic reach</p>
-                  </div>
-                </div>
-                <div className="impact-stat">
-                  <TrendingUp size={32} />
-                  <div>
-                    <h4>70% Reliance</h4>
-                    <p>Dominant market presence</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -333,14 +310,14 @@ const Rajmani = () => {
         <div className="container">
           <div className="horizons-content" ref={horizonsRef}>
             <div className="horizons-text">
-              <h2>Expanding Horizons</h2>
-              <p>
+              <h2 className="horizons-title">Expanding Horizons</h2>
+              <p className="horizons-text-1">
                 While our roots remain strong in the domestic market, we have also taken bold steps into the 
                 premium fashion industry. With the launch of <strong>Pugazh Overseas</strong>, we entered the 
                 high-value fashion world, bringing the same moral values, dedication, and customer-first 
                 approach that have defined us from the start.
               </p>
-              <p>
+              <p className="horizons-text-2">
                 This expansion allows us to serve not only everyday wear but also premium fashion needs, 
                 making Sri Rajamani Fabrics a trusted name across multiple segments of the textile industry. 
                 We are proud to see our vision grow and encompass a wider range of high-end fashion requirements.
@@ -348,13 +325,6 @@ const Rajmani = () => {
               <Link to="/" className="horizons-link">
                 Explore Pugazh Overseas <Compass size={20} />
               </Link>
-            </div>
-            <div className="horizons-image">
-              <div className="horizons-card">
-                <Compass size={80} />
-                <h3>Premium Fashion</h3>
-                <p>Global Standards</p>
-              </div>
             </div>
           </div>
         </div>

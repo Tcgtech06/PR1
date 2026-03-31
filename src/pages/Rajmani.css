@@ -407,6 +407,49 @@
   margin-bottom: 25px;
 }
 
+/* Journey Section Animations - Slide In */
+.rajmani-about .journey-title {
+  opacity: 0;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.rajmani-about .journey-text-1 {
+  opacity: 0;
+  animation: slideInRight 1s ease-out 0.3s forwards;
+}
+
+.rajmani-about .journey-text-2 {
+  opacity: 0;
+  animation: slideInLeft 1s ease-out 0.6s forwards;
+}
+
+.rajmani-about .journey-text-3 {
+  opacity: 0;
+  animation: slideInRight 1s ease-out 0.9s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .rajmani-about .features {
   display: flex;
   flex-direction: column;
@@ -849,20 +892,13 @@
 }
 
 .rajmani-impact .impact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.rajmani-impact .impact-image {
-  display: flex;
-  justify-content: center;
-  order: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .rajmani-impact .impact-text {
-  order: 2;
+  width: 100%;
 }
 
 .rajmani-impact h2 {
@@ -879,56 +915,45 @@
   margin-bottom: 25px;
 }
 
-.rajmani-impact .impact-card {
-  background: #f8fcfb;
-  padding: 60px 40px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(27, 107, 79, 0.1);
+/* Impact Section Animations - Typing Effect */
+.rajmani-impact .impact-title {
+  opacity: 0;
+  animation: typewriter 1.5s steps(40) forwards;
 }
 
-.rajmani-impact .impact-card svg {
-  color: var(--rajmani-light-green);
-  margin-bottom: 20px;
+.rajmani-impact .impact-text-1 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
-.rajmani-impact .impact-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--text-dark);
+.rajmani-impact .impact-text-2 {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s forwards;
 }
 
-.rajmani-impact .impact-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-top: 35px;
+@keyframes typewriter {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.rajmani-impact .impact-stat {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.rajmani-impact .impact-stat svg {
-  color: var(--rajmani-light-blue);
-  flex-shrink: 0;
-}
-
-.rajmani-impact .impact-stat h4 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-  color: var(--text-dark);
-}
-
-.rajmani-impact .impact-stat p {
-  margin: 0;
-  font-size: 1rem;
-  opacity: 0.8;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive adjustments for Impact Section */
@@ -940,21 +965,7 @@
 
 @media (max-width: 768px) {
   .rajmani-impact .impact-content {
-    grid-template-columns: 1fr;
     text-align: center;
-  }
-  
-  .rajmani-impact .impact-image {
-    order: 2;
-  }
-  
-  .rajmani-impact .impact-text {
-    order: 1;
-  }
-  
-  .rajmani-impact .impact-stat {
-    justify-content: center;
-    text-align: left;
   }
 }
 
@@ -965,20 +976,13 @@
 }
 
 .rajmani-horizons .horizons-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .rajmani-horizons .horizons-text {
-  order: 1;
-}
-
-.rajmani-horizons .horizons-image {
-  order: 2;
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 .rajmani-horizons h2 {
@@ -995,25 +999,20 @@
   margin-bottom: 25px;
 }
 
-.rajmani-horizons .horizons-card {
-  background: white;
-  padding: 60px 40px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 15px 45px rgba(201, 169, 97, 0.15);
-  border: 1px solid rgba(201, 169, 97, 0.2);
+/* Horizons Section Animations - Fade In/Out */
+.rajmani-horizons .horizons-title {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
-.rajmani-horizons .horizons-card svg {
-  color: var(--rajmani-light-blue);
-  margin-bottom: 20px;
+.rajmani-horizons .horizons-text-1 {
+  opacity: 0;
+  animation: fadeInScale 1s ease-out 0.4s forwards;
 }
 
-.rajmani-horizons .horizons-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--text-dark);
+.rajmani-horizons .horizons-text-2 {
+  opacity: 0;
+  animation: fadeInScale 1s ease-out 0.8s forwards;
 }
 
 .rajmani-horizons .horizons-link {
@@ -1028,12 +1027,34 @@
   font-weight: 600;
   transition: all 0.3s ease;
   margin-top: 20px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.2s forwards;
 }
 
 .rajmani-horizons .horizons-link:hover {
   background: var(--rajmani-light-green);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(15, 76, 58, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Responsive adjustments for Horizons Section */
@@ -1045,16 +1066,7 @@
 
 @media (max-width: 768px) {
   .rajmani-horizons .horizons-content {
-    grid-template-columns: 1fr;
     text-align: center;
-  }
-  
-  .rajmani-horizons .horizons-image {
-    order: 2;
-  }
-  
-  .rajmani-horizons .horizons-text {
-    order: 1;
   }
   
   .rajmani-horizons .horizons-link {
@@ -1131,4 +1143,4 @@
     margin: 0 auto;
   }
 }
-
+
