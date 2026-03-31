@@ -101,9 +101,9 @@ const Contact = () => {
     {
       icon: <MapPin size={24} />,
       title: "Visit Us",
-      details: ["10, 1st Floor, Opp Sivan Theatre", "Cross Street, Pitchampalayam Pudur", "Tiruppur, Tamil Nadu 641602"],
+      details: ["29, GROUND FLOOR", "ANGERIPALAYAM ROAD", "TIRUPPUR"],
       description: "Our office location",
-      link: "https://maps.app.goo.gl/5Z3gwoWfbJcZo2WS7"
+      link: "https://maps.app.goo.gl/v9Ykq4zwqHFQegdKA"
     }
   ];
 
@@ -122,6 +122,19 @@ const Contact = () => {
           <p className="section-subtitle">
             Multiple ways to reach us. Choose what works best for you.
           </p>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <span style={{ 
+              background: 'rgba(34, 197, 94, 0.1)', 
+              color: 'var(--primary-color)', 
+              padding: '8px 20px', 
+              borderRadius: '20px', 
+              fontWeight: '600',
+              fontSize: '0.95rem',
+              border: '1px solid rgba(34, 197, 94, 0.2)'
+            }}>
+              GSTIN/UIN: 33AHSPL3761C1ZD
+            </span>
+          </div>
           <div className="grid grid-3" ref={contactInfoRef}>
             {contactInfo.map((info, index) => (
               <a 

@@ -11,6 +11,9 @@ const Footer = () => {
             <p className="footer-description">
               We are one of the leading Polyester Knitted fabric sellers in South India. We deal with various kinds of polyester knitted fabrics and maintain 300+ varieties. We supply accessories and deliver goods all over India through our logistic partners.
             </p>
+            <div style={{ marginTop: '10px', fontSize: '0.85rem', color: 'var(--primary-color)', opacity: 0.9, fontWeight: '600' }}>
+              GSTIN/UIN: 33AHSPL3761C1ZD
+            </div>
             <div className="social-links">
               <a href="#" className="social-link">
                 <Facebook size={20} />
@@ -40,7 +43,7 @@ const Footer = () => {
               <a href="tel:+917845160516" className="contact-item" title="Call Us">
                 <Phone size={20} />
               </a>
-              <a href="https://maps.app.goo.gl/5Z3gwoWfbJcZo2WS7?g_st=awb" target="_blank" rel="noopener noreferrer" className="contact-item" title="Find Us">
+              <a href="https://maps.app.goo.gl/v9Ykq4zwqHFQegdKA" target="_blank" rel="noopener noreferrer" className="contact-item" title="Find Us">
                 <MapPin size={20} />
               </a>
             </div>

@@ -1,0 +1,63 @@
+.scroll-to-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-to-button:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 45px rgba(34, 197, 94, 0.3);
+  border-color: var(--primary-color);
+}
+
+.scroll-to-button.up {
+  background: var(--primary-color);
+  color: white;
+  opacity: 0.9;
+}
+
+.scroll-to-button.down {
+  opacity: 0.8;
+}
+
+/* Specific styling for Rajmani pages */
+:root:has(.rajmani-body) .scroll-to-button:hover,
+:root:has(.rajmani-footer) .scroll-to-button:hover {
+  background: #0F4C3A;
+  border-color: #0F4C3A;
+  box-shadow: 0 15px 45px rgba(15, 76, 58, 0.3);
+}
+
+/* Visibility Logic: Hide on small screens as requested */
+@media (max-width: 768px) {
+  .scroll-to-button {
+    display: none;
+  }
+}
+
+/* Animation for the arrow flip */
+@keyframes bounceIn {
+  from { opacity: 0; transform: scale(0.5) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.scroll-to-button {
+  animation: bounceIn 0.5s ease-out;
+}

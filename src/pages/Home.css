@@ -7,9 +7,9 @@
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to avoid scroll trapping */
   color: var(--white);
-  perspective: 1000px;
+  /* Removed perspective: 1000px; to avoid 3D stacking issues with scroll */
 }
 
 /* Plain Weave Polyester Pattern - Crosshatch */
@@ -65,6 +65,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  position: relative;
+  z-index: 10; /* Ensures content is above background decorative elements */
 }
 
 .hero-text {

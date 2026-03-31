@@ -456,26 +456,58 @@ From those humble beginnings, we have grown into one of the leading polyester fa
           <h2>Get In Touch</h2>
           <p>Ready to explore our premium fabric collection? Contact us today!</p>
           <br />
+          <div style={{ 
+            background: 'rgba(27, 107, 79, 0.1)', 
+            display: 'inline-block', 
+            padding: '8px 20px', 
+            borderRadius: '20px', 
+            marginBottom: '30px',
+            border: '1px solid rgba(27, 107, 79, 0.2)'
+          }}>
+            <span style={{ fontWeight: '600', color: 'var(--rajmani-blue)' }}>GSTIN/UIN: 33AUGPM1373E1ZX</span>
+          </div>
+          <br />
           <div className="contact-grid" ref={contactRef}>
-            <a href="mailto:info@rajmanifabrics.com" className="contact-card">
-              <Mail size={32} />
-              <h3>Email Us</h3>
-              <p>info@rajmanifabrics.com</p>
-            </a>
-            <a href="tel:+917845160516" className="contact-card">
-              <Phone size={32} />
-              <h3>Call Us</h3>
-              <p>+91 78451 60516</p>
-            </a>
             <a 
-              href="https://www.google.com/maps/place/Sri+Rajamani+Fabrics/data=!4m7!3m6!1s0x3ba90795b19a1483:0xdd6a74907bfb2ed0!8m2!3d11.1313575!4d77.3383085!16s%2Fg%2F11vf9z5216!19sChIJgxSasZUHqTsR0C77e5B0at0?authuser=0&hl=en&rclk=1" 
+              href="https://maps.app.goo.gl/JEWTnrYd5cM3Xunv5" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="contact-card"
             >
               <MapPin size={32} />
               <h3>Visit Us</h3>
-              <p>Tiruppur, Tamil Nadu</p>
+              <div style={{ textAlign: 'center', color: 'var(--dark-gray)', lineHeight: '1.6' }}>
+                <p style={{ fontWeight: '700', color: 'var(--rajmani-blue)' }}>SRI RAJAMANI FABRICS</p>
+                <p>98/1, Pichampalaym Ittari Road,</p>
+                <p>Tiruppur - 641602</p>
+              </div>
+            </a>
+            <div className="contact-card numbers-card">
+              <Phone size={32} />
+              <h3>Quick Contacts</h3>
+              <div className="phone-list">
+                <div className="phone-item">
+                  <span className="phone-label">MD:</span>
+                  <a href="tel:+919095958484" className="phone-link">90 9595 8484</a>
+                </div>
+                <div className="phone-item">
+                  <span className="phone-label">Accounts:</span>
+                  <a href="tel:+918248208186" className="phone-link">8248 20 8186</a>
+                </div>
+                <div className="phone-item">
+                  <span className="phone-label">Order Enquiry:</span>
+                  <div className="phone-links">
+                    <a href="tel:+918122988599" className="phone-link">8122 988 599</a>
+                    <span className="phone-sep">/</span>
+                    <a href="tel:+917868981707" className="phone-link">78 68 98 1707</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="mailto:info@rajmanifabrics.com" className="contact-card">
+              <Mail size={32} />
+              <h3>Email Us</h3>
+              <p>info@rajmanifabrics.com</p>
             </a>
           </div>
         </div>
@@ -509,7 +541,7 @@ From those humble beginnings, we have grown into one of the leading polyester fa
                   <Phone size={20} />
                 </a>
                 <a 
-                  href="https://www.google.com/maps/place/Sri+Rajamani+Fabrics/data=!4m7!3m6!1s0x3ba90795b19a1483:0xdd6a74907bfb2ed0!8m2!3d11.1313575!4d77.3383085!16s%2Fg%2F11vf9z5216!19sChIJgxSasZUHqTsR0C77e5B0at0?authuser=0&hl=en&rclk=1" 
+                  href="https://maps.app.goo.gl/JEWTnrYd5cM3Xunv5" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="footer-contact-link"

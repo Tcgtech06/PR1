@@ -7,36 +7,13 @@ import GalleryCarousel from '../components/GalleryCarousel';
 import './Home.css';
 
 const Home = () => {
-  const [showHero, setShowHero] = useState(false);
-  const heroObserverRef = useRef(null);
   const aboutPointsRef = useScrollReveal('.about-point-animate', 'about-point-visible', 0.2);
   const headingRevealRef = useScrollReveal('.typing-heading-animate', 'focus-in-view', 0.15);
   const visionRef = useScrollReveal('.vision-content', 'scroll-reveal', 0.15);
   const signatureFabricsRef = useScrollReveal('.signature-fabric-card', 'scroll-reveal', 0.05);
 
-  useEffect(() => {
-    const heroSection = heroObserverRef.current;
-    if (!heroSection) return;
-
-    let hasAnimated = false; // Track if animation has already run
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          hasAnimated = true;
-          setShowHero(false);
-          setTimeout(() => setShowHero(true), 30);
-          observer.unobserve(heroSection); // Stop observing after first trigger
-        }
-      },
-      { 
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-      }
-    );
-
-    observer.observe(heroSection);
-    return () => observer.disconnect();
-  }, []);
+  // Hero Section is at the top of the page, so it should render immediately on load.
+  // We don't need an IntersectionObserver for the hero content.
 
   const features = [
     { 
@@ -71,11 +48,10 @@ const Home = () => {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero" ref={heroObserverRef}>
+      <section className="hero">
         <FabricFlow />
         <div className="container">
-          {showHero && (
-            <div className="hero-content">
+          <div className="hero-content">
               <div className="hero-text">
                   <p className="hero-slogan">Innovating Polyester, Inspiring Fashion.</p>
                   <h1 className="hero-title">
@@ -102,7 +78,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          )}
         </div>
       </section>
 
