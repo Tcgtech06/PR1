@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Package, Mail, Phone, MapPin, Facebook, Instagram, TrendingUp, Users, Compass, Heart, Award, ShieldCheck } from 'lucide-react';
 import SiteSwitcher from '../components/SiteSwitcher';
@@ -14,23 +14,69 @@ import './Rajmani.css';
 const Rajmani = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [journeyTyping, setJourneyTyping] = useState(false);
+  const [typedText, setTypedText] = useState('');
 
   const heroImages = [img1, img2, img3, img4];
+
+  const journeyFullText = `Founded in 2012, Sri Rajamani Fabrics (SRF) was born from the vision of a young entrepreneur, Mr. Mahalingam, whose determination, dedication, and commitment laid the foundation for what we are today.
+
+With just ₹50,000 and a small team, he set out to create a business that understood the needs of its clients and delivered fabrics with quality, reliability, and satisfaction.
+
+From those humble beginnings, we have grown into one of the leading polyester fabric sellers in South India. Our success is built on listening to our customers, fulfilling their requirements with care, and ensuring that every product we deliver adds value to their lives.`;
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 4000); // Crossfade every 4 seconds
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
   // Scroll reveal hooks for different sections
   const productsRef = useScrollReveal('.product-card', 'scroll-reveal', 0.1);
-  const aboutRef = useScrollReveal('.feature', 'scroll-reveal', 0.1);
   const contactRef = useScrollReveal('.contact-card', 'scroll-reveal', 0.1);
   const impactRef = useScrollReveal('.impact-content > *', 'scroll-reveal', 0.1);
   const horizonsRef = useScrollReveal('.horizons-content > *', 'scroll-reveal', 0.1);
   const valuesRef = useScrollReveal('.value-card', 'scroll-reveal', 0.1);
+
+  // Journey section typing animation
+  const journeyRef = useRef(null);
+
+  useEffect(() => {
+    const journeySection = journeyRef.current;
+    if (!journeySection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !journeyTyping) {
+          setJourneyTyping(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(journeySection);
+    return () => observer.disconnect();
+  }, [journeyTyping]);
+
+  // Typing effect
+  useEffect(() => {
+    if (!journeyTyping) return;
+
+    let currentIndex = 0;
+    const typingSpeed = 15; // milliseconds per character
+
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= journeyFullText.length) {
+        setTypedText(journeyFullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, typingSpeed);
+
+    return () => clearInterval(typingInterval);
+  }, [journeyTyping]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -231,48 +277,44 @@ const Rajmani = () => {
       </section>
 
       {/* About Section */}
-      <section className="rajmani-about" id="about">
+      <section className="rajmani-about" id="about" ref={journeyRef}>
         <div className="container">
           <div className="about-content">
             <div className="about-text">
               <h2 className="journey-title">Our Journey</h2>
-              <p className="journey-text journey-text-1">
-                Founded in <strong>2012</strong>, Sri Rajamani Fabrics (SRF) was born from the vision of a 
-                young entrepreneur, Mr. Mahalingam, whose determination, dedication, and commitment 
-                laid the foundation for what we are today. 
-              </p>
-              <p className="journey-text journey-text-2">
-                With just ₹50,000 and a small team, he set out to create a business that understood the 
-                needs of its clients and delivered fabrics with quality, reliability, and satisfaction.
-              </p>
-              <p className="journey-text journey-text-3">
-                From those humble beginnings, we have grown into one of the leading polyester fabric sellers 
-                in South India. Our success is built on listening to our customers, fulfilling their 
-                requirements with care, and ensuring that every product we deliver adds value to their lives.
-              </p>
-              <div className="features" ref={aboutRef}>
-                <div className="feature">
-                  <Package size={24} />
-                  <div>
-                    <h4>Premium Quality</h4>
-                    <p>Only the finest materials and craftsmanship</p>
-                  </div>
-                </div>
-                <div className="feature">
-                  <Package size={24} />
-                  <div>
-                    <h4>Wide Variety</h4>
-                    <p>500+ fabric types and patterns available</p>
-                  </div>
-                </div>
-                <div className="feature">
-                  <Package size={24} />
-                  <div>
-                    <h4>Custom Solutions</h4>
-                    <p>Tailored fabrics for specific requirements</p>
-                  </div>
-                </div>
+              <div className="journey-typing-container">
+                <p className="journey-typed-text">
+                  {typedText}
+                  {journeyTyping && typedText.length < journeyFullText.length && (
+                    <span className="typing-cursor">|</span>
+                  )}
+                </p>
               </div>
+              {typedText.length >= journeyFullText.length && (
+                <div className="features features-fade-in">
+                  <div className="feature">
+                    <Package size={24} />
+                    <div>
+                      <h4>Premium Quality</h4>
+                      <p>Only the finest materials and craftsmanship</p>
+                    </div>
+                  </div>
+                  <div className="feature">
+                    <Package size={24} />
+                    <div>
+                      <h4>Wide Variety</h4>
+                      <p>500+ fabric types and patterns available</p>
+                    </div>
+                  </div>
+                  <div className="feature">
+                    <Package size={24} />
+                    <div>
+                      <h4>Custom Solutions</h4>
+                      <p>Tailored fabrics for specific requirements</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
