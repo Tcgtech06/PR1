@@ -1,8 +1,9 @@
-import { ArrowRight, Scissors, Shirt, Package, Users, Star, CheckCircle, Layers, Zap, Award } from 'lucide-react';
+import { ArrowRight, Scissors, Shirt, Package, Users, Star, CheckCircle, Layers, Zap, Award, Target, Eye, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import FabricFlow from '../components/FabricFlow';
+import GalleryCarousel from '../components/GalleryCarousel';
 import './Home.css';
 
 const Home = () => {
@@ -17,19 +18,19 @@ const Home = () => {
     const heroSection = heroObserverRef.current;
     if (!heroSection) return;
 
+    let hasAnimated = false; // Track if animation has already run
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
           setShowHero(false);
-          // Shorter delay for smoother transition
           setTimeout(() => setShowHero(true), 30);
-        } else {
-          setShowHero(false);
+          observer.unobserve(heroSection); // Stop observing after first trigger
         }
       },
       { 
         threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px' // Trigger slightly earlier
+        rootMargin: '0px 0px -50px 0px'
       }
     );
 
@@ -78,12 +79,11 @@ const Home = () => {
               <div className="hero-text">
                   <p className="hero-slogan">Innovating Polyester, Inspiring Fashion.</p>
                   <h1 className="hero-title">
-                    Your Gateway to
-                    <span className="gradient-text"> Premium Fabrics</span>
+                    Pugazh Overseas:
+                    <span className="gradient-text"> South India's Fabric Authority</span>
                   </h1>
                   <p className="hero-description">
-                    Leading polyester knitted fabric traders in South India. We offer 300+ varieties 
-                    of premium quality fabrics with All India delivery through our trusted logistics network.
+                    13 years of consistency. 50,000 sq. ft. of excellence. As part of the Sri Rajamani Fabrics family, we deliver micro polyester, spun polyester, imported super poly, N.S. Lycra, and corduroy for every need. 300+ varieties. Zero compromise on quality.
                   </p>
                   <div className="hero-buttons">
                     <Link to="/products" className="btn btn-primary">
@@ -107,8 +107,9 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="section features">
-        <div className="container">
+      <section className="section features" style={{ background: 'linear-gradient(135deg, #ffffff 0%, rgba(34, 197, 94, 0.08) 50%, #ffffff 100%)', paddingTop: '70px', paddingBottom: '70px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%)', borderRadius: '50%' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: '1' }}>
           <div ref={headingRevealRef}>
             <h2 className="section-title typing-heading-animate">Why Choose Pugazh Overseas?</h2>
           </div>
@@ -128,13 +129,15 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="stats-section">
-        <div className="container">
+      <section className="stats-section" style={{ background: 'linear-gradient(135deg, rgba(30, 64, 175, 0.08) 0%, #ffffff 50%, rgba(30, 64, 175, 0.05) 100%)', paddingTop: '70px', paddingBottom: '70px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', bottom: '-50px', left: '-50px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(30, 64, 175, 0.1) 0%, transparent 70%)', borderRadius: '50%' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: '1' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '50px', fontSize: '2rem', fontWeight: 'bold', color: 'var(--text-dark)' }}>Our Achievements</h2>
           <div className="grid grid-4">
             {stats.map((stat, index) => (
-              <div key={index} className="stat-card">
-                <div className="stat-number">{stat.number}</div>
-                <div className="stats-label">{stat.label}</div>
+              <div key={index} className="stat-card" style={{ background: 'rgba(255, 255, 255, 0.95)', borderRadius: '12px', padding: '30px', boxShadow: '0 4px 15px rgba(30, 64, 175, 0.1)', border: '2px solid rgba(30, 64, 175, 0.15)' }}>
+                <div className="stat-number" style={{ color: 'var(--primary-color)' }}>{stat.number}</div>
+                <div className="stats-label" style={{ color: 'var(--dark-gray)' }}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -142,20 +145,103 @@ const Home = () => {
       </section>
 
       {/* Our Vision Section */}
-      <section className="section" style={{ background: 'var(--white)', paddingBottom: '20px' }}>
-        <div className="container">
-          <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }} ref={visionRef}>
-            <h2 className="section-title vision-content">Our Vision</h2>
-            <p className="section-subtitle vision-content" style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--dark-gray)' }}>
-              We aim to be a benchmark in the industry by consistently delivering fabrics that combine <strong>innovation</strong>, <strong>durability</strong>, and <strong>style</strong>. Each collection reflects our commitment to excellence and our understanding of evolving market trends.
-            </p>
+      <section style={{ background: 'linear-gradient(135deg, var(--light-gray) 0%, #f0f9ff 100%)', position: 'relative', overflow: 'hidden', paddingTop: '80px', paddingBottom: '80px' }}>
+        {/* Decorative Background Elements */}
+        <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '400px', height: '400px', background: 'rgba(34, 197, 94, 0.08)', borderRadius: '50%' }}></div>
+        <div style={{ position: 'absolute', bottom: '-50px', left: '-50px', width: '300px', height: '300px', background: 'rgba(30, 64, 175, 0.06)', borderRadius: '50%' }}></div>
+        
+        <div className="container" style={{ position: 'relative', zIndex: '2' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }} ref={visionRef}>
+            {/* Header */}
+            <div style={{ textAlign: 'center', marginBottom: '70px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', background: 'rgba(34, 197, 94, 0.15)', borderRadius: '50%', marginBottom: '25px' }}>
+                <Eye size={50} style={{ color: 'var(--primary-color)' }} />
+              </div>
+              <h2 style={{ fontSize: '3rem', fontWeight: 'bold', color: 'var(--text-dark)', marginBottom: '15px' }}>Our Vision & Legacy</h2>
+              <div style={{ height: '4px', width: '60px', background: 'linear-gradient(90deg, var(--primary-color), var(--light-green))', margin: '0 auto 15px' }}></div>
+              <p style={{ fontSize: '1.15rem', color: 'var(--dark-gray)' }}>Building the Future of Premium Fabric Excellence</p>
+            </div>
+
+            {/* Main Content Grid */}
+            <div className="vision-grid">
+              {/* Left Column - Story */}
+              <div>
+                <h3 style={{ fontSize: '1.8rem', color: 'var(--text-dark)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                  <Target size={35} style={{ color: 'var(--primary-color)' }} />
+                  Our Journey & Purpose
+                </h3>
+                <div style={{ background: 'rgba(255, 255, 255, 0.9)', border: '2px solid rgba(34, 197, 94, 0.2)', borderRadius: '15px', padding: '30px', boxShadow: '0 4px 20px rgba(34, 197, 94, 0.08)' }}>
+                  <p style={{ color: 'var(--dark-gray)', lineHeight: '1.9', fontSize: '1.05rem', marginBottom: '20px' }}>
+                    From a modest <strong>100 sq. ft. facility</strong> to an impressive <strong>50,000 sq. ft. powerhouse</strong>, Pugazh Overseas has grown into South India's most trusted fabric supplier.
+                  </p>
+                  <p style={{ color: 'var(--dark-gray)', lineHeight: '1.9', fontSize: '1.05rem', marginBottom: '20px' }}>
+                    As part of the <strong>Sri Rajamani Fabrics family</strong>, we combine heritage expertise with innovation, delivering <strong>300+ premium polyester varieties</strong> trusted by manufacturers, designers, and retailers nationwide.
+                  </p>
+                  <p style={{ color: 'var(--dark-gray)', lineHeight: '1.9', fontSize: '1.05rem' }}>
+                    We don't just sell fabrics— we build partnerships. Every piece reflects our commitment to <strong>quality</strong>, <strong>reliability</strong>, and <strong>customer success</strong>.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column - Stats & Values */}
+              <div>
+                <h3 style={{ fontSize: '1.8rem', color: 'var(--text-dark)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                  <Lightbulb size={35} style={{ color: 'var(--primary-color)' }} />
+                  Our Core Values
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  {[
+                    { icon: CheckCircle, title: 'Innovation First', desc: 'Constantly evolving with market trends and fabric technology' },
+                    { icon: Award, title: 'Quality Obsessed', desc: 'Zero compromise on material excellence and durability' },
+                    { icon: Users, title: 'Customer Centric', desc: 'Your satisfaction is our success metric' },
+                    { icon: Layers, title: 'Variety Guaranteed', desc: '300+ fabric types for every need and purpose' }
+                  ].map((value, idx) => (
+                    <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.95)', border: '2px solid rgba(34, 197, 94, 0.15)', borderRadius: '12px', padding: '20px', display: 'flex', gap: '15px', boxShadow: '0 2px 8px rgba(34, 197, 94, 0.06)', transition: 'all 0.3s ease' }}>
+                      <value.icon size={35} style={{ color: 'var(--primary-color)', flexShrink: 0 }} />
+                      <div>
+                        <h4 style={{ color: 'var(--text-dark)', marginBottom: '5px', fontWeight: '600' }}>{value.title}</h4>
+                        <p style={{ color: 'var(--dark-gray)', fontSize: '0.95rem' }}>{value.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Stats Section */}
+            <div style={{ background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(30, 64, 175, 0.08) 100%)', border: '2px solid rgba(34, 197, 94, 0.25)', borderRadius: '20px', padding: '50px', boxShadow: '0 8px 32px rgba(34, 197, 94, 0.1)' }}>
+              <h3 style={{ color: 'var(--text-dark)', textAlign: 'center', marginBottom: '40px', fontSize: '1.6rem' }}>Our Growth Story</h3>
+              <div className="growth-stats-grid">
+                {[
+                  { number: '13+', label: 'Years of Excellence', icon: <Award size={40} /> },
+                  { number: '50,000', label: 'Sq. Ft. Facility', icon: <Layers size={40} /> },
+                  { number: '300+', label: 'Fabric Varieties', icon: <Shirt size={40} /> },
+                  { number: '1000+', label: 'Satisfied Clients', icon: <Users size={40} /> }
+                ].map((stat, idx) => (
+                  <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.88)', borderRadius: '15px', padding: '25px', border: '2px solid rgba(34, 197, 94, 0.15)', boxShadow: '0 4px 12px rgba(34, 197, 94, 0.08)' }}>
+                    <div style={{ color: 'var(--primary-color)', marginBottom: '12px', display: 'flex', justifyContent: 'center' }}>{stat.icon}</div>
+                    <h4 style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--primary-color)', marginBottom: '8px' }}>{stat.number}</h4>
+                    <p style={{ color: 'var(--dark-gray)', fontSize: '0.95rem' }}>{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div style={{ textAlign: 'center', marginTop: '60px' }}>
+              <p style={{ color: 'var(--dark-gray)', fontSize: '1.1rem', marginBottom: '5px' }}>Our Promise to You:</p>
+              <p style={{ fontSize: '1.4rem', fontWeight: 'bold', background: 'linear-gradient(90deg, var(--primary-color), var(--light-green))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '25px' }}>
+                Premium Quality • Complete Variety • Unmatched Reliability
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Our Signature Fabrics Section */}
-      <section className="section" style={{ background: 'var(--light-gray)', paddingTop: '20px' }}>
-        <div className="container">
+      <section className="section" style={{ background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.06) 0%, #ffffff 50%, rgba(34, 197, 94, 0.04) 100%)', paddingTop: '60px', paddingBottom: '60px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '0', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)', borderRadius: '50%' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: '1' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <h2 className="section-title">Our Signature Fabrics</h2>
             <p className="section-subtitle">
@@ -185,66 +271,87 @@ const Home = () => {
               </div>
             ))}
           </div>
-
-        </div>
-      </section>
-
-      {/* About Preview Section */}
-
-
-      <section className="section about-preview">
-        <div className="container">
-          <div className="about-content">
-            <div className="about-text">
-              <h2 className="section-title">About Pugazh Overseas</h2>
-              <p className="about-description">
-                Building on a legacy of over 14 years in the textile industry, Pugazh Overseas 
-                was established in <strong>2019</strong> as a trusted partner for businesses seeking quality 
-                products and reliable export services.
-              </p>
-              <div className="about-points" ref={aboutPointsRef}>
-                <div className="about-point about-point-animate" style={{ animationDelay: '0s' }}>
-                  <CheckCircle size={20} />
-                  <span>ISO Certified Quality Management</span>
-                </div>
-                <div className="about-point about-point-animate" style={{ animationDelay: '0.3s' }}>
-                  <CheckCircle size={20} />
-                  <span>Extensive Global Network</span>
-                </div>
-                <div className="about-point about-point-animate" style={{ animationDelay: '0.6s' }}>
-                  <CheckCircle size={20} />
-                  <span>24/7 Customer Support</span>
-                </div>
-              </div>
-              <Link to="/about" className="btn btn-secondary">
-                Learn More About Us
-              </Link>
-            </div>
-            <div className="about-image">
-              <div className="about-card">
-                <Scissors size={60} className="about-icon" />
-                <h3>Fabric Excellence</h3>
-                <p>Precision in Every Thread</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2 className="cta-title">Ready to Expand Your Business Globally?</h2>
-            <p className="cta-description">
-              Let us help you reach new markets with our comprehensive export solutions.
-            </p>
-            <Link to="/contact" className="btn btn-primary btn-large">
-              Get Started Today <ArrowRight size={20} />
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <Link to="/products" className="btn btn-primary">
+              Explore All Products <ArrowRight size={20} />
             </Link>
           </div>
         </div>
       </section>
+
+      {/* About Preview Section */}
+      <section className="section about-preview" style={{ background: 'linear-gradient(135deg, #f8fbff 0%, rgba(34, 197, 94, 0.05) 50%, #ffffff 100%)', paddingTop: '70px', paddingBottom: '70px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-80px', left: '-80px', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%)', borderRadius: '50%' }}></div>
+        <div style={{ position: 'absolute', bottom: '-60px', right: '-60px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(30, 64, 175, 0.08) 0%, transparent 70%)', borderRadius: '50%' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: '1' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 className="section-title">About Pugazh Overseas</h2>
+            <p className="about-description" style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '30px' }}>
+              Building on a legacy of over 14 years in the textile industry, Pugazh Overseas 
+              was established in <strong>2019</strong> as a trusted partner for businesses seeking quality 
+              products and reliable export services. From our humble 100 sq. ft. beginnings to our impressive 50,000 sq. ft. facility, we've become South India's leading polyester knitted fabric trader.
+            </p>
+            <p style={{ fontSize: '1rem', color: 'var(--dark-gray)', lineHeight: '1.8', marginBottom: '30px' }}>
+              As part of the prestigious <strong>Sri Rajamani Fabrics family</strong>, we specialize in 300+ varieties of premium polyester fabrics including micro polyester, spun polyester, imported super poly, N.S. Lycra, and specialty fabrics like corduroy. Whether you need uniforms, sportswear, casual wear, or suiting materials, we have the perfect fabric to meet your requirements.
+            </p>
+            <div className="about-points responsive-about-points" ref={aboutPointsRef}>
+              <div className="about-point about-point-animate" style={{ animationDelay: '0s', textAlign: 'center' }}>
+                <CheckCircle size={24} style={{ color: 'var(--primary-color)', margin: '0 auto 10px' }} />
+                <span style={{ display: 'block', fontWeight: '600', color: 'var(--text-dark)' }}>ISO Certified Quality</span>
+                <span style={{ fontSize: '0.9rem', color: 'var(--dark-gray)' }}>Management Standards</span>
+              </div>
+              <div className="about-point about-point-animate" style={{ animationDelay: '0.3s', textAlign: 'center' }}>
+                <CheckCircle size={24} style={{ color: 'var(--primary-color)', margin: '0 auto 10px' }} />
+                <span style={{ display: 'block', fontWeight: '600', color: 'var(--text-dark)' }}>Nationwide Network</span>
+                <span style={{ fontSize: '0.9rem', color: 'var(--dark-gray)' }}>All India Delivery</span>
+              </div>
+              <div className="about-point about-point-animate" style={{ animationDelay: '0.6s', textAlign: 'center' }}>
+                <CheckCircle size={24} style={{ color: 'var(--primary-color)', margin: '0 auto 10px' }} />
+                <span style={{ display: 'block', fontWeight: '600', color: 'var(--text-dark)' }}>24/7 Support</span>
+                <span style={{ fontSize: '0.9rem', color: 'var(--dark-gray)' }}>Always Here to Help</span>
+              </div>
+            </div>
+            <p style={{ fontSize: '0.95rem', color: 'var(--dark-gray)', lineHeight: '1.7', marginBottom: '30px', fontStyle: 'italic', background: 'rgba(34, 197, 94, 0.08)', padding: '20px', borderRadius: '10px', borderLeft: '4px solid var(--primary-color)' }}>
+              <strong>Our Commitment:</strong> We replace any mistake fabric from customers without hassle. Your satisfaction is not just our goal—it's our guarantee. With 1000+ satisfied clients across India, we've built our reputation on quality, reliability, and genuine care for our partners' success.
+            </p>
+            <Link to="/about" className="btn btn-secondary">
+              Learn More About Our Story
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 3D Gallery Carousel Section */}
+      <GalleryCarousel />
+
+      {/* Why Choose Pugazh Section */}
+      <section className="section" style={{ background: 'linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, #ffffff 50%, rgba(34, 197, 94, 0.05) 100%)', paddingTop: '70px', paddingBottom: '70px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(30, 64, 175, 0.08) 0%, transparent 70%)', borderRadius: '50%' }}></div>
+        <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)', borderRadius: '50%' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: '1' }}>
+          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+            <h2 className="section-title">Why Choose Pugazh Overseas?</h2>
+            <p className="section-subtitle">Trusted by manufacturers, designers, and retailers across India</p>
+          </div>
+          <div className="grid grid-3">
+            {[
+              { icon: <Zap size={40} />, title: 'Fast Delivery', desc: 'All India delivery network with quick turnaround times and reliable logistics partners' },
+              { icon: <Package size={40} />, title: 'Quality Assured', desc: 'Rigorous quality control at every step, from sourcing to packaging and delivery' },
+              { icon: <Star size={40} />, title: 'Competitive Pricing', desc: 'Best prices without compromising on quality, bulk discounts available' },
+              { icon: <Users size={40} />, title: 'Expert Support', desc: '24/7 customer support team ready to assist with your fabric needs' },
+              { icon: <CheckCircle size={40} />, title: 'Easy Returns', desc: 'Fabric mistake? We replace it free. Your satisfaction is our priority' },
+              { icon: <Layers size={40} />, title: 'Variety Selection', desc: 'From basic polyester to imported super poly and specialty fabrics' }
+            ].map((item, idx) => (
+              <div key={idx} className="card" style={{ padding: '30px', textAlign: 'center', border: '2px solid rgba(34, 197, 94, 0.15)', borderRadius: '12px' }}>
+                <div style={{ color: 'var(--primary-color)', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>{item.icon}</div>
+                <h3 style={{ fontSize: '1.2rem', color: 'var(--text-dark)', marginBottom: '12px', fontWeight: '600' }}>{item.title}</h3>
+                <p style={{ color: 'var(--dark-gray)', fontSize: '0.95rem', lineHeight: '1.6' }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

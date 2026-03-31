@@ -632,3 +632,63 @@
     animation-duration: 0.4s !important;
   }
 }
+
+/* Responsive Custom Grids for newly added sections */
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.growth-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.responsive-about-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+  .vision-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .growth-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .responsive-about-points {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .growth-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .responsive-about-points {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-point {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 15px 0;
+  }
+}
