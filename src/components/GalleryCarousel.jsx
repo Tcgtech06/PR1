@@ -11,6 +11,7 @@ import 'swiper/css/navigation';
 import p1 from '../assets/p1.jpeg';
 import p2 from '../assets/p2.jpeg';
 import p3 from '../assets/p3.png';
+import gallery from '../assets/gallery.HEIC';
 
 import './GalleryCarousel.css';
 
@@ -19,6 +20,7 @@ const GalleryCarousel = () => {
     { image: p1, label: 'Number 1', title: 'Intro', duration: '15:20' },
     { image: p2, label: 'Number 2', title: 'Process', duration: '10:45' },
     { image: p3, label: 'Number 3', title: 'Quality', duration: '08:30' },
+    { image: gallery, label: 'Number 4', title: 'Gallery', duration: '12:00' },
   ];
 
   return (
@@ -36,7 +38,7 @@ const GalleryCarousel = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
-          initialSlide={1} // Start on the 2nd item since we only have 3 now
+          initialSlide={1} // Start on the 2nd item
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
