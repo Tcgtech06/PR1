@@ -39,40 +39,13 @@ const Products = () => {
 
   const productCategories = [
     {
-      icon: <Leaf size={40} />,
-      title: "Agricultural Products",
-      description: "Fresh spices, grains, pulses, and organic produce sourced directly from farmers.",
-      products: ["Turmeric", "Black Pepper", "Cardamom", "Rice", "Lentils", "Tea Leaves"]
-    },
-    {
-      icon: <Shirt size={40} />,
-      title: "Textiles & Garments",
-      description: "High-quality cotton fabrics, traditional wear, and modern fashion garments.",
-      products: ["Cotton Fabrics", "Silk Sarees", "Casual Wear", "Traditional Clothing", "Home Textiles"]
-    },
-    {
-      icon: <Gem size={40} />,
-      title: "Handicrafts & Jewelry",
-      description: "Exquisite handcrafted items and traditional jewelry pieces.",
-      products: ["Wooden Crafts", "Metal Artifacts", "Traditional Jewelry", "Decorative Items"]
-    },
-    {
-      icon: <Coffee size={40} />,
-      title: "Food & Beverages",
-      description: "Premium quality processed foods, beverages, and specialty items.",
-      products: ["Instant Mixes", "Pickles", "Snacks", "Beverages", "Condiments"]
-    },
-    {
-      icon: <Package size={40} />,
-      title: "Industrial Goods",
-      description: "Quality industrial products and machinery components.",
-      products: ["Auto Parts", "Machinery", "Tools", "Electronic Components"]
-    },
-    {
-      icon: <Wheat size={40} />,
-      title: "Organic Products",
-      description: "Certified organic products for health-conscious consumers worldwide.",
-      products: ["Organic Spices", "Natural Oils", "Herbal Products", "Organic Grains"]
+      image: "/Mars Melange with Melange Collar Cuff.jpg",
+      title: "Mars Melange (Baby Pique)",
+      fabricName: "Mars Melange (Baby Pique)",
+      gsm: "195-200",
+      width: "44\" Tubular",
+      colours: "20+",
+      description: "Premium quality Mars Melange fabric with baby pique texture, perfect for polo shirts and casual wear."
     }
   ];
 
@@ -162,32 +135,41 @@ const Products = () => {
       {/* Products Categories Grid */}
       <section className="section products-grid">
         <div className="container">
-          <h2 className="section-title">Product Categories</h2>
+          <h2 className="section-title">Our Products</h2>
           <p className="section-subtitle">
-            We specialize in various product categories, ensuring quality and authenticity in every shipment.
+            Premium quality polyester knitted fabrics for all your textile needs.
           </p>
           
           <div className="grid grid-3" ref={productsGridRef}>
-            {productCategories.map((category, index) => (
+            {productCategories.map((product, index) => (
               <div key={index} className="card product-card">
-                <div className="product-icon">
-                  {category.icon}
+                <div className="product-image-container">
+                  <img src={product.image} alt={product.title} className="product-image" />
                 </div>
-                <h3 className="product-title">{category.title}</h3>
-                <p className="product-description">{category.description}</p>
-                <div className="product-list">
-                  <h4>Key Products:</h4>
-                  <ul>
-                    {category.products.map((product, idx) => (
-                      <li key={idx}>{product}</li>
-                    ))}
-                  </ul>
+                <h3 className="product-title">{product.title}</h3>
+                <div className="product-specs">
+                  <div className="spec-row">
+                    <span className="spec-label">Fabric Name:</span>
+                    <span className="spec-value">{product.fabricName}</span>
+                  </div>
+                  <div className="spec-row">
+                    <span className="spec-label">GSM:</span>
+                    <span className="spec-value">{product.gsm}</span>
+                  </div>
+                  <div className="spec-row">
+                    <span className="spec-label">Width:</span>
+                    <span className="spec-value">{product.width}</span>
+                  </div>
+                  <div className="spec-row">
+                    <span className="spec-label">Colours:</span>
+                    <span className="spec-value">{product.colours}</span>
+                  </div>
                 </div>
+                <p className="product-description">{product.description}</p>
                 <button 
                   className="whatsapp-inquiry-btn"
-                  onClick={() => handleWhatsAppInquiry(category.title, {
-                    description: category.description,
-                    products: category.products
+                  onClick={() => handleWhatsAppInquiry(product.title, {
+                    description: `Fabric Name: ${product.fabricName}\nGSM: ${product.gsm}\nWidth: ${product.width}\nColours: ${product.colours}\n\n${product.description}`
                   })}
                 >
                   <MessageSquare size={18} />
