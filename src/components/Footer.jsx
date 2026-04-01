@@ -15,10 +15,10 @@ const Footer = () => {
               GSTIN/UIN: 33AHSPL3761C1ZD
             </div>
             <div className="social-links">
-              <a href="#" className="social-link">
+              <a href="https://www.facebook.com/share/1BESbGZsez/" target="_blank" rel="noopener noreferrer" className="social-link" title="Follow us on Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="social-link">
+              <a href="https://www.instagram.com/p/DWkoL4REiNn/?igsh=MTAxdTRldWl6a2IwOQ==" target="_blank" rel="noopener noreferrer" className="social-link" title="Follow us on Instagram">
                 <Instagram size={20} />
               </a>
             </div>
