@@ -67,6 +67,60 @@
 /* Products Grid */
 .products-grid {
   background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fabric Texture Pattern */
+.products-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 10px 10px;
+  background-image: 
+    linear-gradient(45deg, rgba(34, 197, 94, 0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(34, 197, 94, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(34, 197, 94, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(34, 197, 94, 0.03) 75%);
+  background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.products-grid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(34, 197, 94, 0.02),
+      rgba(34, 197, 94, 0.02) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(34, 197, 94, 0.02),
+      rgba(34, 197, 94, 0.02) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.products-grid .container {
+  position: relative;
+  z-index: 1;
 }
 
 .product-card {
