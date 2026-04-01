@@ -431,12 +431,20 @@
   }
 
   /* Our Vision & Legacy - Tablet */
-  h2[style*="fontSize: '3rem'"] {
-    font-size: 2.2rem !important;
+  .our-vision-section .vision-title {
+    font-size: 2rem !important;
   }
 
-  p[style*="fontSize: '1.15rem'"] {
+  .our-vision-section .vision-subtitle {
     font-size: 1rem !important;
+  }
+
+  .our-vision-section .vision-subheading {
+    font-size: 1.5rem !important;
+  }
+
+  .our-vision-section .vision-text {
+    font-size: 0.95rem !important;
   }
 }
 
@@ -506,17 +514,58 @@
   }
 
   /* Our Vision & Legacy - Mobile */
-  .section-title,
-  h2[style*="fontSize: '3rem'"] {
-    font-size: 1.8rem !important;
+  .our-vision-section .vision-title {
+    font-size: 1.4rem !important;
   }
 
-  p[style*="fontSize: '1.15rem'"] {
-    font-size: 0.95rem !important;
+  .our-vision-section .vision-subtitle {
+    font-size: 0.8rem !important;
   }
 
-  p[style*="fontSize: '1.05rem'"] {
+  .our-vision-section .vision-subheading {
+    font-size: 1.1rem !important;
+  }
+
+  .our-vision-section .vision-text {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .our-vision-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .our-vision-section .vision-header {
+    margin-bottom: 30px !important;
+  }
+
+  .our-vision-section .vision-header h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .our-vision-section .vision-header p {
+    font-size: 0.8rem !important;
+  }
+
+  .our-vision-section h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .our-vision-section h4 {
     font-size: 0.9rem !important;
+  }
+
+  .our-vision-section p {
+    font-size: 0.8rem !important;
+  }
+
+  .our-vision-section .growth-stats-grid h4 {
+    font-size: 1.3rem !important;
+  }
+
+  .our-vision-section .growth-stats-grid p {
+    font-size: 0.75rem !important;
   }
 }
 

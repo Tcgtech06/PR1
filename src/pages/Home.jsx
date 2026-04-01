@@ -120,7 +120,7 @@ const Home = () => {
       </section>
 
       {/* Our Vision Section */}
-      <section style={{ background: 'linear-gradient(135deg, var(--light-gray) 0%, #f0f9ff 100%)', position: 'relative', overflow: 'hidden', paddingTop: '80px', paddingBottom: '80px' }}>
+      <section className="our-vision-section" style={{ background: 'linear-gradient(135deg, var(--light-gray) 0%, #f0f9ff 100%)', position: 'relative', overflow: 'hidden', paddingTop: '80px', paddingBottom: '80px' }}>
         {/* Decorative Background Elements */}
         <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '400px', height: '400px', background: 'rgba(34, 197, 94, 0.08)', borderRadius: '50%' }}></div>
         <div style={{ position: 'absolute', bottom: '-50px', left: '-50px', width: '300px', height: '300px', background: 'rgba(30, 64, 175, 0.06)', borderRadius: '50%' }}></div>
@@ -128,31 +128,31 @@ const Home = () => {
         <div className="container" style={{ position: 'relative', zIndex: '2' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }} ref={visionRef}>
             {/* Header */}
-            <div style={{ textAlign: 'center', marginBottom: '70px' }}>
+            <div className="vision-header" style={{ textAlign: 'center', marginBottom: '70px' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', background: 'rgba(34, 197, 94, 0.15)', borderRadius: '50%', marginBottom: '25px' }}>
                 <Eye size={50} style={{ color: 'var(--primary-color)' }} />
               </div>
-              <h2 style={{ fontSize: '3rem', fontWeight: 'bold', color: 'var(--text-dark)', marginBottom: '15px' }}>Our Vision & Legacy</h2>
+              <h2 className="vision-title" style={{ fontSize: '3rem', fontWeight: 'bold', color: 'var(--text-dark)', marginBottom: '15px' }}>Our Vision & Legacy</h2>
               <div style={{ height: '4px', width: '60px', background: 'linear-gradient(90deg, var(--primary-color), var(--light-green))', margin: '0 auto 15px' }}></div>
-              <p style={{ fontSize: '1.15rem', color: 'var(--dark-gray)' }}>Building the Future of Premium Fabric Excellence</p>
+              <p className="vision-subtitle" style={{ fontSize: '1.15rem', color: 'var(--dark-gray)' }}>Building the Future of Premium Fabric Excellence</p>
             </div>
 
             {/* Main Content Grid */}
             <div className="vision-grid">
               {/* Left Column - Story */}
               <div>
-                <h3 style={{ fontSize: '1.8rem', color: 'var(--text-dark)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                <h3 className="vision-subheading" style={{ fontSize: '1.8rem', color: 'var(--text-dark)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                   <Target size={35} style={{ color: 'var(--primary-color)' }} />
                   Our Journey & Purpose
                 </h3>
                 <div style={{ background: 'rgba(255, 255, 255, 0.9)', border: '2px solid rgba(34, 197, 94, 0.2)', borderRadius: '15px', padding: '30px', boxShadow: '0 4px 20px rgba(34, 197, 94, 0.08)' }}>
-                  <p style={{ color: 'var(--dark-gray)', lineHeight: '1.9', fontSize: '1.05rem', marginBottom: '20px' }}>
+                  <p className="vision-text" style={{ color: 'var(--dark-gray)', lineHeight: '1.9', fontSize: '1.05rem', marginBottom: '20px' }}>
                     From a modest <strong>100 sq. ft. facility</strong> to an impressive <strong>50,000 sq. ft. powerhouse</strong>, Pugazh Overseas has grown into South India's most trusted fabric supplier.
                   </p>
-                  <p style={{ color: 'var(--dark-gray)', lineHeight: '1.9', fontSize: '1.05rem', marginBottom: '20px' }}>
+                  <p className="vision-text" style={{ color: 'var(--dark-gray)', lineHeight: '1.9', fontSize: '1.05rem', marginBottom: '20px' }}>
                     As part of the <strong>Sri Rajamani Fabrics family</strong>, we combine heritage expertise with innovation, delivering <strong>300+ premium polyester varieties</strong> trusted by manufacturers, designers, and retailers nationwide.
                   </p>
-                  <p style={{ color: 'var(--dark-gray)', lineHeight: '1.9', fontSize: '1.05rem' }}>
+                  <p className="vision-text" style={{ color: 'var(--dark-gray)', lineHeight: '1.9', fontSize: '1.05rem' }}>
                     We don't just sell fabrics— we build partnerships. Every piece reflects our commitment to <strong>quality</strong>, <strong>reliability</strong>, and <strong>customer success</strong>.
                   </p>
                 </div>
