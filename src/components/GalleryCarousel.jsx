@@ -3,10 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import 'swiper/swiper-bundle.css';
 
 import p1 from '../assets/p1.jpeg';
 import p2 from '../assets/p2.jpeg';
