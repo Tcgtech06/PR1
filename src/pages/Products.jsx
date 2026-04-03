@@ -29,16 +29,54 @@ Thank you!`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
   };
 
-  // Create 10 duplicate products
-  const productCategories = Array(10).fill({
-    image: "/Mars Melange.jpeg",
-    title: "Mars Melange (Baby Pique)",
-    fabricName: "Mars Melange (Baby Pique)",
-    gsm: "195-200",
-    width: "44\" Tubular",
-    colours: "20+",
-    description: "Premium quality Mars Melange fabric with baby pique texture, perfect for polo shirts and casual wear."
-  });
+  // Product categories array
+  const productCategories = [
+    {
+      image: "/Mars Melange.jpeg",
+      title: "Mars Melange (Baby Pique)",
+      fabricName: "Mars Melange (Baby Pique)",
+      gsm: "195-200",
+      width: "44\" Tubular",
+      colours: "20+",
+      description: "Premium quality Mars Melange fabric with baby pique texture, perfect for polo shirts and casual wear."
+    },
+    {
+      image: "/corduroy.jpg.jpeg",
+      title: "Corduroy",
+      fabricName: "Knitted Corduroy",
+      gsm: "230-240",
+      width: "60\" Open width",
+      colours: "12+",
+      description: "Knitted Corduroy looks rib like structure in horizontal view with 4% spandex (Elastine). Majorly used as Formal & Cargo pants."
+    },
+    {
+      image: "/TinTin Spandex.jpg.jpeg",
+      title: "TinTin Spandex (Ottoman)",
+      fabricName: "TinTin Spandex (Ottoman)",
+      gsm: "210-220",
+      width: "60\" Open width",
+      colours: "20+",
+      description: "Tintin Spandex is also called as Ottoman looks rib like structure in horizontal view with 3% spandex (Elastine). Majorly used as Formal & Cargo pants."
+    },
+    {
+      image: "/crepe lycra.jpg.jpeg",
+      title: "Crepe Lycra",
+      fabricName: "Valentino Crepe Lycra",
+      gsm: "220-230",
+      width: "60\" Open width",
+      colours: "55+",
+      description: "Valentino Creape is from the Crepe construction family with NE design made of Micro Filament with 5% Spandex (Elastine). Crepe Lycra can be used in various kind of garment like 5-Sleeve, Polos, Round neck t-shirt, womens fashions, kids wear and even school uniforms."
+    },
+    {
+      image: "/mars.jpg.jpeg",
+      title: "Mars (Baby Pique)",
+      fabricName: "Mars (Baby Pique)",
+      gsm: "190-195",
+      width: "44\" Tubular",
+      colours: "60+",
+      description: "Mars is kind of Baby Pique construction also called as Mars Matty, Sports Matty & SAP Matty. Majorly used for mens polo t-shirt, Mandrian collar t-shirt, self collar t-shirt & round neck."
+    }
+  ];
 
   return (
     <div className="products">
