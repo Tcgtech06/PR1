@@ -1,37 +1,38 @@
-import { Users, Target, Award, Globe, CheckCircle, TrendingUp } from 'lucide-react';
+import { Award, Palette, CheckCircle } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
-import useScrollReveal from '../hooks/useScrollReveal';
 import './About.css';
 
 const About = () => {
-  // Scroll reveal hooks for different sections
-  const storyRef = useScrollReveal('.story-content > *', 'scroll-reveal', 0.1);
-  const mdStoryRef = useScrollReveal('.story-content > *', 'scroll-reveal', 0.1);
-  const heritageRef = useScrollReveal('.heritage-content', 'scroll-reveal', 0.1);
-  const missionVisionRef = useScrollReveal('.mv-card', 'scroll-reveal', 0.1);
-  const valuesRef = useScrollReveal('.value-card', 'scroll-reveal', 0.1);
-  const whyChooseRef = useScrollReveal('.choose-point', 'scroll-reveal', 0.1);
+  const fabrics = [
+    { name: 'Valentino Crepe', image: '/valentino crepe.jpg' },
+    { name: 'Super Tensile', image: '/super tensile.jpg' },
+    { name: 'Monalisa', image: '/Monalisa.jpg' },
+    { name: 'Double Bull', image: '/Double Bull.jpg' },
+    { name: 'Road Rib', image: '/Road Rib.jpg' },
+    { name: 'Mars (Baby Pique) with Plain & Jacquard Collar Cuff', image: '/Mars (Baby Pique) with Plain & Jacquard Collar Cuff.jpg' },
+    { name: 'Mars Melange with Melange Collar Cuff', image: '/Mars Melange with Melange Collar Cuff.jpg' },
+    { name: 'Micro 4 Way Lycra 255 & 230 GSM', image: '/Micro 4 Way Lycra 255 & 230 GSM.jpg' },
+    { name: '4 Way Lycra Twill Spandex', image: '/4 Way Lycra Twill Spandex.jpg' },
+    { name: 'TinTin Spandex', image: '/TinTin Spandex.jpg' },
+    { name: 'Knitted Corduroy', image: '/Knitted Corduroy.jpg' },
+    { name: '2 Way', image: '/2 way.jpg' }
+  ];
 
-  const values = [
+  const whatSetsUsApart = [
     {
-      icon: <Award size={40} />,
-      title: "Quality Excellence",
-      description: "We maintain the highest standards in product quality and service delivery."
+      icon: <Award size={50} />,
+      title: 'Unique Designs',
+      description: 'Exclusive patterns and textures tailored to modern fashion needs.'
     },
     {
-      icon: <Users size={40} />,
-      title: "Customer Focus",
-      description: "Our customers' success is our priority, driving everything we do."
+      icon: <Palette size={50} />,
+      title: 'Color Standards',
+      description: 'Vibrant, lasting shades that elevate every garment.'
     },
     {
-      icon: <Globe size={40} />,
-      title: "Global Vision",
-      description: "Connecting businesses worldwide through reliable trade partnerships."
-    },
-    {
-      icon: <TrendingUp size={40} />,
-      title: "Continuous Growth",
-      description: "Constantly evolving to meet changing market demands and opportunities."
+      icon: <CheckCircle size={50} />,
+      title: 'Quality Assurance',
+      description: 'Fabrics engineered for strength, comfort, and longevity.'
     }
   ];
 
@@ -39,211 +40,70 @@ const About = () => {
     <div className="about">
       <HeroSection
         className="about-hero"
-        title="About Pugazh Overseas"
+        title="Pugazh Overseas Polyester Market Innovators"
         description="Building bridges across continents through quality products and trusted partnerships. Your gateway to global trade excellence."
       />
 
-      {/* Story Section */}
-      <section className="section story-section">
+      {/* Heritage & Vision Section */}
+      <section className="section heritage-vision-section">
         <div className="container">
-          <div className="story-content" ref={storyRef}>
-            <div className="story-text">
-              <h2 className="section-title">About Us</h2>
-              <p className="story-description">
-                As one of South India's premier <strong>Polyester Knitted fabric</strong> suppliers, our journey began with a simple mission: to deliver exceptional quality textiles to businesses nationwide. Over the years, we have grown into a trusted partner for school and corporate uniforms, sportswear, casual wear, and premium suiting.
+          <div className="heritage-vision-content">
+            {/* Heritage */}
+            <div className="heritage-card">
+              <h2 className="heritage-title">Our Heritage</h2>
+              <p className="heritage-text">
+                Founded in 2020, Pugazh Overseas emerged from the legacy of <strong>Sri Rajamani Fabrics</strong>, a trusted name with deep insight into the pulse of polyester fabric demand. With this foundation, we set out to redefine standards in the polyester market by introducing unique designs, colors, and uncompromising quality.
               </p>
-              <p className="story-description">
-                Our extensive catalog features over 300 varieties of premium textiles. From versatile <strong>Micro</strong> and <strong>Spun Polyester fabrics</strong> to our celebrated spandex and lycra collections, we ensure every woven thread meets world-class standards. We also specialize in high-performance sublimation fabrics like <strong>Dot-knit</strong> and <strong>Honey-Comb</strong>.
-              </p>
-              <p className="story-description">
-                Beyond standard offerings, we pride ourselves on delivering bespoke solutions. Whether you need custom <strong>Collar Cuffs</strong>, essential accessories like <strong>Zippers</strong> and <strong>Elastics</strong>, or timely nation-wide delivery through our dedicated logistics network, Pugazh Overseas is your complete textile sourcing partner.
-              </p>
-              <div className="story-stats">
-                <div className="stat">
-                  <span className="stat-number">300+</span>
-                  <span className="stat-label">Fabric Varieties</span>
-                </div>
-                <div className="stat">
-                  <span className="stat-number">All India</span>
-                  <span className="stat-label">Delivery</span>
-                </div>
-                <div className="stat">
-                  <span className="stat-number">Custom</span>
-                  <span className="stat-label">Specifications</span>
-                </div>
-              </div>
             </div>
-            <div className="story-image">
-              <div className="story-card">
-                <Globe size={80} />
-                <h3>Global Presence</h3>
-                <p>Connecting Markets Worldwide</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-
-      {/* About MD Section */}
-      <section className="section story-section" style={{ background: 'var(--light-gray)' }}>
-        <div className="container">
-          <div className="story-content" ref={mdStoryRef}>
-            <div className="story-image" style={{ order: -1 }}>
-              <div className="story-card" style={{ background: 'var(--white)' }}>
-                <Users size={80} />
-                <h3>Founder's Vision</h3>
-                <p>A True Entrepreneurial Spirit</p>
-              </div>
-            </div>
-            <div className="story-text">
-              <h2 className="section-title">About Our Managing Director</h2>
-              <p className="story-description">
-                At the young age of 23, driven by an unwavering entrepreneurial spirit, Mr. Mahalingam, CEO of Sri Rajamani Fabrics & Pugazh Overseas, embarked on a remarkable journey with a close friend. Armed with a dream and determination, they set up a modest service-based business in a humble 100 sq.ft building. Little did they know that this was just the beginning of an extraordinary success story that would captivate the hearts of many.
-              </p>
-              <p className="story-description">
-                Within a mere two years, their venture not only flourished but flourished exponentially! Witnessing the tremendous growth, they took a bold step and opened a new branch, expanding their reach and influence. To diversify their offerings, they also ventured into small-scale trading in the same service field, demonstrating their adaptability and foresight.
-              </p>
-              <p className="story-description">
-                But Mr. Mahalingam was not content with resting on his laurels. Instead, he dared to dream bigger and bolder. Recognizing an untapped opportunity, he took a daring leap into the unknown, establishing a trading business that directly competed with the leading concern in the market. This audacious move was met with skepticism, but he knew that great rewards come to those who embrace calculated risks.
-              </p>
-              <p className="story-description">
-                Through sheer resilience, hard work, and an unwavering commitment to quality, Mr. Mahalingam's venture soon blossomed into a roaring success. Today, he stands tall as one of Tamil Nadu's foremost polyester fabric sellers, a name synonymous with trust, excellence, and innovation.
-              </p>
-              <p className="story-description" style={{ fontWeight: 600, color: 'var(--primary-blue)' }}>
-                From the modest 100 sq.ft building to an impressive 20,000 sq.ft facility, Mr. Mahalingam's journey is an awe-inspiring testament to the power of vision and perseverance.
+            {/* Vision */}
+            <div className="vision-card">
+              <h2 className="vision-title">Our Vision</h2>
+              <p className="vision-text">
+                We aim to be a benchmark in the industry by consistently delivering fabrics that combine innovation, durability, and style. Each collection reflects our commitment to excellence and our understanding of evolving market trends.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Heritage Section */}
-      <section className="section story-section" style={{ background: 'var(--white)' }}>
+      {/* Signature Fabrics Section */}
+      <section className="section signature-fabrics-section">
         <div className="container">
-          <div className="story-content" ref={heritageRef}>
-            <div className="story-text heritage-content">
-              <h2 className="section-title">Our Heritage</h2>
-              <p className="story-description">
-                Founded in <strong>2020</strong>, Pugazh Overseas emerged from the legacy of <strong>Sri Rajamani Fabrics</strong>, a trusted name with deep insight into the pulse of polyester fabric demand. With this foundation, we set out to redefine standards in the polyester market by introducing unique designs, colors, and uncompromising quality.
-              </p>
-              <h3 style={{ marginTop: '24px', marginBottom: '12px', color: 'var(--text-dark)', fontSize: '1.3rem', fontWeight: 700 }}>What Sets Us Apart</h3>
-              <div className="about-points">
-                <div className="about-point">
-                  <CheckCircle size={20} />
-                  <span><strong>Unique Designs:</strong> Exclusive patterns and textures tailored to modern fashion needs.</span>
-                </div>
-                <div className="about-point">
-                  <CheckCircle size={20} />
-                  <span><strong>Color Standards:</strong> Vibrant, lasting shades that elevate every garment.</span>
-                </div>
-                <div className="about-point">
-                  <CheckCircle size={20} />
-                  <span><strong>Quality Assurance:</strong> Fabrics engineered for strength, comfort, and longevity.</span>
-                </div>
-              </div>
-            </div>
-            <div className="story-image heritage-content">
-              <div className="story-card">
-                <Award size={80} />
-                <h3>Our Legacy</h3>
-                <p>Built on Trust Since <strong>2020</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="mission-vision">
-        <div className="container">
-          <div className="mv-content" ref={missionVisionRef}>
-            <div className="mv-card">
-              <Target size={50} />
-              <h3>Our Mission</h3>
-              <p>
-                To facilitate seamless international trade by providing high-quality products, 
-                reliable logistics, and exceptional customer service that exceeds expectations 
-                and builds lasting partnerships.
-              </p>
-            </div>
-            <div className="mv-card">
-              <Award size={50} />
-              <h3>Our Vision</h3>
-              <p>
-                To be the most trusted and preferred global trade partner, known for our 
-                commitment to quality, innovation, and sustainable business practices that 
-                benefit all stakeholders.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="section values-section">
-        <div className="container">
-          <h2 className="section-title">Our Core Values</h2>
-          <p className="section-subtitle">
-            These fundamental principles guide our decisions and shape our relationships with clients and partners.
-          </p>
-          <div className="grid grid-4" ref={valuesRef}>
-            {values.map((value, index) => (
-              <div key={index} className="card value-card">
-                <div className="value-icon">
-                  {value.icon}
-                </div>
-                <h3 className="value-title">{value.title}</h3>
-                <p className="value-description">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="section why-choose">
-        <div className="container">
-          <div className="choose-content">
-            <div className="choose-text">
-              <h2 className="section-title typing-heading">Why Choose Pugazh Overseas?</h2>
-              <div className="choose-points" ref={whyChooseRef}>
-                <div className="choose-point">
-                  <CheckCircle size={24} />
-                  <div>
-                    <h4>Proven Track Record</h4>
-                    <p>14+ years of successful international trade operations</p>
+          <div className="signature-fabrics-content">
+            <h2 className="section-title">Our Signature Fabrics</h2>
+            <p className="section-subtitle">
+              We specialize in distinctive polyester fabrics that stand out for their texture, finish, and versatility:
+            </p>
+            <div className="fabrics-grid">
+              {fabrics.map((fabric, index) => (
+                <div key={index} className="fabric-item">
+                  <div className="fabric-image-wrapper">
+                    <img src={fabric.image} alt={fabric.name} className="fabric-image" />
                   </div>
+                  <span className="fabric-name">{fabric.name}</span>
                 </div>
-                <div className="choose-point">
-                  <CheckCircle size={24} />
-                  <div>
-                    <h4>Quality Assurance</h4>
-                    <p>ISO certified processes ensuring consistent quality</p>
-                  </div>
-                </div>
-                <div className="choose-point">
-                  <CheckCircle size={24} />
-                  <div>
-                    <h4>Global Network</h4>
-                    <p>Extensive partnerships across 50+ countries</p>
-                  </div>
-                </div>
-                <div className="choose-point">
-                  <CheckCircle size={24} />
-                  <div>
-                    <h4>Customer Support</h4>
-                    <p>24/7 dedicated support for all your trade needs</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
-            <div className="choose-image">
-              <div className="choose-card">
-                <Users size={60} />
-                <h3>Trusted Partner</h3>
-                <p>Your Success is Our Success</p>
-              </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Sets Us Apart Section */}
+      <section className="section what-sets-us-apart-section">
+        <div className="container">
+          <div className="what-sets-content">
+            <h2 className="section-title">What Sets Us Apart</h2>
+            <div className="apart-items-grid">
+              {whatSetsUsApart.map((item, index) => (
+                <div key={index} className="apart-item">
+                  <div className="apart-icon">
+                    {item.icon}
+                  </div>
+                  <h3 className="apart-title">{item.title}</h3>
+                  <p className="apart-description">{item.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

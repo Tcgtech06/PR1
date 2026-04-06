@@ -111,6 +111,30 @@
   animation: slideInLeft 0.6s ease-out 0.3s both;
 }
 
+/* Hero Welcome Section */
+.hero-welcome-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--light-green);
+  padding: 25px 30px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  animation: slideInLeft 0.6s ease-out 0.35s both;
+  backdrop-filter: blur(10px);
+}
+
+.hero-welcome-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light-green);
+  margin-bottom: 12px;
+}
+
+.hero-welcome-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
 .hero-buttons {
   display: flex;
   gap: 15px;
@@ -380,6 +404,21 @@
     margin-bottom: 24px;
   }
 
+  .hero-welcome-section {
+    padding: 20px 20px;
+    margin-bottom: 30px;
+  }
+
+  .hero-welcome-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-welcome-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
   .hero-buttons {
     justify-content: center;
     gap: 16px;
@@ -460,6 +499,22 @@
 
   .hero-description {
     font-size: 0.95rem;
+  }
+
+  .hero-welcome-section {
+    padding: 15px 15px;
+    margin-bottom: 25px;
+    border-left-width: 3px;
+  }
+
+  .hero-welcome-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-welcome-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .hero-card,

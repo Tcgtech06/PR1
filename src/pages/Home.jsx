@@ -55,11 +55,10 @@ const Home = () => {
               <div className="hero-text">
                   <p className="hero-slogan">Innovating Polyester, Inspiring Fashion.</p>
                   <h1 className="hero-title">
-                    Pugazh Overseas:
-                    <span className="gradient-text"> South India's Fabric Authority</span>
+                    Welcome to the Future of Polyester
                   </h1>
                   <p className="hero-description">
-                    13 years of consistency. 50,000 sq. ft. of excellence. As part of the Sri Rajamani Fabrics family, we deliver micro polyester, spun polyester, imported super poly, N.S. Lycra, and corduroy for every need. 300+ varieties. Zero compromise on quality.
+                    Pugazh Overseas blends the trusted legacy of Sri Rajamani Fabrics with a modern passion for textile innovation. Since 2020, we have redefined the polyester market by delivering high-performance fabrics that don't compromise on style.
                   </p>
                   <div className="hero-buttons">
                     <Link to="/products" className="btn btn-primary">
