@@ -7,10 +7,8 @@ import GalleryCarousel from '../components/GalleryCarousel';
 import './Home.css';
 
 const Home = () => {
-  const aboutPointsRef = useScrollReveal('.about-point-animate', 'about-point-visible', 0.2);
   const headingRevealRef = useScrollReveal('.typing-heading-animate', 'focus-in-view', 0.15);
   const visionRef = useScrollReveal('.vision-content', 'scroll-reveal', 0.15);
-  const signatureFabricsRef = useScrollReveal('.signature-fabric-card', 'scroll-reveal', 0.05);
 
   // Hero Section is at the top of the page, so it should render immediately on load.
   // We don't need an IntersectionObserver for the hero content.
@@ -200,131 +198,12 @@ const Home = () => {
                 ))}
               </div>
             </div>
-
-            {/* Call to Action */}
-            <div style={{ textAlign: 'center', marginTop: '60px' }}>
-              <p style={{ color: 'var(--dark-gray)', fontSize: '1.1rem', marginBottom: '5px' }}>Our Promise to You:</p>
-              <p style={{ fontSize: '1.4rem', fontWeight: 'bold', background: 'linear-gradient(90deg, var(--primary-color), var(--light-green))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '25px' }}>
-                Premium Quality • Complete Variety • Unmatched Reliability
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Signature Fabrics Section */}
-      <section className="section" style={{ background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.06) 0%, #ffffff 50%, rgba(34, 197, 94, 0.04) 100%)', paddingTop: '60px', paddingBottom: '60px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '0', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)', borderRadius: '50%' }}></div>
-        <div className="container" style={{ position: 'relative', zIndex: '1' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <h2 className="section-title">Our Signature Fabrics</h2>
-            <p className="section-subtitle">
-              We specialize in distinctive polyester fabrics that stand out for their texture, finish, and versatility:
-            </p>
-          </div>
-          <div className="grid grid-4" ref={signatureFabricsRef}>
-            {[
-              { name: 'Valentino Crepe', image: '/valentino crepe.jpg' },
-              { name: 'Super Tensile', image: '/super tensile.jpg' },
-              { name: 'Monalisa', image: '/Monalisa.jpg' },
-              { name: 'Double Bull', image: '/Double Bull.jpg' },
-              { name: 'Road Rib', image: '/Road Rib.jpg' },
-              { name: 'Mars (Baby Pique) with Plain & Jacquard Collar Cuff', image: '/Mars (Baby Pique) with Plain & Jacquard Collar Cuff.jpg' },
-              { name: 'Mars Melange with Melange Collar Cuff', image: '/Mars Melange with Melange Collar Cuff.jpg' },
-              { name: 'Micro 4 Way Lycra 255 & 230 GSM', image: '/Micro 4 Way Lycra 255 & 230 GSM.jpg' },
-              { name: '4 Way Lycra Twill Spandex', image: '/4 Way Lycra Twill Spandex.jpg' },
-              { name: 'TinTin Spandex', image: '/TinTin Spandex.jpg' },
-              { name: 'Knitted Corduroy', image: '/Knitted Corduroy.jpg' },
-              { name: '2 Way', image: '/2 way.jpg' },
-            ].map((fabric, index) => (
-              <div key={index} className="card signature-fabric-card">
-                <div className="fabric-image-container">
-                  <img src={fabric.image} alt={fabric.name} className="fabric-image" />
-                </div>
-                <div className="fabric-name">{fabric.name}</div>
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link to="/products" className="btn btn-primary">
-              Explore All Products <ArrowRight size={20} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* About Preview Section */}
-      <section className="section about-preview" style={{ background: 'linear-gradient(135deg, #f8fbff 0%, rgba(34, 197, 94, 0.05) 50%, #ffffff 100%)', paddingTop: '70px', paddingBottom: '70px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-80px', left: '-80px', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%)', borderRadius: '50%' }}></div>
-        <div style={{ position: 'absolute', bottom: '-60px', right: '-60px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(30, 64, 175, 0.08) 0%, transparent 70%)', borderRadius: '50%' }}></div>
-        <div className="container" style={{ position: 'relative', zIndex: '1' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 className="section-title">About Pugazh Overseas</h2>
-            <p className="about-description" style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '30px' }}>
-              Building on a legacy of over 14 years in the textile industry, Pugazh Overseas 
-              was established in <strong>2019</strong> as a trusted partner for businesses seeking quality 
-              products and reliable export services. From our humble 100 sq. ft. beginnings to our impressive 50,000 sq. ft. facility, we've become South India's leading polyester knitted fabric trader.
-            </p>
-            <p style={{ fontSize: '1rem', color: 'var(--dark-gray)', lineHeight: '1.8', marginBottom: '30px' }}>
-              As part of the prestigious <strong>Sri Rajamani Fabrics family</strong>, we specialize in 300+ varieties of premium polyester fabrics including micro polyester, spun polyester, imported super poly, N.S. Lycra, and specialty fabrics like corduroy. Whether you need uniforms, sportswear, casual wear, or suiting materials, we have the perfect fabric to meet your requirements.
-            </p>
-            <div className="about-points responsive-about-points" ref={aboutPointsRef}>
-              <div className="about-point about-point-animate" style={{ animationDelay: '0s', textAlign: 'center' }}>
-                <CheckCircle size={24} style={{ color: 'var(--primary-color)', margin: '0 auto 10px' }} />
-                <span style={{ display: 'block', fontWeight: '600', color: 'var(--text-dark)' }}>ISO Certified Quality</span>
-                <span style={{ fontSize: '0.9rem', color: 'var(--dark-gray)' }}>Management Standards</span>
-              </div>
-              <div className="about-point about-point-animate" style={{ animationDelay: '0.3s', textAlign: 'center' }}>
-                <CheckCircle size={24} style={{ color: 'var(--primary-color)', margin: '0 auto 10px' }} />
-                <span style={{ display: 'block', fontWeight: '600', color: 'var(--text-dark)' }}>Nationwide Network</span>
-                <span style={{ fontSize: '0.9rem', color: 'var(--dark-gray)' }}>All India Delivery</span>
-              </div>
-              <div className="about-point about-point-animate" style={{ animationDelay: '0.6s', textAlign: 'center' }}>
-                <CheckCircle size={24} style={{ color: 'var(--primary-color)', margin: '0 auto 10px' }} />
-                <span style={{ display: 'block', fontWeight: '600', color: 'var(--text-dark)' }}>24/7 Support</span>
-                <span style={{ fontSize: '0.9rem', color: 'var(--dark-gray)' }}>Always Here to Help</span>
-              </div>
-            </div>
-            <p style={{ fontSize: '0.95rem', color: 'var(--dark-gray)', lineHeight: '1.7', marginBottom: '30px', fontStyle: 'italic', background: 'rgba(34, 197, 94, 0.08)', padding: '20px', borderRadius: '10px', borderLeft: '4px solid var(--primary-color)' }}>
-              <strong>Our Commitment:</strong> We replace any mistake fabric from customers without hassle. Your satisfaction is not just our goal—it's our guarantee. With 1000+ satisfied clients across India, we've built our reputation on quality, reliability, and genuine care for our partners' success.
-            </p>
-            <Link to="/about" className="btn btn-secondary">
-              Learn More About Our Story
-            </Link>
           </div>
         </div>
       </section>
 
       {/* 3D Gallery Carousel Section */}
       <GalleryCarousel />
-
-      {/* Why Choose Pugazh Section */}
-      <section className="section" style={{ background: 'linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, #ffffff 50%, rgba(34, 197, 94, 0.05) 100%)', paddingTop: '70px', paddingBottom: '70px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(30, 64, 175, 0.08) 0%, transparent 70%)', borderRadius: '50%' }}></div>
-        <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)', borderRadius: '50%' }}></div>
-        <div className="container" style={{ position: 'relative', zIndex: '1' }}>
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <h2 className="section-title">Why Choose Pugazh Overseas?</h2>
-            <p className="section-subtitle">Trusted by manufacturers, designers, and retailers across India</p>
-          </div>
-          <div className="grid grid-3">
-            {[
-              { icon: <Zap size={40} />, title: 'Fast Delivery', desc: 'All India delivery network with quick turnaround times and reliable logistics partners' },
-              { icon: <Package size={40} />, title: 'Quality Assured', desc: 'Rigorous quality control at every step, from sourcing to packaging and delivery' },
-              { icon: <Star size={40} />, title: 'Competitive Pricing', desc: 'Best prices without compromising on quality, bulk discounts available' },
-              { icon: <Users size={40} />, title: 'Expert Support', desc: '24/7 customer support team ready to assist with your fabric needs' },
-              { icon: <CheckCircle size={40} />, title: 'Easy Returns', desc: 'Fabric mistake? We replace it free. Your satisfaction is our priority' },
-              { icon: <Layers size={40} />, title: 'Variety Selection', desc: 'From basic polyester to imported super poly and specialty fabrics' }
-            ].map((item, idx) => (
-              <div key={idx} className="card" style={{ padding: '30px', textAlign: 'center', border: '2px solid rgba(34, 197, 94, 0.15)', borderRadius: '12px' }}>
-                <div style={{ color: 'var(--primary-color)', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>{item.icon}</div>
-                <h3 style={{ fontSize: '1.2rem', color: 'var(--text-dark)', marginBottom: '12px', fontWeight: '600' }}>{item.title}</h3>
-                <p style={{ color: 'var(--dark-gray)', fontSize: '0.95rem', lineHeight: '1.6' }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
     </div>
   );

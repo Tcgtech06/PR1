@@ -5,7 +5,8 @@
   color: var(--white);
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  will-change: auto;
 }
 
 .about-hero::before {
