@@ -1,12 +1,34 @@
 import HeroSection from '../components/HeroSection';
 import useScrollReveal from '../hooks/useScrollReveal';
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import './Products.css';
 
 const Products = () => {
   // Scroll reveal hooks for different sections
   const productsGridRef = useScrollReveal('.product-card', 'scroll-reveal', 0.1);
+  const [showModal, setShowModal] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const WHATSAPP_NUMBER = "+917845160516";
+
+  // TinTin Spandex slideshow images
+  const tinTinImages = [
+    '/tin1.jpeg',
+    '/tin2.jpeg',
+    '/tin3.jpeg',
+    '/tin4.jpeg',
+    '/tin5.jpeg',
+    '/tin6.jpeg'
+  ];
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? tinTinImages.length - 1 : prev - 1));
+  };
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prev) => (prev === tinTinImages.length - 1 ? 0 : prev + 1));
+  };
 
   const handleWhatsAppInquiry = (product) => {
     const message = `Hello Pugazh Overseas,
@@ -97,8 +119,20 @@ Thank you!`;
           <div className="grid grid-3" ref={productsGridRef}>
             {productCategories.map((product, index) => (
               <div key={index} className="card product-card">
-                <div className="product-image-container">
+                <div 
+                  className="product-image-container"
+                  onClick={() => {
+                    if (product.title === "TinTin Spandex (Ottoman)") {
+                      setShowModal(true);
+                      setCurrentImageIndex(0);
+                    }
+                  }}
+                  style={product.title === "TinTin Spandex (Ottoman)" ? { cursor: 'pointer' } : {}}
+                >
                   <img src={product.image} alt={product.title} className="product-image" />
+                  {product.title === "TinTin Spandex (Ottoman)" && (
+                    <div className="slideshow-indicator">Tap to view more colors</div>
+                  )}
                 </div>
                 <h3 className="product-title">{product.title}</h3>
                 <div className="product-specs">
@@ -136,6 +170,58 @@ Thank you!`;
       </section>
 
       {/* CTA Section */}
+
+      {/* TinTin Spandex Slideshow Modal */}
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setShowModal(false)}>
+              <X size={28} />
+            </button>
+            
+            <div className="slideshow-container">
+              <div className="slideshow-image-wrapper">
+                <img 
+                  src={tinTinImages[currentImageIndex]} 
+                  alt={`TinTin Spandex Color ${currentImageIndex + 1}`}
+                  className="slideshow-image"
+                />
+              </div>
+              
+              <div className="slideshow-controls">
+                <button 
+                  className="slideshow-btn prev-btn"
+                  onClick={handlePrevImage}
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                
+                <div className="slideshow-indicators">
+                  {tinTinImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      className={`indicator ${idx === currentImageIndex ? 'active' : ''}`}
+                      onClick={() => setCurrentImageIndex(idx)}
+                    />
+                  ))}
+                </div>
+                
+                <button 
+                  className="slideshow-btn next-btn"
+                  onClick={handleNextImage}
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+              
+              <div className="slideshow-info">
+                <h3>TinTin Spandex (Ottoman) - Color {currentImageIndex + 1} of {tinTinImages.length}</h3>
+                <p>Explore different color variations of our premium TinTin Spandex fabric</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
