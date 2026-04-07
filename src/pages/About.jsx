@@ -4,8 +4,8 @@ import './About.css';
 
 const About = () => {
   const fabrics = [
+    { name: 'Super Tencile (Indian Tencile)', image: '/tencel.jpeg' },
     { name: 'Valentino Crepe', image: '/valentino crepe.jpg' },
-    { name: 'Super Tensile', image: '/super tensile.jpg' },
     { name: 'Monalisa', image: '/Monalisa.jpg' },
     { name: 'Double Bull', image: '/Double Bull.jpg' },
     { name: 'Road Rib', image: '/Road Rib.jpg' },

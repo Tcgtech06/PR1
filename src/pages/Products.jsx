@@ -54,6 +54,15 @@ Thank you!`;
   // Product categories array
   const productCategories = [
     {
+      image: "/tencel.jpeg",
+      title: "Super Tencile (Indian Tencile)",
+      fabricName: "Super Tencile (Indian Tencile)",
+      gsm: "200-210",
+      width: "60\" Open Width",
+      colours: "20+",
+      description: "Super Tencile is inspired from imported tencile which is blend of Nylon, Rayon & Spandex, with the same construction methods we developed Super Tencile in combination of Spun Polyester 60% Micro Polyester 35% Spandex 5%. Basically used for Round neck T-Shirt & Self Collar T-Shirt."
+    },
+    {
       image: "/Mars Melange.jpeg",
       title: "Mars Melange (Baby Pique)",
       fabricName: "Mars Melange (Baby Pique)",

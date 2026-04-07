@@ -19,7 +19,7 @@ const Rajmani = () => {
 
   const heroImages = [img1, img2, img3, img4];
 
-  const journeyFullText = `Founded in 2012, Sri Rajamani Fabrics (SRF) was born from the vision of a young entrepreneur, Mr. Mahalingam, whose determination, dedication, and commitment laid the foundation for what we are today.
+  const journeyFullText = `Sri Rajamani Fabrics was born from the vision of a young entrepreneur, Mr. Mahalingam, whose determination, dedication, and commitment laid the foundation for what we are today..
 
 With just ₹50,000 and a small team, he set out to create a business that understood the needs of its clients and delivered fabrics with quality, reliability, and satisfaction.
 
@@ -296,22 +296,22 @@ From those humble beginnings, we have grown into one of the leading polyester fa
               {journeyTyping && (
                 <>
                   <p className="journey-typed-text journey-para-1">
-                    {typedText.slice(0, 237)}
-                    {typedText.length < 237 && typedText.length > 0 && (
+                    {typedText.slice(0, 177)}
+                    {typedText.length < 177 && typedText.length > 0 && (
                       <span className="typing-cursor">|</span>
                     )}
                   </p>
-                  {typedText.length >= 237 && (
+                  {typedText.length >= 177 && (
                     <p className="journey-typed-text journey-para-2">
-                      {typedText.slice(238, 429)}
-                      {typedText.length < 429 && (
+                      {typedText.slice(179, 355)}
+                      {typedText.length < 355 && (
                         <span className="typing-cursor">|</span>
                       )}
                     </p>
                   )}
-                  {typedText.length >= 429 && (
+                  {typedText.length >= 355 && (
                     <p className="journey-typed-text journey-para-3">
-                      {typedText.slice(430)}
+                      {typedText.slice(357)}
                       {typedText.length < journeyFullText.length && (
                         <span className="typing-cursor">|</span>
                       )}
@@ -319,31 +319,7 @@ From those humble beginnings, we have grown into one of the leading polyester fa
                   )}
                 </>
               )}
-              {typedText.length >= journeyFullText.length && (
-                <div className="features features-fade-in">
-                  <div className="feature">
-                    <Package size={24} />
-                    <div>
-                      <h4>Premium Quality</h4>
-                      <p>Only the finest materials and craftsmanship</p>
-                    </div>
-                  </div>
-                  <div className="feature">
-                    <Package size={24} />
-                    <div>
-                      <h4>Wide Variety</h4>
-                      <p>500+ fabric types and patterns available</p>
-                    </div>
-                  </div>
-                  <div className="feature">
-                    <Package size={24} />
-                    <div>
-                      <h4>Custom Solutions</h4>
-                      <p>Tailored fabrics for specific requirements</p>
-                    </div>
-                  </div>
-                </div>
-              )}
+
             </div>
             
             {/* Timeline - Desktop Only */}
@@ -388,8 +364,7 @@ From those humble beginnings, we have grown into one of the leading polyester fa
               </p>
               <p className="impact-text-2">
                 For us, this is more than business; it is a way of participating in the fashion dreams 
-                of common people and making them accessible to all. We believe that everyone deserves 
-                access to high-quality textiles that enhance their lifestyle.
+                of common people and making them accessible to all.
               </p>
             </div>
           </div>
