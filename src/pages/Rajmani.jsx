@@ -444,7 +444,7 @@ From those humble beginnings, we have grown into one of the leading polyester fa
           <br />
           <div className="contact-grid" ref={contactRef}>
             <a 
-              href="https://maps.app.goo.gl/JEWTnrYd5cM3Xunv5" 
+              href="https://maps.app.goo.gl/KfaiXPzUsxBGfBxb7" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="contact-card"
@@ -472,9 +472,9 @@ From those humble beginnings, we have grown into one of the leading polyester fa
                 <div className="phone-item">
                   <span className="phone-label">Order Enquiry:</span>
                   <div className="phone-links">
-                    <a href="tel:+918122988599" className="phone-link">8122 988 599</a>
+                    <a href="https://wa.me/918122988599" className="phone-link">8122 988 599</a>
                     <span className="phone-sep">/</span>
-                    <a href="tel:+917868981707" className="phone-link">78 68 98 1707</a>
+                    <a href="https://wa.me/917868981707" className="phone-link">78 68 98 1707</a>
                   </div>
                 </div>
               </div>
@@ -516,7 +516,7 @@ From those humble beginnings, we have grown into one of the leading polyester fa
                   <Phone size={20} />
                 </a>
                 <a 
-                  href="https://maps.app.goo.gl/JEWTnrYd5cM3Xunv5" 
+                  href="https://maps.app.goo.gl/KfaiXPzUsxBGfBxb7" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="footer-contact-link"
