@@ -9,8 +9,19 @@ const Products = () => {
   const productsGridRef = useScrollReveal('.product-card', 'scroll-reveal', 0.1);
   const [showModal, setShowModal] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [activeProduct, setActiveProduct] = useState('');
 
   const WHATSAPP_NUMBER = "+917845160516";
+
+  // Super Tencile slideshow images
+  const superTencileImages = [
+    '/tencel1.jpeg',
+    '/tencel2.jpeg',
+    '/tencel3.jpeg',
+    '/tencel4.jpeg',
+    '/tencel5.jpeg',
+    '/tencel6.jpeg'
+  ];
 
   // TinTin Spandex slideshow images
   const tinTinImages = [
@@ -22,12 +33,18 @@ const Products = () => {
     '/tin6.jpeg'
   ];
 
+  const getCurrentImages = () => {
+    return activeProduct === 'Super Tencile (Indian Tencile)' ? superTencileImages : tinTinImages;
+  };
+
   const handlePrevImage = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? tinTinImages.length - 1 : prev - 1));
+    const images = getCurrentImages();
+    setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   const handleNextImage = () => {
-    setCurrentImageIndex((prev) => (prev === tinTinImages.length - 1 ? 0 : prev + 1));
+    const images = getCurrentImages();
+    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   const handleWhatsAppInquiry = (product) => {
@@ -132,14 +149,22 @@ Thank you!`;
                   className="product-image-container"
                   onClick={() => {
                     if (product.title === "TinTin Spandex (Ottoman)") {
+                      setActiveProduct("TinTin Spandex (Ottoman)");
+                      setShowModal(true);
+                      setCurrentImageIndex(0);
+                    } else if (product.title === "Super Tencile (Indian Tencile)") {
+                      setActiveProduct("Super Tencile (Indian Tencile)");
                       setShowModal(true);
                       setCurrentImageIndex(0);
                     }
                   }}
-                  style={product.title === "TinTin Spandex (Ottoman)" ? { cursor: 'pointer' } : {}}
+                  style={(product.title === "TinTin Spandex (Ottoman)" || product.title === "Super Tencile (Indian Tencile)") ? { cursor: 'pointer' } : {}}
                 >
                   <img src={product.image} alt={product.title} className="product-image" />
                   {product.title === "TinTin Spandex (Ottoman)" && (
+                    <div className="slideshow-indicator">Tap to view more colors</div>
+                  )}
+                  {product.title === "Super Tencile (Indian Tencile)" && (
                     <div className="slideshow-indicator">Tap to view more colors</div>
                   )}
                 </div>
@@ -180,7 +205,7 @@ Thank you!`;
 
       {/* CTA Section */}
 
-      {/* TinTin Spandex Slideshow Modal */}
+      {/* Slideshow Modal */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -191,8 +216,8 @@ Thank you!`;
             <div className="slideshow-container">
               <div className="slideshow-image-wrapper">
                 <img 
-                  src={tinTinImages[currentImageIndex]} 
-                  alt={`TinTin Spandex Color ${currentImageIndex + 1}`}
+                  src={getCurrentImages()[currentImageIndex]} 
+                  alt={`${activeProduct} Color ${currentImageIndex + 1}`}
                   className="slideshow-image"
                 />
               </div>
@@ -206,7 +231,7 @@ Thank you!`;
                 </button>
                 
                 <div className="slideshow-indicators">
-                  {tinTinImages.map((_, idx) => (
+                  {getCurrentImages().map((_, idx) => (
                     <button
                       key={idx}
                       className={`indicator ${idx === currentImageIndex ? 'active' : ''}`}
@@ -224,8 +249,8 @@ Thank you!`;
               </div>
               
               <div className="slideshow-info">
-                <h3>TinTin Spandex (Ottoman) - Color {currentImageIndex + 1} of {tinTinImages.length}</h3>
-                <p>Explore different color variations of our premium TinTin Spandex fabric</p>
+                <h3>{activeProduct} - Color {currentImageIndex + 1} of {getCurrentImages().length}</h3>
+                <p>Explore different color variations of our premium fabric</p>
               </div>
             </div>
           </div>
