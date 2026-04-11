@@ -49,11 +49,34 @@ const Products = () => {
     '/lycra12.jpeg'
   ];
 
+  // Mars slideshow images
+  const marsImages = [
+    '/Mars1.jpeg',
+    '/Mars2.jpeg',
+    '/Mars3.jpeg',
+    '/Mars4.jpeg',
+    '/Mars5.jpeg',
+    '/Mars6.jpeg',
+    '/Mars7.jpeg',
+    '/Mars8.jpeg'
+  ];
+
+  // Corduroy slideshow images
+  const corduroyImages = [
+    '/Cordoury1.jpeg',
+    '/Cordoury2.jpeg',
+    '/Cordoury3.jpeg'
+  ];
+
   const getCurrentImages = () => {
     if (activeProduct === 'Super Tencile (Indian Tencile)') {
       return superTencileImages;
     } else if (activeProduct === 'Crepe Lycra') {
       return crepeLycraImages;
+    } else if (activeProduct === 'Mars (Baby Pique)') {
+      return marsImages;
+    } else if (activeProduct === 'Corduroy') {
+      return corduroyImages;
     } else {
       return tinTinImages;
     }
@@ -182,9 +205,17 @@ Thank you!`;
                       setActiveProduct("Crepe Lycra");
                       setShowModal(true);
                       setCurrentImageIndex(0);
+                    } else if (product.title === "Mars (Baby Pique)") {
+                      setActiveProduct("Mars (Baby Pique)");
+                      setShowModal(true);
+                      setCurrentImageIndex(0);
+                    } else if (product.title === "Corduroy") {
+                      setActiveProduct("Corduroy");
+                      setShowModal(true);
+                      setCurrentImageIndex(0);
                     }
                   }}
-                  style={(product.title === "TinTin Spandex (Ottoman)" || product.title === "Super Tencile (Indian Tencile)" || product.title === "Crepe Lycra") ? { cursor: 'pointer' } : {}}
+                  style={(product.title === "TinTin Spandex (Ottoman)" || product.title === "Super Tencile (Indian Tencile)" || product.title === "Crepe Lycra" || product.title === "Mars (Baby Pique)" || product.title === "Corduroy") ? { cursor: 'pointer' } : {}}
                 >
                   <img src={product.image} alt={product.title} className="product-image" />
                   {product.title === "TinTin Spandex (Ottoman)" && (
@@ -194,6 +225,12 @@ Thank you!`;
                     <div className="slideshow-indicator">Tap to view more colors</div>
                   )}
                   {product.title === "Crepe Lycra" && (
+                    <div className="slideshow-indicator">Tap to view more colors</div>
+                  )}
+                  {product.title === "Mars (Baby Pique)" && (
+                    <div className="slideshow-indicator">Tap to view more colors</div>
+                  )}
+                  {product.title === "Corduroy" && (
                     <div className="slideshow-indicator">Tap to view more colors</div>
                   )}
                 </div>
