@@ -1,5 +1,5 @@
 .gallery-carousel-section {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(30, 64, 175, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.04) 100%);
   padding: 80px 0 100px;
   position: relative;
   overflow: hidden;
@@ -19,6 +19,16 @@
   transition: all 0.3s ease;
 }
 
+/* Force remove all filters and overlays from Swiper */
+.gallery-slide::before,
+.gallery-slide::after {
+  display: none !important;
+}
+
+.gallery-slide > * {
+  filter: none !important;
+}
+
 .gallery-slide-wrap {
   width: 100%;
   height: 100%;
@@ -36,8 +46,16 @@
   position: relative;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
-  background: #fff;
+  background: transparent;
+  filter: none !important;
 }
+
+.gallery-slide-image-container::before,
+.gallery-slide-image-container::after {
+  display: none !important;
+}
+
+
 
 .gallery-slide-wrap.is-active .gallery-slide-image-container {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
@@ -49,6 +67,18 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+}
+
+/* Remove Swiper's default shadow overlays */
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.gallery-slide .swiper-slide-shadow-left,
+.gallery-slide .swiper-slide-shadow-right {
+  background: none !important;
 }
 
 /* When active we can slightly zoom in the image */
@@ -163,4 +193,56 @@
   .swiper-button-next-custom {
     display: none; /* Hide arrows on smaller screens where touch/swipe is more natural */
   }
+}
+
+/* Aggressively remove all Swiper shadow effects */
+.gallery-swiper .swiper-slide-shadow,
+.gallery-swiper .swiper-slide-shadow-left,
+.gallery-swiper .swiper-slide-shadow-right,
+.gallery-swiper .swiper-slide-shadow-top,
+.gallery-swiper .swiper-slide-shadow-bottom {
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+.gallery-swiper .swiper-slide {
+  filter: none !important;
+}
+
+.gallery-swiper .swiper-slide * {
+  filter: none !important;
+}
+
+/* Specifically target first slide to remove any blue overlay */
+.gallery-swiper .swiper-slide:first-child,
+.gallery-swiper .swiper-slide:first-child *,
+.gallery-swiper .swiper-slide:first-child img {
+  filter: none !important;
+  background: transparent !important;
+}
+
+.gallery-swiper .swiper-slide:first-child .gallery-slide-image-container::before,
+.gallery-swiper .swiper-slide:first-child .gallery-slide-image-container::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* Nuclear option - remove ALL possible Swiper overlays and shadows */
+.gallery-swiper .swiper-slide-shadow-coverflow,
+.gallery-swiper .swiper-slide > .swiper-slide-shadow,
+.gallery-swiper .swiper-slide > .swiper-slide-shadow-left,
+.gallery-swiper .swiper-slide > .swiper-slide-shadow-right {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  background: transparent !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Override any Swiper inline styles */
+.gallery-swiper .swiper-slide[style*="shadow"] {
+  filter: none !important;
 }

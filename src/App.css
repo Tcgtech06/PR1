@@ -270,3 +270,19 @@ main {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+/* Force remove Swiper coverflow shadows globally */
+.swiper-slide-shadow,
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right,
+.swiper-slide-shadow-top,
+.swiper-slide-shadow-bottom,
+.swiper-slide-shadow-coverflow {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  background: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}

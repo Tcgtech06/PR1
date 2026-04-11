@@ -18,9 +18,14 @@ import './GalleryCarousel.css';
 const GalleryCarousel = () => {
   const galleryItems = [
     { image: p1, label: 'Number 1', title: 'Intro', duration: '15:20' },
-    { image: p2, label: 'Number 2', title: 'Process', duration: '10:45' },
     { image: p3, label: 'Number 3', title: 'Quality', duration: '08:30' },
+    { image: p2, label: 'Number 2', title: 'Process', duration: '10:45' },
     { image: p4, label: 'Number 4', title: 'Gallery', duration: '12:00' },
+    { image: '/Monalisa.jpg', label: 'Monalisa', title: 'Monalisa Fabric', duration: 'Product' },
+    { image: '/Double Bull.jpg', label: 'Double Bull', title: 'Double Bull Fabric', duration: 'Product' },
+    { image: '/Road Rib.jpg', label: 'Road Rib', title: 'Road Rib Fabric', duration: 'Product' },
+    { image: '/4 Way Lycra Twill Spandex.jpg', label: '4 Way Lycra', title: '4 Way Lycra Twill Spandex', duration: 'Product' },
+    { image: '/Micro 4 Way Lycra 255 & 230 GSM.jpg', label: 'Micro 4 Way Lycra', title: 'Micro 4 Way Lycra 255 & 230 GSM', duration: 'Product' },
   ];
 
   return (
@@ -38,13 +43,13 @@ const GalleryCarousel = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
-          initialSlide={1} // Start on the 2nd item since we only have 3 now
+          initialSlide={1}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
             depth: 100,
             modifier: 2.5,
-            slideShadows: true,
+            slideShadows: false,
           }}
           pagination={{ clickable: true }}
           navigation={{
