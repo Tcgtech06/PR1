@@ -45,6 +45,16 @@ const Home = () => {
 
   return (
     <div className="home">
+      {/* Marquee Animation */}
+      <div className="marquee-container">
+        <div className="marquee-content">
+          <img src="/slide.jpeg" alt="Fabric showcase" className="marquee-image" />
+          <img src="/slide.jpeg" alt="Fabric showcase" className="marquee-image" />
+          <img src="/slide.jpeg" alt="Fabric showcase" className="marquee-image" />
+          <img src="/slide.jpeg" alt="Fabric showcase" className="marquee-image" />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="hero">
         <FabricFlow />
