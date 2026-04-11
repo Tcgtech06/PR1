@@ -33,8 +33,30 @@ const Products = () => {
     '/tin6.jpeg'
   ];
 
+  // Crepe Lycra slideshow images
+  const crepeLycraImages = [
+    '/lycra1.jpeg',
+    '/lycra2.jpeg',
+    '/lycra3.jpeg',
+    '/lycra4.jpeg',
+    '/lycra5.jpeg',
+    '/lycra6.jpeg',
+    '/lycra7.jpeg',
+    '/lycra8.jpeg',
+    '/lycra9.jpeg',
+    '/lycra10.jpeg',
+    '/lycra11.jpeg',
+    '/lycra12.jpeg'
+  ];
+
   const getCurrentImages = () => {
-    return activeProduct === 'Super Tencile (Indian Tencile)' ? superTencileImages : tinTinImages;
+    if (activeProduct === 'Super Tencile (Indian Tencile)') {
+      return superTencileImages;
+    } else if (activeProduct === 'Crepe Lycra') {
+      return crepeLycraImages;
+    } else {
+      return tinTinImages;
+    }
   };
 
   const handlePrevImage = () => {
@@ -156,15 +178,22 @@ Thank you!`;
                       setActiveProduct("Super Tencile (Indian Tencile)");
                       setShowModal(true);
                       setCurrentImageIndex(0);
+                    } else if (product.title === "Crepe Lycra") {
+                      setActiveProduct("Crepe Lycra");
+                      setShowModal(true);
+                      setCurrentImageIndex(0);
                     }
                   }}
-                  style={(product.title === "TinTin Spandex (Ottoman)" || product.title === "Super Tencile (Indian Tencile)") ? { cursor: 'pointer' } : {}}
+                  style={(product.title === "TinTin Spandex (Ottoman)" || product.title === "Super Tencile (Indian Tencile)" || product.title === "Crepe Lycra") ? { cursor: 'pointer' } : {}}
                 >
                   <img src={product.image} alt={product.title} className="product-image" />
                   {product.title === "TinTin Spandex (Ottoman)" && (
                     <div className="slideshow-indicator">Tap to view more colors</div>
                   )}
                   {product.title === "Super Tencile (Indian Tencile)" && (
+                    <div className="slideshow-indicator">Tap to view more colors</div>
+                  )}
+                  {product.title === "Crepe Lycra" && (
                     <div className="slideshow-indicator">Tap to view more colors</div>
                   )}
                 </div>
