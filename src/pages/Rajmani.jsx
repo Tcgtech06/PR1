@@ -144,6 +144,16 @@ From those humble beginnings, we have grown into one of the leading polyester fa
         </div>
       </nav>
 
+      {/* Marquee Animation */}
+      <div className="marquee-container">
+        <div className="marquee-content">
+          <img src="/slide.jpeg" alt="Fabric showcase" className="marquee-image" />
+          <img src="/slide.jpeg" alt="Fabric showcase" className="marquee-image" />
+          <img src="/slide.jpeg" alt="Fabric showcase" className="marquee-image" />
+          <img src="/slide.jpeg" alt="Fabric showcase" className="marquee-image" />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="rajmani-hero">
         {/* Text content */}

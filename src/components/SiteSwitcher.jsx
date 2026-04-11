@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
-import logo2 from '../assets/logo2.png';
 import './SiteSwitcher.css';
 
 const SiteSwitcher = () => {
@@ -26,8 +25,8 @@ const SiteSwitcher = () => {
     },
     {
       id: 'rajamani',
-      name: 'Raja Mani Fabrics',
-      icon: <img src={logo2} alt="Raja Mani" className="site-logo" />,
+      name: '',
+      icon: <img src="/raj.jpeg" alt="Raja Mani" className="site-logo" />,
       description: 'Premium Textile Solutions',
       url: '/rajmani'
     }
@@ -54,7 +53,7 @@ const SiteSwitcher = () => {
           <span className="switch-text">SWITCH TO</span>
           <div className="site-info">
             {otherSite.icon}
-            <span className="site-name">{otherSite.name}</span>
+            {otherSite.name && <span className="site-name">{otherSite.name}</span>}
           </div>
         </div>
       </button>

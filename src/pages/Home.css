@@ -1,3 +1,37 @@
+/* Marquee Animation */
+.marquee-container {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  position: relative;
+  border-bottom: 2px solid #fbbf24;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  height: 100%;
+  align-items: center;
+}
+
+.marquee-image {
+  height: 60px;
+  width: auto;
+  margin-right: 50px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 /* Hero Section - Green with Polyester Fabric Pattern */
 .hero {
   width: 100%;
