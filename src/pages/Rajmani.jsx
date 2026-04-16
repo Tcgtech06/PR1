@@ -4,7 +4,6 @@ import { Package, Mail, Phone, MapPin, Facebook, Instagram, TrendingUp, Users, C
 import SiteSwitcher from '../components/SiteSwitcher';
 import HamburgerIcon from '../components/HamburgerIcon';
 import useScrollReveal from '../hooks/useScrollReveal';
-import logo2 from '../assets/logo2.png';
 import img1 from '../assets/img1.jpg';
 import img2 from '../assets/img2.jpg';
 import img3 from '../assets/img3.webp';
@@ -90,7 +89,7 @@ From those humble beginnings, we have grown into one of the leading polyester fa
           <div className="nav-content">
             <Link to="/rajmani" className="nav-logo">
               <div className="logo-container">
-                <img src={logo2} alt="Raja Mani Fabrics Logo" className="logo-image" />
+                <img src="/raj.jpeg" alt="Raja Mani Fabrics Logo" className="logo-image" />
               </div>
             </Link>
             
