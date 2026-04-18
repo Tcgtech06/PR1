@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pugazhoverseas.com/sitemap.xml
+
+# Allow all search engines to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow crawling of admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow crawling of important pages
+Allow: /products
+Allow: /about
+Allow: /contact
+Allow: /rajmani
+
+# Allow crawling of assets
+Allow: /assets/
+Allow: /public/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.svg
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
